@@ -1,11 +1,17 @@
 /*IMPORT FONTS*/
-
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+/*font-family: 'Jost', sans-serif;*/
 
 :root{
     /*COLORS*/    
     --bg-Soft: rgb(197, 197, 197);
-
+    --bg-Body: #1d1b19;
+    --mc: #987750;
+    --tc: #888;
+    --gc: #ddd;
+    /*color: var(--mc);*/
+    
+    
     /*FONTS*/
 
 
