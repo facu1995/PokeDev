@@ -4,11 +4,11 @@
 
 :root{
     /*COLORS*/    
-    --bg-Soft: rgb(197, 197, 197);
-    --bg-Body: #1d1b19;
-    --mc: #987750;
-    --tc: #888;
-    --gc: #ddd;
+    --gbg: rgb(197, 197, 197);
+    --dgbg: #1d1b19;
+    --dc: #987750;
+    --gc: #888;
+    --wc: #ddd;
     /*color: var(--mc);*/
     
     
