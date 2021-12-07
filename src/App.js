@@ -2,6 +2,7 @@ import './styles/style.css'
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 
 import { MainScreen } from './components/screens/MainScreen';
+import { PokemonScreen } from './components/screens/PokemonScreen';
 
 function App() {
   return (
@@ -10,8 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainScreen />} />
             <Route path="Main" element={<MainScreen />} />
-            <Route path='Pokemon' element='Coso' />
-              <Route path=":Id" element='Coso' />  {/* Modelo para trabajar con useParams, toma datos del Url */}
+            <Route path='Pokemon:Id' element={<PokemonScreen />} />
         </Routes>
       </BrowserRouter>
     </>
