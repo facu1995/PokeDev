@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css'
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+
+import { MainScreen } from './components/screens/MainScreen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainScreen />} />
+            <Route path="Main" element={<MainScreen />} />
+            <Route path='Pokemon' element='Coso' />
+              <Route path=":Id" element='Coso' />  {/* Modelo para trabajar con useParams, toma datos del Url */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
