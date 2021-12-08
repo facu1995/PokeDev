@@ -33,14 +33,12 @@ li{
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-weight: 600;
-    font-family: 'Jost';
     color: var(--wc);
 }
 
 h2{                             
     font-size: 48px;
     font-weight:400;
-    margin-bottom: 34px;
 }
 
 h3{
@@ -57,12 +55,6 @@ h5{
     line-height: 30px; 
 }
 
-.GOLD{                      
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--mc);
-    margin-bottom: 54px;
-}
 
 p{
     font-size: 30px;
@@ -71,6 +63,11 @@ p{
     color: var(--gc);
 }
 
+.GOLD{                      
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--dc);
+}
 /* .smallP{
 
 }

@@ -3,10 +3,6 @@ import dataPokemon from '../mocks/pokemonData'
 import imagenPoke from '../img/PokeImg/1.png'
 
 
-
-
-
-
 export const CallDataExample = () => {
     const imagenPokemon = require.context("../img/PokeImg", true);
     return (
@@ -25,6 +21,7 @@ export const CallDataExample = () => {
             <p>evolution xxxxxxxxx</p>
         
             <img src={imagenPoke} alt="" />
+
         </div>
     )
 }
