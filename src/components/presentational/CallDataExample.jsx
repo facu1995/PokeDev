@@ -23,8 +23,7 @@ export const CallDataExample = () => {
             <p>Total</p>
             <p>Location: {dataPokemon.location_area_encounters}</p>
             <p>evolution xxxxxxxxx</p>
-            
-            
+        
             <img src={imagenPoke} alt="" />
         </div>
     )
