@@ -38,10 +38,12 @@ const dataBasic = {
         {'name':'tackle'}
     ],
     'evolution' : ['rattata', 'raticate']
-    
+
     
 
 }
+
+
 
 /*https://pokeapi.co/api/v2/pokemon/132/encounters Locations viene desde otro endpoint */
 /*https://pokeapi.co/api/v2/pokemon/132/encounters detalles de moves viene desde otro endpoint */
