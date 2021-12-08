@@ -1,6 +1,7 @@
 import React from 'react'
 import dataPokemon from '../mocks/pokemonData'
 import imagenPoke from '../img/PokeImg/1.png'
+import pokeTypes from './visualData/pokeTypes';
 
 
 export const CallDataExample = () => {
