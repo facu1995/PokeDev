@@ -58,5 +58,14 @@ const pokemonInit={
             }
         }
     ],
+    "types": [
+        {
+            "slot": 1,
+            "type": {
+                "name": "s",
+                "url": ""
+            }
+        }
+    ],
 };
 export default pokemonInit;
