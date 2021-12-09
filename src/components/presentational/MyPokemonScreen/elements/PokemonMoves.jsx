@@ -1,5 +1,5 @@
 import React from 'react'
-import pokeTypes from '../visualData/pokeTypes'
+import pokeTypes from '../../visualData/pokeTypes'
 
 export const PokemonMoves = () => {
     return (

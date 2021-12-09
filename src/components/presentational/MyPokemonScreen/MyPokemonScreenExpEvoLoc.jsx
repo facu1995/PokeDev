@@ -1,5 +1,5 @@
 import React from 'react'
-import { PokemonMoves } from './PokemonMoves'
+import { PokemonMoves } from './elements/PokemonMoves'
 
 export const MyPokemonScreenExpEvoLoc = () => {
     return (

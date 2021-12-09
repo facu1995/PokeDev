@@ -4,4 +4,7 @@
 @import './components/MyPokemonScreen.css';
 @import './components/MyPokemonScreenHeader.css';
 @import './components/MyPokemonScreenDetails.css';
-@import './components/MyPokemonScreenStats.css'
+@import './components/MyPokemonScreenStats.css';
+@import './components/MyPokemonScreenExpEvoLoc.css';
+@import './elements/PokemonEvolutions.css';
+@import './elements/PokemonMoves.css';
