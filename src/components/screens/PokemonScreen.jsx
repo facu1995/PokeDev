@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 //components
-import StatBasePokemon from '../presentational/StatBasePokemon';
+import StatBasePokemon from '../presentational/PokemonScreen/StatBasePokemon';
+import EvolucionesPokemon from '../presentational/PokemonScreen/EvolucionesPokemon';
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
@@ -67,11 +68,11 @@ export const PokemonScreen = () => {
 
     return (
         <>
-            <h2>PokemonScreen</h2>
+            <h3>PokemonScreen</h3>
             <h4>id: {pokemon.id}</h4>
-            <p>evolucionesNameArray{evoluciones.name}</p>
             <PokemonContext.Provider value={pokemon}>
-                <StatBasePokemon evoluciones={evoluciones} />
+                <StatBasePokemon />
+                <EvolucionesPokemon evoluciones={evoluciones}/>
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
