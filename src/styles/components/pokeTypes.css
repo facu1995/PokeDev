@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i {
+    margin: 0 5px 0 5px;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    padding: 8px;
+}
+
+.fa-fire {
+    color: white;
+    background: #fba54c;
+    transition: .1s;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.fa-fire:hover {
+    transform: scale(110%, 110%);
+    background: #ff911c;
+    box-shadow: 0 0 20px #fba54c;
+}
+
+
+.fa-tint {
+    color: white;
+    background: #539ddf;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-tint:hover {
+    transform: scale(110%, 110%);
+    background: #2097ff;
+    box-shadow: 0 0 20px #539ddf;
+}
+
+
+.fa-bolt {
+    color: white;
+    background: #f2d94e;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-bolt:hover {
+    transform: scale(110%, 110%);
+    background: #ffdd1c;
+    box-shadow: 0 0 20px #f2d94e;
+}
+
+
+.fa-mountain {
+    color: white;
+    background: #da7c4d;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-mountain:hover {
+    transform: scale(110%, 110%);
+    background: #ff6a20;
+    box-shadow: 0 0 20px #da7c4d;
+}
+
+
+.fa-leaf {
+    color: white;
+    background-color: #5fbd58;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-leaf:hover {
+    transform: scale(110%, 110%);
+    background-color: rgb(51, 255, 36);
+    box-shadow: 0 0 20px #5fbd58;
+}
+
+
+.fa-ghost {
+    color: white;
+    background: #5f6dbc;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-ghost:hover {
+    transform: scale(110%, 110%);
+    background: #3755ff;
+    box-shadow: 0 0 20px #5f6dbc;
+}
+
+
+.fa-feather-alt {
+    color: white;
+    background: #a1bbec;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-feather-alt:hover {
+    transform: scale(110%, 110%);
+    background: #5a93fd;
+    box-shadow: 0 0 20px #a1bbec;
+}
+
+
+.fa-bug {
+    color: white;
+    background: #92bc2c;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-bug:hover {
+    transform: scale(110%, 110%);
+    background: #a7dd28;
+    box-shadow: 0 0 20px #92bc2c;
+
+}
+
+
+.fa-circle {
+    color: white;
+    background: #a0a29f;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-circle:hover {
+    transform: scale(110%, 110%);
+    background: #c8cac7;
+    box-shadow: 0 0 20px #a0a29f;
+}
+
+.fa-hand-rock {
+    color: white;
+    background: #d3425f;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-hand-rock:hover {
+    transform: scale(110%, 110%);
+    background: #f7365c;
+    box-shadow: 0 0 20px #d3425f;
+}
+
+.fa-cog {
+    color: white;
+    background: #5695a3;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-cog:hover {
+    transform: scale(110%, 110%);
+    background: #5ec2d8;
+    box-shadow: 0 0 20px #5695a3;
+}
+
+.fa-dragon {
+    color: white;
+    background: #0c69c8;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-dragon:hover {
+    transform: scale(110%, 110%);
+    background: #0c81f5;
+    box-shadow: 0 0 20px #0c69c8;
+}
+
+.fa-skull-crossbones {
+    color: white;
+    background: #b763cf;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-skull-crossbones:hover {
+    transform: scale(110%, 110%);
+    background: #d84bff;
+    box-shadow: 0 0 20px #b763cf;
+}
+
+.fa-snowflake {
+    color: white;
+    background: #75d0c1;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-snowflake:hover {
+    transform: scale(110%, 110%);
+    background: #54ebd1;
+    box-shadow: 0 0 20px #75d0c1;
+}
