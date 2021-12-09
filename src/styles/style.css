@@ -2,5 +2,6 @@
 @import './base/base.css';
 @import './components/firstComponent.css';
 @import './components/MyPokemonScreen.css';
-@import './components/MyPokemonScreenHeader.css',
-@import '.components/'
+@import './components/MyPokemonScreenHeader.css';
+@import './components/MyPokemonScreenDetails.css';
+@import './components/MyPokemonScreenStats.css'

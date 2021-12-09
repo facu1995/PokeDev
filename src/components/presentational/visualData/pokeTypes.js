@@ -1,18 +1,18 @@
 const pokeTypes = {
-    'fire' : '<i class="fas fa-fire"></i>',
-    'water' : '<i class="fas fa-tint"></i>',
-    'electric' : '<i class="fas fa-bolt"></i>',
-    'earth' : '<i class="fas fa-mountain"></i>',
-    'leaf' : '<i class="fas fa-leaf"></i>',
-    'ghost' : '<i class="fas fa-ghost"></i>',
-    'fly' : '<i class="fas fa-feather-alt"></i>',
-    'bug' : '<i class="fas fa-bug"></i>',
-    'stone' : '<i class="fas fa-circle"></i>',
-    'fight' : '<i class="fas fa-hand-rock"></i>',
-    'steel' : '<i class="fas fa-cog"></i>',
-    'dragon' : '<i class="fas fa-dragon"></i>',
-    'poison' : '<i class="fas fa-skull-crossbones"></i>',
-    'ice' : '<i class="fas fa-snowflake"></i>'
+    'fire' : 'fas fa-fire',
+    'water' : 'fas fa-tint',
+    'electric' : 'fas fa-bolt',
+    'earth' : 'fas fa-mountain',
+    'leaf' : 'fas fa-leaf',
+    'ghost' : 'fas fa-ghost',
+    'fly' : 'fas fa-feather-alt',
+    'bug' : 'fas fa-bug',
+    'stone' : 'fas fa-circle',
+    'fight' : 'fas fa-hand-rock',
+    'steel' : 'fas fa-cog',
+    'dragon' : 'fas fa-dragon',
+    'poison' : 'fas fa-skull-crossbones',
+    'ice' : 'fas fa-snowflake'
  }
 
  export default pokeTypes

@@ -1,0 +1,22 @@
+.MyPokemonScreenStats>h5{
+    margin: 3rem 0;
+}
+
+.MyPokemonScreenStats__lists{
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.MyPokemonScreenStats__lists>ul>li{
+    margin: 5px 0;
+}
+
+.MyPokemonScreenStats__listLeft{
+    font-size: 20px;
+}
+
+.MyPokemonScreenStats__listRight{
+    font-size: 20px;
+    color: blue;
+}

@@ -1,0 +1,10 @@
+.intro{
+    margin: 3rem 0;
+}
+
+
+
+.MyPokemonScreenDetails>p{
+    transform: scale(0.7);
+    margin: 40px 0;
+}

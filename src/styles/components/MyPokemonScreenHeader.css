@@ -1,0 +1,53 @@
+.MyPokemonScreenHeader{
+    text-align: center;
+    margin: auto;
+}
+
+.MyPokemonScreenHeader__imgCont{
+    border: solid var(--gc) 5px;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+
+.MyPokemonScreenHeader__cont{
+        text-align: center;
+        border: var(--gc) 1px solid;
+}
+
+.MyPokemonScreenHeader__cont>p{
+    transform: scale(0.4);
+    text-decoration: underline;
+    line-height: 2;
+}
+
+.MyPokemonScreenHeader__cont>p:hover{
+    transition: 0.2s;
+    color: rgb(197, 197, 197);
+}
+.MyPokemonScreenHeader__cont>p>i{
+    color:var(--grc);
+}
+
+.MyPokemonScreenHeader__cont>img{
+    height: 100%;
+}
+
+.MyPokemonScreenHeader__imgFooter{
+    text-align: center;
+}
+.MyPokemonScreenHeader__imgFooter>h5{
+    margin: 15px;
+}
+
+
+.MyPokemonScreenHeader__blink{
+    color: var(--grc);
+    animation: blink 2.5s linear infinite;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
