@@ -13,6 +13,7 @@
 .MyPokemonScreenHeader__cont{
         text-align: center;
         border: var(--gc) 1px solid;
+
 }
 
 .MyPokemonScreenHeader__cont>p{
@@ -24,6 +25,7 @@
 .MyPokemonScreenHeader__cont>p:hover{
     transition: 0.2s;
     color: rgb(197, 197, 197);
+
 }
 .MyPokemonScreenHeader__cont>p>i{
     color:var(--grc);
@@ -39,8 +41,6 @@
 .MyPokemonScreenHeader__imgFooter>h5{
     margin: 15px;
 }
-
-
 .MyPokemonScreenHeader__blink{
     color: var(--grc);
     animation: blink 2.5s linear infinite;
