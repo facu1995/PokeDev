@@ -5,70 +5,12 @@ import { useParams } from 'react-router';
 import StatBasePokemon from '../presentational/StatBasePokemon';
 //context
 import PokemonContext from "../context/PokemonContext";
+//initPokemon
+import PokemonInitPokemon from "./pokemonInitJSON"
 export const PokemonScreen = () => {
 
     const { id } = useParams();
-    const [pokemon, setPokemon] = useState({
-        "abilities": [
-            {
-                "ability": {
-                    "name": "",
-                    "url": ""
-                },
-                "is_hidden": "",
-                "slot": 1
-            },
-            
-        ],
-        "base_experience": "",
-        "forms": [
-            {
-                "name": "",
-                "url": ""
-            }
-        ],
-        "id": 7,
-        "is_default": true,
-        "location_area_encounters": "",
-        "moves": [
-            {
-                "move": {
-                    "name": "",
-                    "url": ""
-                },
-                "version_group_details": [
-                    {
-                        "level_learned_at": 0,
-                        "move_learn_method": {
-                            "name": "",
-                            "url": ""
-                        },
-                        "version_group": {
-                            "name": "",
-                            "url": ""
-                        }
-                    }
-                ]
-            }
-        ],
-        "name": "",
-        "order": 0,
-        "past_types": [],
-        "species": {
-            "name": "",
-            "url": ""
-        },
-        "stats": [
-            {
-                "base_stat": 0,
-                "effort": 0,
-                "stat": {
-                    "name": "",
-                    "url": ""
-                }
-            }
-        ],
-    })
+    const [pokemon, setPokemon] = useState(PokemonInitPokemon)
     
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [] });
 
