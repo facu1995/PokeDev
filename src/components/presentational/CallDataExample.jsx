@@ -1,11 +1,10 @@
 import React from 'react'
 import dataPokemon from '../mocks/pokemonData'
-import imagenPoke from '../img/PokeImg/1.png'
-import pokeTypes from './visualData/pokeTypes';
+
 
 
 export const CallDataExample = () => {
-    const imagenPokemon = require.context("../img/PokeImg", true);
+
     return (
         <div>
             <p>Nombre pokemon: {dataPokemon.name}</p>
@@ -21,7 +20,7 @@ export const CallDataExample = () => {
             <p>Location: {dataPokemon.location_area_encounters}</p>
             <p>evolution xxxxxxxxx</p>
         
-            <img src={imagenPoke} alt="" />
+
 
         </div>
     )
