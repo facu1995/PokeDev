@@ -1,6 +1,5 @@
 import React from 'react'
 import dataPokemon from '../mocks/pokemonData'
-import imagenPoke from '../img/PokeImg/1.png'
 import '../../styles/components/pokeTypes.css'
 import pokeTypes from './visualData/pokeTypes';
 
@@ -21,11 +20,8 @@ export const CallDataExample = () => {
             <p>HP: {dataPokemon.stats[0].base_stat}</p>
             <p>Total</p>
             <p>Location: {dataPokemon.location_area_encounters}</p>
-            <p>evolution xxxxxxxxx</p>
-        
 
-            <img src={imagenPoke} alt="" />
-           
+            <p>evolution xxxxxxxxx</p>   
             <i class={pokeTypes.fire}></i>
             <i class={pokeTypes.water}></i>
             <i class={pokeTypes.electric}></i>
