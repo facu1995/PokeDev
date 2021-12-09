@@ -6,35 +6,23 @@ export const PokemonAllScreen = () => {
     const [filtro, setFiltro] = useState("");
     const [pokemonAll, setPokemonAll] = useState([]);
     const limit = 8;
+    const cantPokemonFetch=300;
+    const [cantMaximaPokemon, setCantMaximaPokemon] = useState(30);
 
     useEffect(() => {
-        /* async function fetchPokemonsAllData() {//Funcion que carga completa infomacion de los pokemones
-            let pokemonArray = [];
-            let i = offset;
-            for (; i <= offset + limit; i++) {
-                const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + i)
-                const dataJSON = await data.json();
-                pokemonArray.push(dataJSON);
-            }
-            setPokemonAll(pokemonArray);
-        } */
         const obtenerPokemons = async (id) => {
-            //const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=' + limit + "&offset=" + offset) dinamico
-            const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=300&offset=0')
+            const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit="+cantPokemonFetch+"&offset=0");
             const dataJSON = await data.json();
-            console.log(dataJSON.results)
             setPokemonAll(dataJSON.results);
         }
-        //fetchPokemonsAllData();
         obtenerPokemons();
-    }, [offset]);
-
+    }, []);
 
     return (
         <>
-        <NavPokemonAll offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} setFiltro={setFiltro}/>
+        <NavPokemonAll offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} setFiltro={setFiltro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch}/>
         <p>Desde {offset} hasta {offset + limit}</p>
-        <ContenedorPokemons offset={offset} limit={limit} pokemonAll={pokemonAll} filtro={filtro}/>
+        <ContenedorPokemons offset={offset} limit={limit} pokemonAll={pokemonAll} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} setCantMaximaPokemon={setCantMaximaPokemon}/>
         </>
     )
 }

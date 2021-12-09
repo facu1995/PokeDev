@@ -3,7 +3,7 @@ import CardPokemon from "./CardPokemon";
 export const MostrarCard = ({ filtro, pokemonArray, offset }) => {
     return (
         pokemonArray.map((el, idx) => {
-            return <CardPokemon key={idx} id={offset + idx} name={el.name} url={el.url} />
+            return <CardPokemon key={idx} name={el.name} url={el.url} />
         })
     )
 }
