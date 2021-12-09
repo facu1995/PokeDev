@@ -1,0 +1,12 @@
+.nav_principal__ul{
+    display: flex;
+}
+
+.nav_principal__li{
+    font-size: 18px;
+    padding:10px 20px;
+}
+
+.nav_principal__a{
+    text-decoration: none;
+}
