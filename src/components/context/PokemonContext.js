@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import pokemonInit from "../screens/pokemonInitJSON";
+import pokemonInit from "../initializerJSON/pokemonInitJSON";
 const PokemonContext= createContext(pokemonInit);
 export default PokemonContext;

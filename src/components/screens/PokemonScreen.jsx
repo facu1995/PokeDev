@@ -6,7 +6,7 @@ import StatBasePokemon from '../presentational/StatBasePokemon';
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
-import PokemonInitPokemon from "./pokemonInitJSON"
+import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON"
 export const PokemonScreen = () => {
 
     const { id } = useParams();
