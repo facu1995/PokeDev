@@ -4,10 +4,12 @@ import NavPokemonAll from '../presentational/PokemonAllScreen/NavPokemonAll';
 import ContenedorPokemons from "../presentational/PokemonAllScreen/ContenedorPokemons";
 //style
 import "../../styles/components/PokemonAllScreen.css";
+import PaginaMoverNav from '../presentational/PokemonAllScreen/PaginaMoverNav';
 export const PokemonAllScreen = () => {
     const [offset, setOffset] = useState(1);
     const [filtro, setFiltro] = useState("");
     const [pokemonAll, setPokemonAll] = useState([]);
+    const [page,setPage]= useState(1);
     const limit = 8;
     const cantPokemonFetch = 300;
     const [cantMaximaPokemon, setCantMaximaPokemon] = useState(30);
@@ -23,8 +25,9 @@ export const PokemonAllScreen = () => {
 
     return (
         <div className="PokemonAllScreen">
-            <NavPokemonAll offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} setFiltro={setFiltro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} />
+            <NavPokemonAll offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} setFiltro={setFiltro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage}/>
             <ContenedorPokemons offset={offset} limit={limit} pokemonAll={pokemonAll} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} setCantMaximaPokemon={setCantMaximaPokemon} />
+            <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} />
         </div>
     )
 }
