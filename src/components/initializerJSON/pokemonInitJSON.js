@@ -56,6 +56,46 @@ const pokemonInit={
                 "name": "",
                 "url": ""
             }
+        },
+        {
+            "base_stat": 0,
+            "effort": 0,
+            "stat": {
+                "name": "",
+                "url": ""
+            }
+        },
+        {
+            "base_stat": 0,
+            "effort": 0,
+            "stat": {
+                "name": "",
+                "url": ""
+            }
+        },
+        {
+            "base_stat": 0,
+            "effort": 0,
+            "stat": {
+                "name": "",
+                "url": ""
+            }
+        },
+        {
+            "base_stat": 0,
+            "effort": 0,
+            "stat": {
+                "name": "",
+                "url": ""
+            }
+        },
+        {
+            "base_stat": 0,
+            "effort": 0,
+            "stat": {
+                "name": "",
+                "url": ""
+            }
         }
     ],
     "types": [

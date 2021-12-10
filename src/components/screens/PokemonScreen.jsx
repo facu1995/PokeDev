@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { CallDataExample } from '../presentational/CallDataExample';
 
 //components
 import StatBasePokemon from '../presentational/StatBasePokemon';
@@ -72,8 +73,8 @@ export const PokemonScreen = () => {
             <p>evolucionesNameArray{evoluciones.name}</p>
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon evoluciones={evoluciones} />
-                {/* <HeaderPokemon />
-            <AtaquesPokemon />
+                { <CallDataExample />
+            /*<AtaquesPokemon />
             <EnergiaPokemon /> */}
             </PokemonContext.Provider>
         </>

@@ -3,6 +3,7 @@ import { MyPokemonScreenDetails } from '../presentational/MyPokemonScreen/MyPoke
 import { MyPokemonScreenExpEvoLoc } from '../presentational/MyPokemonScreen/MyPokemonScreenExpEvoLoc'
 import { MyPokemonScreenHeader } from '../presentational/MyPokemonScreen/MyPokemonScreenHeader'
 import { MyPokemonScreenStats } from '../presentational/MyPokemonScreen/MyPokemonScreenStats'
+import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario'
 
 
 export const MyPokemonScreen = () => {
@@ -12,6 +13,7 @@ export const MyPokemonScreen = () => {
             <MyPokemonScreenDetails />
             <MyPokemonScreenStats />
             <MyPokemonScreenExpEvoLoc />
+            <MyFormulario />
         </>
     )
 }
