@@ -5,6 +5,7 @@ import { CallDataExample } from '../presentational/CallDataExample';
 //components
 import StatBasePokemon from '../presentational/PokemonScreen/StatBasePokemon';
 import EvolucionesPokemon from '../presentational/PokemonScreen/EvolucionesPokemon';
+import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
@@ -76,6 +77,7 @@ export const PokemonScreen = () => {
             <h4>id: {pokemon.id}</h4>
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon />
+                <PruebaModificarPokemon setPokemon={setPokemon}/>
                 <EvolucionesPokemon evoluciones={evoluciones} />
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
