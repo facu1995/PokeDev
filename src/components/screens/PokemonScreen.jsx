@@ -78,12 +78,7 @@ export const PokemonScreen = () => {
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
                 <CallDataExample />
-            <PokemonContext.Provider />
-                
-            
-                 
-  
-
+            </ PokemonContext.Provider >
         </>
     )
 }
