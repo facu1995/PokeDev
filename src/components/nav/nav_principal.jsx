@@ -7,7 +7,6 @@ function Nav() {
             <ul className="nav_principal__ul">
                 <li className="nav_principal__li"><Link to="/" className="nav_principal__a">mian</Link></li>
                 <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">home</Link></li>
-                <li className="nav_principal__li"><Link to="/pokemon/1" className="nav_principal__a">pokemonEjemplo</Link></li>
             </ul>
         </nav>
     )
