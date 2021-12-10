@@ -4,7 +4,7 @@ import MostrarMovimientos from '../presentational/MovimientosAllScreen/MostrarMo
 export const MovimientosAllScreen = () => {
 
     const [movesAll, setmovesAll] = useState([]);
-    const cantMovesFetch = 300;
+    const cantMovesFetch = 900;
 
 
     useEffect(() => {
