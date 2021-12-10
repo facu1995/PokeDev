@@ -10,7 +10,6 @@ function PaginaMoverNav({ offset, limit, setOffset, filtro, cantMaximaPokemon, c
         }
         else{
             setCantPage(Math.ceil(cantMaximaPokemon/(limit+1)));
-            console.log(cantMaximaPokemon);
 
         }
     },[cantMaximaPokemon, cantPokemonFetch, filtro, limit])
