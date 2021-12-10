@@ -1,0 +1,33 @@
+.PokemonAllScreen__btn {
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    background: transparent;
+    font-size: 0.875em;
+    border: 2px solid rgba(255, 255, 255, .2);
+    color: var(--wc);
+    outline: none;
+    cursor: pointer;
+}
+
+.PokemonAllScreen__btn:hover {
+    border: solid 2px var(--dc);
+    color: var(--dc);
+}
+
+.PokemonAllScreen__input {
+    font-size: 0.875em;
+    width: 300px;
+    height: 30px;
+    padding: 0px 25px 0px 25px;
+    margin: 10px 20px 10px 0;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .2);
+    transition: all 0.3s ease-in-out;
+}
+
+.PokemonAllScreen__input:hover {
+    border: solid 1px #b3aca7;
+}

@@ -8,12 +8,15 @@ import EvolucionesPokemon from '../presentational/PokemonScreen/EvolucionesPokem
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
-import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON"
+import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON";
+//style
+import "../../styles/components/PokemonScreen.css";
+
 export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
-    
+
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [] });
 
 
@@ -22,27 +25,27 @@ export const PokemonScreen = () => {
         const dataJSON = await data.json();
         setPokemon(dataJSON);
     }
-    
+
     useEffect(() => {
         let evolucionesNameArray = [];
 
-        async function obtenerIdEvolutionPokemon () {
+        async function obtenerIdEvolutionPokemon() {
             let i = 0;
-            let evolucionesIdArray=[];
+            let evolucionesIdArray = [];
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
-                let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' +evolucionesNameArray[i])
+                let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesNameArray[i])
                 let dataJSON = await data.json();
-                evolucionesIdArray.push(dataJSON.id); 
+                evolucionesIdArray.push(dataJSON.id);
             }
             setEvoluciones({
                 name: evolucionesNameArray,
                 id: evolucionesIdArray
             });
-            
+
         }
-    
-        async function obtenerNameEvolutionPokemon (id){
+
+        async function obtenerNameEvolutionPokemon(id) {
             let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + id)
             let dataJSON = await data.json();
             if (dataJSON.evolution_chain.url) {
@@ -73,12 +76,12 @@ export const PokemonScreen = () => {
             <h4>id: {pokemon.id}</h4>
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon />
-                <EvolucionesPokemon evoluciones={evoluciones}/>
+                <EvolucionesPokemon evoluciones={evoluciones} />
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
                 <CallDataExample />
-            </ PokemonContext.Provider >
+            </PokemonContext.Provider>
         </>
     )
 }
