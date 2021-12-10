@@ -73,10 +73,11 @@ export const PokemonScreen = () => {
             <p>evolucionesNameArray{evoluciones.name}</p>
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon evoluciones={evoluciones} />
-                { <CallDataExample />
-            /*<AtaquesPokemon />
-            <EnergiaPokemon /> */}
-            </PokemonContext.Provider>
+                 <CallDataExample />
+           
+               
+
+            <PokemonContext.Provider />
         </>
     )
 }
