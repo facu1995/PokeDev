@@ -6,7 +6,8 @@ const PruebaMovimientos = () => {
     return (
         <div className="PruebaMovimientos">
             <h4>PruebaMovimientos</h4>
-            <p>Nombre {pokemon.name} </p>
+            <p>Movimientos </p>
+            
         </div>
     )
 }
