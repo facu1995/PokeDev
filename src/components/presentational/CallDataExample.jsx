@@ -21,23 +21,21 @@ export const CallDataExample = () => {
             <p>HP:  {pokemon.stats[0].base_stat}</p>
             <p>Total</p>
             <p>Location:  {pokemon.location_area_encounters}</p>
-
             <p>evolution xxxxxxxxx</p>   
-            <i class={pokeTypes.fire}></i>
-            <i class={pokeTypes.water}></i>
-            <i class={pokeTypes.electric}></i>
-            <i class={pokeTypes.earth}></i>
-            <i class={pokeTypes.leaf}></i>
-            <i class={pokeTypes.ghost}></i>
-            <i class={pokeTypes.fly}></i>
-            <i class={pokeTypes.bug}></i>
-            <i class={pokeTypes.stone}></i>
-            <i class={pokeTypes.fight}></i>
-            <i class={pokeTypes.steel}></i>
-            <i class={pokeTypes.dragon}></i>
-            <i class={pokeTypes.poison}></i>
-            <i class={pokeTypes.ice}></i>
-
+            <i className={pokeTypes.fire}></i>
+            <i className={pokeTypes.water}></i>
+            <i className={pokeTypes.electric}></i>
+            <i className={pokeTypes.earth}></i>
+            <i className={pokeTypes.leaf}></i>
+            <i className={pokeTypes.ghost}></i>
+            <i className={pokeTypes.fly}></i>
+            <i className={pokeTypes.bug}></i>
+            <i className={pokeTypes.stone}></i>
+            <i className={pokeTypes.fight}></i>
+            <i className={pokeTypes.steel}></i>
+            <i className={pokeTypes.dragon}></i>
+            <i className={pokeTypes.poison}></i>
+            <i className={pokeTypes.ice}></i>
         </div>
     )
 }

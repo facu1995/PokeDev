@@ -28,7 +28,7 @@ function CardPokemon({ name, url }) {
           <div className="contenedor2">
             <div className="CardPokemon">
               <img className="CardPokemon__img" src={imgSrc} alt="imagen" />
-              <h5 class="GOLD">HI THERE! I'M </h5>
+              <h5 className="GOLD">HI THERE! I'M </h5>
               <h3 className="CardPokemon__name">
                 <span className="MyPokemonScreenHeader__blink">[</span> {name}{" "}
                 <span className="MyPokemonScreenHeader__blink">]</span>
