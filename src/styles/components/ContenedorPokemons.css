@@ -1,4 +1,6 @@
 .ContenedorPokemons__container{
-    max-width:1300px;
-    margin: 50px auto;
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
 }

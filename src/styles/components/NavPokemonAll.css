@@ -1,0 +1,17 @@
+
+
+.NavPokemonAll__input {
+    font-size: 0.875em;
+    width: 300px;
+    height: 30px;
+    padding: 0px 25px 0px 25px;
+    margin: 10px 20px 10px 0;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .2);
+    transition: all 0.3s ease-in-out;
+}
+
+.NavPokemonAll__input:hover {
+    border: solid 1px #b3aca7;
+}

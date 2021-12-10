@@ -1,36 +1,21 @@
+import React from 'react';
 
-function NavPokemonAll({ offset, limit, setOffset, filtro, setFiltro, cantMaximaPokemon, cantPokemonFetch }) {
-
+//components
+import PaginaMoverNav from "./PaginaMoverNav";
+//style
+import "../../../styles/components/NavPokemonAll.css";
+function NavPokemonAll({ offset, limit, setOffset, filtro, setFiltro, cantMaximaPokemon, cantPokemonFetch,page,setPage}) {
+    
     const handleChange = (evt) => {
         setFiltro(evt.target.value);
         setOffset(1);
-    }
-    function decrementarOffset() {
-        if (offset !== 1) {
-            setOffset(offset - limit - 1);
-        }
-    }
-
-    function aumentarOffset() {
-        if (filtro === "") {
-            if (offset + limit < cantPokemonFetch) {
-                setOffset(offset + limit + 1);
-            }
-        }
-        else{
-            if (offset + limit < cantMaximaPokemon) {
-                setOffset(offset + limit + 1);
-            }
-        }
+        setPage(1);
     }
     return (
-        <>
-            <h4>Nav</h4>
-            <input type="text" value={filtro} onChange={handleChange} name="filtro" />
-            <button className="PokemonAllScreen__btn_back" onClick={decrementarOffset}> atras</button>
-            <button className="PokemonAllScreen__btn_next" onClick={aumentarOffset}> siguiente</button>
-        </>
+        <div className="NavPokemonAll">
+            <input className="NavPokemonAll__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Buscar Pokemon" />
+            <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} />
+        </div>
     )
 }
-
 export default NavPokemonAll;
