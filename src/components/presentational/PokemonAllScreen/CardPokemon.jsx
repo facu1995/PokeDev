@@ -23,13 +23,30 @@ function CardPokemon({ name, url }) {
         setPokemon(dataJSON);
     }
     return (
+
+      {/*
         <Link to={"/pokemon/"+id}>
         <div className="CardPokemon">
             <h5 className="CardPokemon__name">{name}</h5>
             <img className="CardPokemon__img" src={imgSrc} alt="imagen" />
             <p>tipo:{pokemon.types[0].type.name}</p>
         </div>
-        </Link>
+        </Link> */}
+
+            
+                <div className="contenedor1">
+                  <div className="contenedor2">
+                    <div className="CardPokemon">
+                      <img className="CardPokemon__img" src={imgSrc} alt="imagen"/>
+                      <h5 class="GOLD">HI THERE! I'M </h5>
+                      <h3 className="CardPokemon__name"><span className = 'MyPokemonScreenHeader__blink'>[</span> {name} <span className = 'MyPokemonScreenHeader__blink'>]</span></h3>
+                      <p>Tipo: {pokemon.types[0].type.name}</p>
+                      </div>
+                  </div>
+                </div>
+                
+                
+
     )
 }
 

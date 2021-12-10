@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { CallDataExample } from '../presentational/CallDataExample';
 
 //components
 import StatBasePokemon from '../presentational/PokemonScreen/StatBasePokemon';
@@ -76,7 +77,13 @@ export const PokemonScreen = () => {
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
-            </PokemonContext.Provider>
+                <CallDataExample />
+            <PokemonContext.Provider />
+                
+            
+                 
+  
+
         </>
     )
 }
