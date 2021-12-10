@@ -12,7 +12,6 @@ const PruebaModificarPokemon = ({ setPokemon }) => {
     return (
         <div className="PruebaModificarPokemon">
             <h4>PruebaModificarPokemon</h4>
-            <p>Nombre {pokemon.name} </p>
             <button onClick={cambiarNombre} >cambiar nombre</button>
         </div>
     )
