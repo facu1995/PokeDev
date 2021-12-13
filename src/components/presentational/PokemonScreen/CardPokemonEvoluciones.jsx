@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //style
 import "../../../styles/components/CardPokemonEvoluciones.css";
 
-function CardPokemonEvoluciones({ name, url, species }) {
+function CardPokemonEvoluciones({ name, url, description }) {
     let id = 1;
     let arrayURL = url.split('/');
     if (arrayURL[6]) {
@@ -19,7 +19,7 @@ function CardPokemonEvoluciones({ name, url, species }) {
             <div className='CardPokemonEvoluciones__info'>
                 <h5>Pokedex Number: "{id}"</h5>
                 <h3 className="CardPokemonEvoluciones__name">{name}</h3>
-                <p >{species.flavor_text_entries[0].flavor_text}</p>
+                <p >{description}</p>
             </div>
         </div>
         </Link>

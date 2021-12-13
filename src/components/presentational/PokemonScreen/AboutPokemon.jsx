@@ -1,14 +1,14 @@
 import React from 'react'
 import UsePokemon from "../../context/usePokemon";
+import { CardPokemonAbout } from './CardPokemonAbout';
+import '../../../styles/components/pokeTypes.css'
 //import CardPokemon from '../PokemonAllScreen/CardPokemon';
 const AboutPokemon = ({species} ) => {
     const pokemon = UsePokemon();
     return (
         <div className="AboutPokemon">
 
-            {/* <CardPokemon /> */}
-            <p style= {{background : 'red'}}>ACA VA CARD POKEMON, Faltan parametros</p>
-
+            <CardPokemonAbout />
             <h5 className='GOLD'>INTRODUCTION</h5>
             <h2>About Me</h2>
             <hr className='AboutPokemon__hr'/>

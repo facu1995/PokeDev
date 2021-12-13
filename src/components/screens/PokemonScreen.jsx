@@ -19,7 +19,7 @@ export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
-    const [species, setSpecies] = useState({})
+    const [species, setSpecies] = useState({flavor_text_entries:[{flavor_text:''}]})
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
 
@@ -41,8 +41,8 @@ export const PokemonScreen = () => {
                 let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesNameArray[i])
                 let dataJSON = await data.json();
                 evolucionesIdArray.push(dataJSON.id);
-                if (dataJSON.species.flavor_text_entries[0].flavor_text) {
-                    descriptionArray.push(dataJSON.species.flavor_text_entries[0].flavor_text);
+                if (dataJSON.flavor_text_entries[0].flavor_text) {
+                    descriptionArray.push(dataJSON.flavor_text_entries[0].flavor_text);
                 }
             }
             setEvoluciones({

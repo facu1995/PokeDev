@@ -2,6 +2,7 @@ import React from 'react'
 import UsePokemon from "../../context/usePokemon";
 //style
 import "../../../styles/components/PruebaMovimientos.css";
+import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
 const PruebaMovimientos = ({ setPokemon }) => {
     const pokemon = UsePokemon();
 
@@ -15,6 +16,18 @@ const PruebaMovimientos = ({ setPokemon }) => {
     }
     return (
         <div className="PruebaMovimientos">
+        <div className="MovimientosAllScreen">
+            <ul className='MovimientosAllScreen__bar'>
+                <li>LEVEL</li>
+                <li>MOVE NAME</li>
+                <li>TYPE</li>
+                <li>POWER</li>
+            </ul>
+            <div className='MovimientosAllScreen__list'>
+                <MostrarMovimientoPokemon movesAll={pokemon.moves}/>
+            </div>
+            <div className='MovimientosAllScreen__barBottom'></div>
+        </div>            
             <h4>PruebaMovimientos</h4>
             <p>Movimientos </p>
             <ul className="PruebaMovimientos__ul">
