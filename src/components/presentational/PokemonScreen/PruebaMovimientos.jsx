@@ -6,7 +6,7 @@ import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
 const PruebaMovimientos = ({ setPokemon }) => {
     const pokemon = UsePokemon();
 
-    
+
     const EliminarPoder = (movimientoName) => {
         setPokemon({
             ...pokemon,
@@ -16,19 +16,20 @@ const PruebaMovimientos = ({ setPokemon }) => {
     }
     return (
         <div className="PruebaMovimientos">
-        <div className="MovimientosAllScreen">
-            <ul className='MovimientosAllScreen__bar'>
-                <li>LEVEL</li>
-                <li>MOVE NAME</li>
-                <li>TYPE</li>
-                <li>POWER</li>
-            </ul>
-            <div className='MovimientosAllScreen__list'>
-                <MostrarMovimientoPokemon movesAll={pokemon.moves}/>
+            <div className="MovimientosAllScreen">
+                <ul className='MovimientosAllScreen__bar'>
+                    <li>LEVEL</li>
+                    <li>MOVE NAME</li>
+                    <li>TYPE</li>
+                    <li>POWER</li>
+                    <li>Eliminar</li>
+                </ul>
+                <div className='MovimientosAllScreen__list'>
+                    <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder}/>
+                </div>
+                <div className='MovimientosAllScreen__barBottom'></div>
             </div>
-            <div className='MovimientosAllScreen__barBottom'></div>
-        </div>            
-            <h4>PruebaMovimientos</h4>
+            {/*  <h4>PruebaMovimientos</h4>
             <p>Movimientos </p>
             <ul className="PruebaMovimientos__ul">
                 {pokemon.moves.map((el, idx) => {
@@ -38,7 +39,7 @@ const PruebaMovimientos = ({ setPokemon }) => {
                     </li>
                 })
                 }
-            </ul>
+            </ul> */}
         </div>
     )
 }

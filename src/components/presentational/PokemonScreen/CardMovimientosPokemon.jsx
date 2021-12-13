@@ -1,16 +1,31 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-//inicializador pokemon
+import { obtenerClassType } from "../visualData/Types"
 
-function CardMovimientosPokemon({ pokeMove }) {
-    
+import "../../../styles/components/CardMovimientosPokemon.css"
+
+function CardMovimientosPokemon({ pokeMove, EliminarPoder }) {
+    const [move, setMove] = useState({id:"",power: "0", type: { name: "" } });
+
+    useEffect(() => {
+        const obtenerMove = async () => {
+            const data = await fetch(pokeMove.move.url)
+            const dataJSON = await data.json();
+            setMove(dataJSON);
+        }
+        obtenerMove();
+
+    }, [pokeMove.move.url])
     return (
-        <div className='CardMovimiento__movimientos'>
-            <div>LEVEL</div>
-            <div>{pokeMove.move.name}</div>
-            <div>TIPO</div>
-            <div>PODER</div>
+        <div className='CardMovimientosPokemon__movimientos'>
+            <div className="flex-align-center">{move.id}</div>
+            <div  className="flex-align-center">{pokeMove.move.name}</div>
+            <div  className="flex-align-center">
+                <i className={obtenerClassType(move.type.name)}></i>
+            </div>
+            <div  className="flex-align-center">{move.power}</div>
+            <button  className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i class="fas fa-trash-alt"></i></button>
         </div>
     );
 }
