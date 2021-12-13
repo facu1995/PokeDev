@@ -1,0 +1,5 @@
+.AboutPokemon__hr{
+    width: 150px;
+    border: var(--gc) solid 1px;
+    margin: 1rem 0;
+}
