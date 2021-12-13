@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "../../../styles/components/EvolucionesPokemon.css"
 import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 import UsePokemon from '../../context/usePokemon'
-const MoviEvoPokemon = ({ evoluciones }) => {
+const MoviEvoPokemon = ({ evoluciones, species }) => {
     const pokemon = UsePokemon();
 
     const [MoviEvo, setMoviEvo] = useState('evo')
@@ -20,7 +20,7 @@ const MoviEvoPokemon = ({ evoluciones }) => {
                     <div className="EvolucionesPokemon">
                         <div className="EvolucionesPokemon__container">
                         {evoluciones.id.map((el, idx) => {
-                            return <CardPokemonEvoluciones key={idx} name={evoluciones.name[idx]} url={'https://pokeapi.co/api/v2/pokemon/'+el } id = {pokemon.id} />
+                            return <CardPokemonEvoluciones key={idx} name={evoluciones.name[idx]} species = {species} url={'https://pokeapi.co/api/v2/pokemon/'+el } id = {pokemon.id} />
                         })}
                         </div>
                     </div>

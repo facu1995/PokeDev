@@ -43,7 +43,6 @@ function CardPokemon({ name, url }) {
 
           </div>
         </div>
-      </div>
     </Link>
   );
 }

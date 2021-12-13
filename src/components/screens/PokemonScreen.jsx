@@ -80,9 +80,9 @@ export const PokemonScreen = () => {
             <h3>PokemonScreen</h3>
             <PokemonContext.Provider value={pokemon}>
 
-                <AboutPokemon />
+                <AboutPokemon species = {species}/>
                 <StatsPokemon />
-                <MoviEvoPokemon evoluciones={evoluciones} /> 
+                <MoviEvoPokemon evoluciones={evoluciones} species = {species}  /> 
                 <MyFormulario />  
                 <PruebaModificarPokemon setPokemon={setPokemon}/>
                 <PruebaMovimientos  setPokemon={setPokemon}/>
