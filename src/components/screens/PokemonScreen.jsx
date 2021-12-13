@@ -20,7 +20,7 @@ export const PokemonScreen = () => {
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
     const [species, setSpecies] = useState({})
 
-    const [evoluciones, setEvoluciones] = useState({ name: [], id: [] });
+    const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
 
 
     const obtenerPokemon = async (id) => {
@@ -31,7 +31,7 @@ export const PokemonScreen = () => {
 
     useEffect(() => {
         let evolucionesNameArray = [];
-
+        let descriptionArray = [];
         async function obtenerIdEvolutionPokemon() {
             let i = 0;
             let evolucionesIdArray = [];
@@ -40,10 +40,14 @@ export const PokemonScreen = () => {
                 let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesNameArray[i])
                 let dataJSON = await data.json();
                 evolucionesIdArray.push(dataJSON.id);
+                if (dataJSON.species.flavor_text_entries[0].flavor_text) {
+                    descriptionArray.push(dataJSON.species.flavor_text_entries[0].flavor_text);
+                }
             }
             setEvoluciones({
                 name: evolucionesNameArray,
-                id: evolucionesIdArray
+                id: evolucionesIdArray,
+                description: descriptionArray
             });
 
         }
@@ -80,8 +84,8 @@ export const PokemonScreen = () => {
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon />
                 <EvolucionesPokemon evoluciones={evoluciones} />
-                <PruebaModificarPokemon setPokemon={setPokemon}/>
-                <PruebaMovimientos  setPokemon={setPokemon}/>
+                <PruebaModificarPokemon setPokemon={setPokemon} />
+                <PruebaMovimientos setPokemon={setPokemon} />
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
