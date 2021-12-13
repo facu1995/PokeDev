@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 //inicializador pokemon
 import pokemonInit from '../../initializerJSON/pokemonInitJSON';
 //style
+import {obtenerClassType} from "../visualData/Types"
 
 import "../../../styles/components/CardPokemon.css"
 function CardPokemon({ name, url }) {
-    let id = 1;
-    let arrayURL = url.split('/');
-    if (arrayURL[6]) {
-        id = arrayURL[6];
-    }
-    const imgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg";
-    const [pokemon, setPokemon] = useState(pokemonInit)
-    useEffect(() => {
-        obtenerPokemon(id);
-    }, [id]);
+  let id = 1;
+  let arrayURL = url.split('/');
+  if (arrayURL[6]) {
+    id = arrayURL[6];
+  }
+  const imgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg";
+  const [pokemon, setPokemon] = useState(pokemonInit)
+  useEffect(() => {
+    obtenerPokemon(id);
+  }, [id]);
+
 
     const obtenerPokemon = async (id) => {
         const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id)
@@ -33,12 +35,17 @@ function CardPokemon({ name, url }) {
                 <span className="MyPokemonScreenHeader__blink">[</span> {name}{" "}
                 <span className="MyPokemonScreenHeader__blink">]</span>
               </h3>
-              <p>Tipo: {pokemon.types[0].type.name}</p>
+               {
+              pokemon.types.map((el, idx) => <i key={idx} className={obtenerClassType(el.type.name)}></i>
+              )
+            }
             </div>
+
           </div>
         </div>
-      </Link>
-    );
+      </div>
+    </Link>
+  );
 }
 
 export default CardPokemon;

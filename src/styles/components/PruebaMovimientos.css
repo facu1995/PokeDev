@@ -1,0 +1,6 @@
+.PruebaMovimientos__li{
+    width:400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
