@@ -1,7 +1,6 @@
 import React from 'react'
 //import UsePokemon from "../../context/usePokemon";
 //style
-import "../../../styles/components/EvolucionesPokemon.css"
 //components
 import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 const EvolucionesPokemon = ({ evoluciones }) => {

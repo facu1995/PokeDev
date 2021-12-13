@@ -1,14 +1,6 @@
-.MyFormularioSection{
-    border: 1px solid red;
-}
-
-h2{
-    
-}
 
   #form {
     position: relative;
-    left: 0;
     width: 550px;
     margin: 50px auto 100px 15px;
   }
@@ -70,7 +62,6 @@ h2{
     color: var(--wc);
     outline:none;
     cursor: pointer;
-    
     
   }
   

@@ -18,7 +18,16 @@ export const MovimientosAllScreen = () => {
 
     return (
         <div className="MovimientosAllScreen">
-        <MostrarMovimientos movesAll={movesAll}/>
+            <ul className='MovimientosAllScreen__bar'>
+                <li>LEVEL</li>
+                <li>MOVE NAME</li>
+                <li>TYPE</li>
+                <li>POWER</li>
+            </ul>
+            <div className='MovimientosAllScreen__list'>
+                <MostrarMovimientos movesAll={movesAll}/>
+            </div>
+            <div className='MovimientosAllScreen__barBottom'></div>
         </div>
     )
 }

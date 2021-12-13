@@ -1,10 +1,15 @@
 @import './base/settings.css';
 @import './base/base.css';
 @import './components/firstComponent.css';
-@import './components/MyPokemonScreen.css';
 @import './components/MyPokemonScreenHeader.css';
 @import './components/MyPokemonScreenDetails.css';
 @import './components/MyPokemonScreenStats.css';
 @import './components/MyPokemonScreenExpEvoLoc.css';
 @import './elements/PokemonEvolutions.css';
 @import './elements/PokemonMoves.css';
+@import './components/ContenedorPokemons.css';
+@import './components/AboutPokemon.css';
+@import './components/StatsPokemon.css';
+@import './components/MoviEvoPokemon.css';
+@import './components/CardMovimientos.css';
+@import './components/MovimientosAllScreen.css';

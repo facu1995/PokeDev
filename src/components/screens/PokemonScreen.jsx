@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { CallDataExample } from '../presentational/CallDataExample';
 
 //components
-import StatBasePokemon from '../presentational/PokemonScreen/StatBasePokemon';
-import EvolucionesPokemon from '../presentational/PokemonScreen/EvolucionesPokemon';
+import AboutPokemon from '../presentational/PokemonScreen/AboutPokemon';
 import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
 import PruebaMovimientos from '../presentational/PokemonScreen/PruebaMovimientos';
 //context
@@ -13,6 +11,9 @@ import PokemonContext from "../context/PokemonContext";
 import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON";
 //style
 import "../../styles/components/PokemonScreen.css";
+import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
+import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
+import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 
 export const PokemonScreen = () => {
 
@@ -77,14 +78,15 @@ export const PokemonScreen = () => {
             <h3>PokemonScreen</h3>
             <h4>id: {pokemon.id}</h4>
             <PokemonContext.Provider value={pokemon}>
-                <StatBasePokemon />
+                <AboutPokemon />
+                <StatsPokemon />
+                <MoviEvoPokemon evoluciones={evoluciones} /> 
+                <MyFormulario />  
                 <PruebaMovimientos/>
                 <PruebaModificarPokemon setPokemon={setPokemon}/>
-                <EvolucionesPokemon evoluciones={evoluciones} />
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
-                <CallDataExample />
             </PokemonContext.Provider>
         </>
     )

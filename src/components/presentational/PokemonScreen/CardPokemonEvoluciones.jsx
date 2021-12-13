@@ -15,8 +15,12 @@ function CardPokemonEvoluciones({ name, url }) {
     return (
         <Link to={"/pokemon/"+id}>
         <div className="CardPokemonEvoluciones">
-            <h5 className="CardPokemonEvoluciones__name">{name}</h5>
-            <img className="CardPokemonEvoluciones__img" src={imgSrc} alt="imagen" />
+            <img className="CardPokemonEvoluciones__img" src={imgSrc} alt="imagen pokemon" />
+            <div className='CardPokemonEvoluciones__info'>
+                <h5>Pokedex Number: "{id}"</h5>
+                <h3 className="CardPokemonEvoluciones__name">{name}</h3>
+                <p style={{background:'red'}}>ACA VA SPICES FLAVOR</p>
+            </div>
         </div>
         </Link>
     )

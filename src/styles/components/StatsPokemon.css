@@ -1,0 +1,19 @@
+.StatsPokemon__stats{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    margin: 4rem 0;
+}
+
+.StatsPokemon__stats>ul>li{
+    margin: 25px 0;
+}
+
+.StatsPokemon__stats_left>li{
+    font-weight: 600;
+}
+
+.StatsPokemon__stats_right>li{
+    color: var(--gbg);
+    font-weight: 600;
+}
