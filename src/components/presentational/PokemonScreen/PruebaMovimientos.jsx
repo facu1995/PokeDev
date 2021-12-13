@@ -20,7 +20,6 @@ const PruebaMovimientos = ({ setPokemon }) => {
             <ul className="PruebaMovimientos__ul">
                 {pokemon.moves.map((el, idx) => {
                     return <li className="PruebaMovimientos__li" key={idx}>
-                        {console.log(el)}
                         {el.move.name}
                         <button onClick={() => { EliminarPoder(el.move.name) }}>Eliminar</button>
                     </li>

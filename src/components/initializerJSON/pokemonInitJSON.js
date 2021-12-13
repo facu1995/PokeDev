@@ -102,7 +102,7 @@ const pokemonInit={
         {
             "slot": 1,
             "type": {
-                "name": "s",
+                "name": "",
                 "url": ""
             }
         }
