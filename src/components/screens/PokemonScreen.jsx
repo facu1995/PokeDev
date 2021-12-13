@@ -18,6 +18,7 @@ export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
+    const [species, setSpecies] = useState({})
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [] });
 
@@ -50,6 +51,7 @@ export const PokemonScreen = () => {
         async function obtenerNameEvolutionPokemon(id) {
             let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + id)
             let dataJSON = await data.json();
+            setSpecies(dataJSON);
             if (dataJSON.evolution_chain.url) {
                 data = await fetch(dataJSON.evolution_chain.url)
                 dataJSON = await data.json();
