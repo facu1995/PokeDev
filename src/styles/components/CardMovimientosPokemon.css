@@ -6,4 +6,8 @@
 
 .CardMovimientosPokemon__btn{
     height:37px;
+    background: var(--rc);
+}
+.CardMovimientosPokemon__btn i{
+    color: var(--white);
 }
