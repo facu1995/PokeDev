@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 import UsePokemon from '../../context/usePokemon'
-import MostrarMovimientoPokemon from './MostrarMovimientosPokemon'
+import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
+import "../../../styles/components/MoviEvoPokemon.css";
 const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
     const pokemon = UsePokemon();
 
@@ -42,19 +43,19 @@ const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
                         <li onClick={() => { movieEvoState('mov') }}>Evolutions</li>
                         <li className='GOLD MoviEvoPokemon__active'>Moves</li>
                     </ul>
-                    <div className="PruebaMovimientos" style={{marginBottom: 70}} >
-                        <div className="MovimientosAllScreen">
-                            <ul className='MovimientosAllScreen__bar'>
+                    <div className="PruebaMovimientos"  >
+                        <div className="MoviEvoPokemon__Movimientos">
+                            <ul className='MoviEvoPokemon__Movimientos__bar'>
                                 <li>LEVEL</li>
                                 <li>MOVE NAME</li>
                                 <li>TYPE</li>
                                 <li>POWER</li>
                                 <li>Eliminar</li>
                             </ul>
-                            <div className='MovimientosAllScreen__list'>
+                            <div className='MoviEvoPokemon__Movimientos__list'>
                                 <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder} />
                             </div>
-                            <div className='MovimientosAllScreen__barBottom'></div>
+                            <div className='MoviEvoPokemon__Movimientos__barBottom'></div>
                         </div>
                     </div>
                 </>
