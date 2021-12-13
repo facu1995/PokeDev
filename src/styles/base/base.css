@@ -68,6 +68,12 @@ p{
     letter-spacing: 1px;
     color: var(--dc);
 }
+
+.sign{
+    font-family: 'Smooch', cursive;
+    font-size: 3rem;
+    margin: 2rem;
+}
 /* .smallP{
 
 }

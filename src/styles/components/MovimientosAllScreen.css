@@ -1,0 +1,35 @@
+.MovimientosAllScreen{
+    height: 300px;
+    width: 500px;
+
+}
+
+.MovimientosAllScreen__bar{
+    align-items: center;
+    background-color: var(--dc);
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    padding: 0 1rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.MovimientosAllScreen__bar>li{
+    color: black;
+    font-weight: 600;
+}
+
+.MovimientosAllScreen__list{
+    height: 300px;
+    width: 500px;
+    overflow: scroll;
+    overflow-y:visible;
+    overflow-x: hidden;
+}
+
+.MovimientosAllScreen__barBottom{
+    background-color: var(--dc);
+    height: 2rem;
+    border-radius: 0 0 5px 5px;
+
+}

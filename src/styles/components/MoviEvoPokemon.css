@@ -1,0 +1,15 @@
+.MoviEvoPokemon__select{
+    display: flex;
+    gap: 40px;
+    font-size: 30px;
+}
+
+.MoviEvoPokemon__select>li:hover{
+    cursor: pointer;
+}
+
+.MoviEvoPokemon__active{
+    text-decoration: underline;
+}
+
+
