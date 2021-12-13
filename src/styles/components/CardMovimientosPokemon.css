@@ -1,0 +1,13 @@
+.CardMovimientosPokemon__movimientos{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    padding: 0 1rem;
+}
+
+.CardMovimientosPokemon__btn{
+    height:37px;
+    background: var(--rc);
+}
+.CardMovimientosPokemon__btn i{
+    color: var(--white);
+}

@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 //components
 import AboutPokemon from '../presentational/PokemonScreen/AboutPokemon';
 import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
-import PruebaMovimientos from '../presentational/PokemonScreen/PruebaMovimientos';
+/* import PruebaMovimientos from '../presentational/PokemonScreen/PruebaMovimientos'; */
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
@@ -85,10 +85,10 @@ export const PokemonScreen = () => {
             <PokemonContext.Provider value={pokemon}>
                 <AboutPokemon species = {species}/>
                 <StatsPokemon />
-                <MoviEvoPokemon evoluciones={evoluciones} species = {species}  /> 
+                <MoviEvoPokemon evoluciones={evoluciones} species = {species} setPokemon={setPokemon}  /> 
                 <MyFormulario />  
                 <PruebaModificarPokemon setPokemon={setPokemon}/>
-                <PruebaMovimientos  setPokemon={setPokemon}/>
+                {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}

@@ -74,6 +74,19 @@ p{
     font-size: 3rem;
     margin: 2rem;
 }
+
+.flex{
+    display:flex;
+}
+.flex-align-center{
+    display: flex;
+    align-items: center;
+}
+.flex-centerAll{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
 /* .smallP{
 
 }

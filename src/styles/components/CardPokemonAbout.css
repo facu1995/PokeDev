@@ -1,0 +1,45 @@
+.CardPokemonAbout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardPokemonAbout__CardPokemon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.CardPokemonAbout__contenedor1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -10px;
+    height: 500px;
+    width: 370px;
+    border: 1px solid rgba(255,255,255,.2);
+}
+.CardPokemonAbout__contenedor2{
+    position: absolute;
+    height: 470px;
+    width: 400px;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.CardPokemonAbout__CardPokemon__img{
+    height:300px;
+    width:300px;
+    margin: 0 0 10px
+}
+
+.CardPokemonAbout__CardPokemon__name{
+    margin: 5px 0 5px;  
+    text-transform: uppercase;
+}
+
+.CardPokemonAbout__MyPokemonScreenHeader__blink{
+    color: var(--grc);
+    animation: blink 2.5s linear infinite;
+}

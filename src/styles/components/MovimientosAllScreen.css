@@ -9,7 +9,7 @@
     background-color: var(--dc);
     height: 2rem;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
     padding: 0 1rem;
     border-radius: 5px 5px 0 0;
 }
