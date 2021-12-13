@@ -75,12 +75,11 @@ export const PokemonScreen = () => {
     return (
         <>
             <h3>PokemonScreen</h3>
-            <h4>id: {pokemon.id}</h4>
             <PokemonContext.Provider value={pokemon}>
                 <StatBasePokemon />
-                <PruebaModificarPokemon setPokemon={setPokemon}/>
                 <EvolucionesPokemon evoluciones={evoluciones} />
-                <PruebaMovimientos/>
+                <PruebaModificarPokemon setPokemon={setPokemon}/>
+                <PruebaMovimientos  setPokemon={setPokemon}/>
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
