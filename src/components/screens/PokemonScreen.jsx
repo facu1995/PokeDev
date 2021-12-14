@@ -90,10 +90,13 @@ export const PokemonScreen = () => {
                 {/* <MyFormulario />   */}
                 <AddMoveFormula setPokemon={setPokemon} />
                 <PruebaModificarPokemon setPokemon={setPokemon}/>
+                
+
                 {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
                 {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
+
             </PokemonContext.Provider>
         </>
     )

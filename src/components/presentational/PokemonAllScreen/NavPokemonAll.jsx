@@ -1,7 +1,7 @@
 import React from 'react';
 
 //components
-import PaginaMoverNav from "./PaginaMoverNav";
+// import PaginaMoverNav from "./PaginaMoverNav";
 //style
 import "../../../styles/components/NavPokemonAll.css";
 function NavPokemonAll({ offset, limit, setOffset, filtro, setFiltro, cantMaximaPokemon, cantPokemonFetch,page,setPage}) {
@@ -14,7 +14,7 @@ function NavPokemonAll({ offset, limit, setOffset, filtro, setFiltro, cantMaxima
     return (
         <div className="NavPokemonAll">
             <input className="NavPokemonAll__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Buscar Pokemon" />
-            <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} />
+            {/* <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} /> */}
         </div>
     )
 }

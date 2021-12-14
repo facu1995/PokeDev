@@ -6,3 +6,12 @@
     align-items: center;
     gap: 20px 0;
 }
+
+@media (min-width:500px) {
+    .ContenedorPokemons__container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px 70px;
+    }
+    
+}
