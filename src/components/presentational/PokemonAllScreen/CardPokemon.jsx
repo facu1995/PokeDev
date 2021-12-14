@@ -39,7 +39,6 @@ function CardPokemon({ name, url }) {
               {pokemon.types.map((el, idx) => <i key={idx} className={ obtenerClassType(el.type.name)}></i>)}
             </div>
           </div>
-
         </div>
       </div>
     </Link>

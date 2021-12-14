@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 //components
 import MostrarMovimientos from '../presentational/MovimientosAllScreen/MostrarMovimientos'
+//styles
+import "../../styles/components/MovimientosAllScreen.css";
 export const MovimientosAllScreen = () => {
-
+    const [filtro, setFiltro] = useState("");
     const [movesAll, setmovesAll] = useState([]);
-    const cantMovesFetch = 900;
+    const cantMovesFetch = 826;
 
+    const handleChange = (evt) => {
+        setFiltro(evt.target.value);
+
+    }
 
     useEffect(() => {
         const obtenerMovimientos = async (id) => {
@@ -18,16 +24,8 @@ export const MovimientosAllScreen = () => {
 
     return (
         <div className="MovimientosAllScreen">
-            <ul className='MovimientosAllScreen__bar'>
-                <li>LEVEL</li>
-                <li>MOVE NAME</li>
-                <li>TYPE</li>
-                <li>POWER</li>
-            </ul>
-            <div className='MovimientosAllScreen__list'>
-                <MostrarMovimientos movesAll={movesAll}/>
-            </div>
-            <div className='MovimientosAllScreen__barBottom'></div>
+        <input className="MovimientosAllScreen__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
+                <MostrarMovimientos movesAll={movesAll} filtro={filtro}/>
         </div>
     )
 }

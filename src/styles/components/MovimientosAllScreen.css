@@ -1,6 +1,6 @@
 .MovimientosAllScreen{
     height: 300px;
-    width: 500px;
+    width: 100%;
 
 }
 
@@ -10,6 +10,7 @@
     height: 2rem;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    gap: 10px;
     padding: 0 1rem;
     border-radius: 5px 5px 0 0;
 }
@@ -21,7 +22,7 @@
 
 .MovimientosAllScreen__list{
     height: 300px;
-    width: 500px;
+    width: 100%;
     overflow: scroll;
     overflow-y:visible;
     overflow-x: hidden;
@@ -32,4 +33,22 @@
     height: 2rem;
     border-radius: 0 0 5px 5px;
 
+}
+
+
+
+.MovimientosAllScreen__input {
+    font-size: 0.875em;
+    width: 300px;
+    height: 30px;
+    padding: 0px 25px 0px 25px;
+    margin: 10px 20px 10px 0;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .2);
+    transition: all 0.3s ease-in-out;
+}
+
+.MovimientosAllScreen__input:hover {
+    border: solid 1px #b3aca7;
 }
