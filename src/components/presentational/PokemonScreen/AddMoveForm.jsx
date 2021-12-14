@@ -15,13 +15,6 @@ export default function AgregarMovimiento({ setPokemon }) {
     let initialValue = { id: 0, name: "", type: "", power: 0 };
     const pokemon = UsePokemon();
 
-    const AddMoves = () => {
-        setPokemon({
-            ...pokemon,
-            moves: [{ id: "", move: { name: "" }, type: { name: "" }, power: "" }, ...pokemon.moves]
-        })
-    }
-
     const fnValidationForm = (v) => { 
         alert(JSON.stringify(v))
         const {id,name,type,power} =v;

@@ -10,7 +10,6 @@ function CardMovimientosPokemon({ pokeMove,local=0, EliminarPoder }) {
 
     useEffect(() => {
         const obtenerMove = async () => {
-            console.log(pokeMove);
             const data = await fetch(pokeMove.move.url)
             const dataJSON = await data.json();
             setMove(dataJSON);
