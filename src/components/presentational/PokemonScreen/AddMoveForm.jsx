@@ -11,7 +11,7 @@ import UsePokemon from "../../context/usePokemon";
 
 //let initialValue = {id:"", move:{name: ""},type:{name:""},power:""};
 
-export default function AgregarMovimiento({ setPokemon }) {
+export default function AddMoveForm({ setPokemon }) {
     let initialValue = { id: 0, name: "", type: "", power: 0 };
     const pokemon = UsePokemon();
 

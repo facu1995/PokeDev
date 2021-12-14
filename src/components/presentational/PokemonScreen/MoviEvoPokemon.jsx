@@ -4,6 +4,7 @@ import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 import UsePokemon from '../../context/usePokemon'
 import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
 import "../../../styles/components/MoviEvoPokemon.css";
+import AddMoveForm from './AddMoveForm';
 const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
     const pokemon = UsePokemon();
 
@@ -60,6 +61,7 @@ const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
                         </div>
                         <Link to="/add/move">Agregar Movimientos</Link>
                     </div>
+                    <AddMoveForm setPokemon={setPokemon} />
                 </>
             }
         </section>

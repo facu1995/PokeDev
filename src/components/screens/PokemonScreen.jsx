@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 
 //components
 import AboutPokemon from '../presentational/PokemonScreen/AboutPokemon';
-import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
+//import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
 /* import PruebaMovimientos from '../presentational/PokemonScreen/PruebaMovimientos'; */
 //context
 import PokemonContext from "../context/PokemonContext";
@@ -13,8 +13,8 @@ import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON";
 import "../../styles/components/PokemonScreen.css";
 import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
 import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
-import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
-import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
+// import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
+// import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
 
 export const PokemonScreen = () => {
 
@@ -88,8 +88,8 @@ export const PokemonScreen = () => {
                 <StatsPokemon />
                 <MoviEvoPokemon evoluciones={evoluciones} species = {species} setPokemon={setPokemon}  /> 
                 {/* <MyFormulario />   */}
-                <AddMoveFormula setPokemon={setPokemon} />
-                <PruebaModificarPokemon setPokemon={setPokemon}/>
+                {/* <AddMoveFormula setPokemon={setPokemon} /> */}
+                {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
                 
 
                 {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
