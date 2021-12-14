@@ -14,6 +14,7 @@ import "../../styles/components/PokemonScreen.css";
 import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
 import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
 import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
+import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
 
 export const PokemonScreen = () => {
 
@@ -86,7 +87,8 @@ export const PokemonScreen = () => {
                 <AboutPokemon species = {species}/>
                 <StatsPokemon />
                 <MoviEvoPokemon evoluciones={evoluciones} species = {species} setPokemon={setPokemon}  /> 
-                <MyFormulario />  
+                {/* <MyFormulario />   */}
+                <AddMoveFormula setPokemon={setPokemon} />
                 <PruebaModificarPokemon setPokemon={setPokemon}/>
                 {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
                 {/* <HeaderPokemon />
