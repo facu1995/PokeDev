@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 import UsePokemon from '../../context/usePokemon'
 import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
@@ -57,6 +58,7 @@ const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
                             </div>
                             <div className='MoviEvoPokemon__Movimientos__barBottom'></div>
                         </div>
+                        <Link to="/add/move">Agregar Movimientos</Link>
                     </div>
                 </>
             }
