@@ -3,3 +3,21 @@
     border: var(--gc) solid 1px;
     margin: 1rem 0;
 }
+
+.AboutPokemon{
+    display: flex;
+    gap: 3rem;
+    margin: 2rem 0;
+    padding: 3%;
+}
+
+.AboutPokemon__flex{
+    margin-top: 2rem;
+}
+
+@media (max-width: 950px) {
+    .AboutPokemon{
+        display: block;
+    }
+}
+
