@@ -18,7 +18,7 @@ const StatsPokemon = () => {
             <h5 className='GOLD'>SOME STADISTICS</h5>
             <h2>My Stats</h2>
             <hr className='AboutPokemon__hr'/>
-            <p>I'm a Freelancer Pokemon, living in the wild. Waiting for someone like you, who wants to be a pokemon master, also, i want to meet new people and win some experience, and maybe if we train a lot, EVOLE! I don't have degrees or things like that, but i can show you my stats where you can see my true potential!   </p>            <div className='StatsPokemon__stats'>
+            <p>I'm a Freelancer Pokemon, living in the wild. Waiting for someone like you, who wants to be a pokemon master, also, i want to meet new people and win some experience, and maybe if we train a lot, EVOLVE! I don't have degrees or things like that, but i can show you my stats where you can see my true potential!   </p>            <div className='StatsPokemon__stats'>
                 <ul className='StatsPokemon__stats_left'>
                     <li>HP:</li>
                     <li>ATTACK</li>
