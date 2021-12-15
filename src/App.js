@@ -17,7 +17,8 @@ function App() {
         <Routes>
 
           <Route path="/newUser" element={<NewUserScreen />} />
-          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/" element={<LoginScreen />} />
+            
             <Route path="/home" element={<PokemonAllScreen />} />
             <Route path='/pokemon/:id' element={<PokemonScreen />} />
             <Route path="/moves" element={<MovimientosAllScreen />} />
