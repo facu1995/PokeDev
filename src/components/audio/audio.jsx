@@ -8,7 +8,7 @@ const Audio = () => {
         src: Intro,
         loop: true,
     });
-    Howler.volume(1.0);
+    Howler.volume(0.6);
     return (
         <>
             <button onClick={() => sound.play()} >Play</button>

@@ -2,7 +2,6 @@ import './styles/style.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //components
 import { PokemonScreen } from './components/screens/PokemonScreen';
-import Nav from './components/nav/nav_principal';
 import { PokemonAllScreen } from './components/screens/PokemonAllScreen';
 import { MovimientosAllScreen } from './components/screens/MovimientosAllScreen';
 import MovimientosScreen from './components/screens/MovimientoScreen';
@@ -13,7 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
+        <Routes >
           <Route path="/newUser" element={<NewUserScreen />} />
           <Route path="/" element={<LoginScreen />} />
           <Route path="/home" element={<PokemonAllScreen />} />
