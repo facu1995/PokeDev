@@ -91,6 +91,25 @@ p{
 .text-decore-none{
     text-decoration: none;
 }
+
+
+.btn {
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    background: transparent;
+    font-size: 0.875em;
+    border: 2px solid var(--gc);
+    color: var(--wc);
+    outline: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: solid 2px var(--dc);
+    color: var(--dc);
+}
 /* .smallP{
 
 }
