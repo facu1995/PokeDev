@@ -6,7 +6,8 @@ import Schema from '../form/login/form_validation/schema_validation/login_schema
 //error
 import errorHandle from '../form/login/form_validation/error_validation/login_errors';
 import { useNavigate } from 'react-router-dom';
-
+//audio
+import Audio from '../audio/audio';
 
 export const LoginScreen = () => {
 
@@ -42,6 +43,7 @@ export const LoginScreen = () => {
                         </Form>)
                 }}
             </Formik>
+            <Audio/>
         </div>
     )
 }

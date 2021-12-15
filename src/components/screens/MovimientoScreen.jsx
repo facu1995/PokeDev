@@ -67,8 +67,8 @@ export const MovimientoScreen = () => {
                 </ul>
                 {/* <button className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i className="fas fa-trash-alt"></i></button> */}
                 <div>
-                <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="PaginaMoverNav__btn" > atras</button></Link>
-                    <Link className="text-decore-none" to={"/moves/" + pagNext}>  <button className="PaginaMoverNav__btn" > siguiente</button></Link>
+                <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="btn" > atras</button></Link>
+                    <Link className="text-decore-none" to={"/moves/" + pagNext}>  <button className="btn" > siguiente</button></Link>
                 </div>
             </div>
         </>
