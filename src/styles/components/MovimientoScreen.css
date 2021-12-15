@@ -1,0 +1,22 @@
+.MovimientoScreen{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MovimientoScreen__li{
+    height:40px;
+    width: 120px;
+}
+
+.MovimientoScreen__ul{
+    margin: 40px 0;
+    width: 500px;
+    border:1px solid var(--gc);
+    padding:20px;
+}
+.MovimientoScreen__ul__ul{
+    display: flex;
+    justify-content: space-between;
+}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { obtenerClassType } from "../visualData/Types"
 
-import "../../../styles/components/CardMovimientosPokemon.css"
+import "../../../styles/components/CardMovimientosPokemon.css";
 
 function CardMovimientosPokemon({ pokeMove,local=0, EliminarPoder }) {
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });

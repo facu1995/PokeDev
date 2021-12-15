@@ -5,26 +5,7 @@
     margin: 50px auto 100px 15px;
   }
   
- /*  input {
-    font-size: 0.875em;
-    width: 650px;
-    height: 70px;
-    padding: 0px 25px 0px 25px;
-    margin: 10px 20px 10px 0;
-    
-    background: transparent;
-    outline: none;
-    
-    
-    border: 1px solid rgba(255,255,255,.2);
-    
-    transition: all 0.3s ease-in-out;
-  }
-  
-  input:hover {
-    border: solid 1px #b3aca7;
-  } */
-  
+
   
 
   textarea {
@@ -41,7 +22,7 @@
     
     font-size: 0.875em;
     
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid var(--gc);
     
     transition: .3s;
     
@@ -58,7 +39,7 @@
     margin: -5px 0px 0px 0px;
     background: transparent;
     font-size: 0.875em;
-    border: 2px solid rgba(255,255,255,.2);
+    border: 2px solid var(--gc);
     color: var(--wc);
     outline:none;
     cursor: pointer;
