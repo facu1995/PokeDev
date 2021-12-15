@@ -1,0 +1,31 @@
+.NewUserScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+} 
+
+.NewUserScreen__form>h3{
+    margin-bottom: 3rem;
+}
+
+.NewUserScreen__form{
+
+    height: 500px;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+
+}
+
+.NewUserScreen__form > button {
+    margin: 0.5rem auto;
+    width: 70%;
+    height: 45px;
+}
+

@@ -5,6 +5,8 @@ import UsePokemon from '../../context/usePokemon'
 import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
 import "../../../styles/components/MoviEvoPokemon.css";
 import AddMoveForm from './AddMoveForm';
+
+
 const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
     const pokemon = UsePokemon();
 
