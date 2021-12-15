@@ -87,6 +87,10 @@ p{
     align-items: center;
     justify-content:center;
 }
+
+.text-decore-none{
+    text-decoration: none;
+}
 /* .smallP{
 
 }

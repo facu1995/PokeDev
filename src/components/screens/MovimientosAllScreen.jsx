@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MostrarMovimientos from '../presentational/MovimientosAllScreen/MostrarMovimientos'
 //styles
 import "../../styles/components/MovimientosAllScreen.css";
+
 export const MovimientosAllScreen = () => {
     const [filtro, setFiltro] = useState("");
     const [movesAll, setmovesAll] = useState([]);
@@ -23,9 +24,11 @@ export const MovimientosAllScreen = () => {
     }, []);
 
     return (
-        <div className="MovimientosAllScreen">
-        <input className="MovimientosAllScreen__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
-                <MostrarMovimientos movesAll={movesAll} filtro={filtro}/>
+        <div className="MovimientosAllScreen ">
+            <div className="MovimientosAllScreen__filter">
+                <input className="MovimientosAllScreen__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
+            </div>
+            <MostrarMovimientos movesAll={movesAll} filtro={filtro} />
         </div>
     )
 }

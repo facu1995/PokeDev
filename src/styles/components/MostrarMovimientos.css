@@ -1,0 +1,18 @@
+.MostrarMovimientos__ul{
+    margin:40px 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+}
+.MostrarMovimientos__ul li{
+    width:150px;
+    text-align: center;
+    padding:10px 5px;
+    border:1px solid var(--gc);
+}
+
+.MostrarMovimientos__ul li:hover{
+    border: solid 2px var(--white);
+    padding:9px 3px;
+}

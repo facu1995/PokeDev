@@ -12,8 +12,8 @@ function CardMovimiento({ pokeMove, setmovesAll }) {
         id = arrayURL[6];
     }
     return (
-        <Link to={"/moves/"+id}>
-        <div>{pokeMove.name}</div>
+        <Link className="text-decore-none" to={"/moves/"+id}>
+        <li>{pokeMove.name}</li>
         </Link>
     );
 }

@@ -13,14 +13,13 @@
     margin: 0 -10px;
     height: 500px;
     width: 370px;
-    border: 1px solid rgba(255,255,255,.2);
-
+    border: 1px solid var(--gc);
 }
 .contenedor2{
     position: absolute;
     height: 470px;
     width: 400px;
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid var(--gc);
 }
 
 .CardPokemon__img{
@@ -37,4 +36,9 @@
 .MyPokemonScreenHeader__blink{
     color: var(--grc);
     animation: blink 2.5s linear infinite;
+}
+
+
+.contenedor1:hover,.contenedor2:hover{
+    border: 1px solid var(--white);
 }
