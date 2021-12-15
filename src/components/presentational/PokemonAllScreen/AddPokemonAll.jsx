@@ -16,7 +16,9 @@ export default function AddPokemonAll() {
     }
     return (
         <div>
-            <h3>::Agregar Pokemon</h3>
+            <h3>Agregar Pokemon</h3>
+            <br/>
+            <br/>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -25,23 +27,24 @@ export default function AddPokemonAll() {
                     return (
                         <Form>
                             <section>
-                                <Field name="id" className="input" placeholder="id" />
+                                <Field name="id" className="input width-100" placeholder="id" />
                                 {errorHandle(errors).id()}
                             </section>
                             <section>
-                                <Field name="name" className="input" placeholder="name" />
+                                <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
                             <section>
-                                <Field name="type" className="input" placeholder="type" />
+                                <Field name="type" className="input width-100" placeholder="type" />
                                 {errorHandle(errors).type()}
                             </section>
                             <section>
-                                <Field name="description" className="input" placeholder="description" />
+                                <Field name="description" className="input width-100" placeholder="description" />
                                 {errorHandle(errors).description()}
                             </section>
                             <section>
-                                <button type="submit" className="btn">Agregar Movimiento</button>
+                            <br/>
+                                <button type="submit" className="btn btn-form">Agregar Pokemon</button>
                             </section>
                         </Form>)
                 }}

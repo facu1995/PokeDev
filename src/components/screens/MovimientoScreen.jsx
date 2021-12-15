@@ -4,21 +4,27 @@ import { Link } from "react-router-dom";
 //components
 import { obtenerClassType } from "../presentational/visualData/Types";
 import { useParams } from 'react-router';
+import Spinner from '../img/spinner5.gif';
 
 //styles
 import "../../styles/components/MovimientoScreen.css";
+import Nav from '../nav/nav_principal';
+
 export const MovimientoScreen = () => {
     const { id } = useParams();
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });
     const [pagNext, setPagNext] = useState(0);
     const [pagBack, setPagBack] = useState(0);
+    const [spinner, setSpinner] = useState(true);
 
 
     useEffect(() => {
+        setSpinner(true);
         const obtenerMove = async () => {
             const data = await fetch("https://pokeapi.co/api/v2/move/" + id);
             const dataJSON = await data.json();
             setMove(dataJSON);
+            setSpinner(false);
         }
         obtenerMove();
 
@@ -28,17 +34,20 @@ export const MovimientoScreen = () => {
         if (id < 826) {
             setPagNext(parseInt(id) + 1);
         }
-        console.log(parseInt(id) - 1,parseInt(id) + 1);
     }, [id])
 
-    /* const EliminarPoder = (movimientoName) => {
-        setMove({
-            moves: [...pokemon.moves.filter(el => el.move.name !== movimientoName)
-            ]
-        });
-    } */
-    return (
-        <>
+    const spinnerOn = () => {
+        return (
+            <div className="flex-centerAll">
+                <div className="spinner">
+                    <div className="spinner__fondo"></div>
+                    <img className='spinner__imagen' src={Spinner} alt="foto" />
+                </div>
+            </div>
+        );
+    }
+    const spinnerOff = () => {
+        return (
             <div className="MovimientoScreen">
                 <ul className="MovimientoScreen__ul">
                     <ul className="MovimientoScreen__ul__ul">
@@ -65,13 +74,22 @@ export const MovimientoScreen = () => {
                         <li className="MovimientoScreen__li flex-centerAll" >{move.power}</li>
                     </ul>
                 </ul>
-                {/* <button className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i className="fas fa-trash-alt"></i></button> */}
                 <div>
-                <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="btn" > atras</button></Link>
+                    <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="btn" > atras</button></Link>
                     <Link className="text-decore-none" to={"/moves/" + pagNext}>  <button className="btn" > siguiente</button></Link>
                 </div>
             </div>
+        );
+    }
+    return (
+        <>
+            <Nav />
+            {spinner === true && spinnerOn()}
+            {spinner === false && spinnerOff()}
+            <></>
         </>
+
     )
 }
+
 export default MovimientoScreen;

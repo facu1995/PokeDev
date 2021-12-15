@@ -4,16 +4,18 @@ import { MyPokemonScreenExpEvoLoc } from '../presentational/MyPokemonScreen/MyPo
 import { MyPokemonScreenHeader } from '../presentational/MyPokemonScreen/MyPokemonScreenHeader'
 import { MyPokemonScreenStats } from '../presentational/MyPokemonScreen/MyPokemonScreenStats'
 import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario'
-
+import Nav from '../nav/nav_principal'
 
 export const MyPokemonScreen = () => {
-    return (
+    return (<>
+        <Nav />
         <>
-            <MyPokemonScreenHeader/>
+            <MyPokemonScreenHeader />
             <MyPokemonScreenDetails />
             <MyPokemonScreenStats />
             <MyPokemonScreenExpEvoLoc />
             <MyFormulario />
         </>
+    </>
     )
 }

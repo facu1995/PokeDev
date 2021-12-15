@@ -19,7 +19,7 @@ export default function EditMoveAll({ setmovesAll,movesAll }) {
     }
     return (
         <div>
-            <h3>::Agregar Movimiento</h3>
+            <h3>Agregar Movimiento</h3>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -28,23 +28,23 @@ export default function EditMoveAll({ setmovesAll,movesAll }) {
                     return (
                         <Form>
                             <section>
-                                <Field name="id" className="input" placeholder="id" />
+                                <Field name="id" className="input width-100" placeholder="id" />
                                 {errorHandle(errors).id()}
                             </section>
                             <section>
-                                <Field name="name" className="input" placeholder="name" />
+                                <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
                             <section>
-                                <Field name="type" className="input" placeholder="type" />
+                                <Field name="type" className="input width-100" placeholder="type" />
                                 {errorHandle(errors).type()}
                             </section>
                             <section>
-                                <Field name="power" className="input" placeholder="power" />
+                                <Field name="power" className="input width-100" placeholder="power" />
                                 {errorHandle(errors).power()}
                             </section>
                             <section>
-                                <button type="submit" className="btn">Agregar Movimiento</button>
+                                <button type="submit" className="btn btn-form">Agregar Movimiento</button>
                             </section>
                         </Form>)
                 }}

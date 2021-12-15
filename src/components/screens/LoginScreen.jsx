@@ -9,12 +9,13 @@ import { useNavigate } from 'react-router-dom';
 //audio
 import Audio from '../audio/audio';
 
+
 export const LoginScreen = () => {
 
-    let initialValue = { email: "", pass: ""};
+    let initialValue = { email: "", pass: "" };
     const navigate = useNavigate();
 
-    const fnValidationForm = (v) => { 
+    const fnValidationForm = (v) => {
         alert(JSON.stringify(v));
         navigate('/home');
     }
@@ -22,27 +23,28 @@ export const LoginScreen = () => {
     const newUser = () => navigate('/newUser')
 
     return (
+
         <div className='LoginScreen'>
-            <Formik 
+            <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
                 onSubmit={fnValidationForm}>
                 {({ errors }) => {
                     return (
                         <Form className='LoginScreen__form'>
-                                <h3>LOGIN</h3>
-                                <Field className="input" name="email" placeholder="E-mail" />
-                                {errorHandle(errors).email()}
+                            <h3>LOGIN</h3>
+                            <Field className="input" name="email" placeholder="E-mail" />
+                            {errorHandle(errors).email()}
 
-                                <Field className="input" name="pass" placeholder="Password" />
-                                {errorHandle(errors).pass()}
+                            <Field className="input" name="pass" placeholder="Password" />
+                            {errorHandle(errors).pass()}
 
-                                <button className='btn LoginScreen__btndiv' type="submit">Login</button>
-                                <button className='btn' type="button" onClick={newUser}>New User</button>
+                            <button className='btn LoginScreen__btndiv' type="submit">Login</button>
+                            <button className='btn' type="button" onClick={newUser}>New User</button>
                         </Form>)
                 }}
             </Formik>
-            <Audio/>
+            <Audio />
         </div>
     )
 }
