@@ -2,24 +2,21 @@ import React from 'react';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
 //Schema
-import Schema from "../../form/pokemonMove/form_validation/schema_validation/pokemonMove_schema";
+import Schema from "../../form/pokemon/form_validation/schema_validation/pokemon_schema";
 //error
-import errorHandle from "../../form/pokemonMove/form_validation/error_validation/pokemonMove_errors";
-//pokemon
-export default function AddMoveAll({ setmovesAll,movesAll }) {
-    let initialValue = { id: 0, name: "", type: "", power: 0 };
+import errorHandle from "../../form/pokemon/form_validation/error_validation/pokemon_errors";
 
-    const fnValidationForm = (v) => { 
+export default function AddPokemonAll() {
+    let initialValue = { id: 0, name: "", type: "", description: 0 };
+
+    const fnValidationForm = (v) => {
         alert(JSON.stringify(v))
-        const {id,name,type,power} =v;
-        setmovesAll([
-            {id:id,name:name,type:type,power:power,url:"https://pokeapi.co/api/v2/move/"+id},
-            ...movesAll
-        ]);
+      /*   const { id, name, type, description } = v; */
+
     }
     return (
         <div>
-            <h3>::Agregar Movimiento</h3>
+            <h3>::Agregar Pokemon</h3>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -40,8 +37,8 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                                 {errorHandle(errors).type()}
                             </section>
                             <section>
-                                <Field name="power" className="input" placeholder="power" />
-                                {errorHandle(errors).power()}
+                                <Field name="description" className="input" placeholder="description" />
+                                {errorHandle(errors).description()}
                             </section>
                             <section>
                                 <button type="submit" className="btn">Agregar Movimiento</button>
