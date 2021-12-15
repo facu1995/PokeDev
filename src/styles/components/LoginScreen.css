@@ -1,0 +1,31 @@
+.LoginScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+} 
+
+.LoginScreen__form>h3{
+    margin-bottom: 3rem;
+}
+
+.LoginScreen__form{
+
+    height: 400px;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+
+}
+
+.LoginScreen__form > button {
+    margin: 0.5rem auto;
+    width: 70%;
+    height: 45px;
+}
+

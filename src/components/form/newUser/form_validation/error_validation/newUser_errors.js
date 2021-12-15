@@ -5,6 +5,9 @@ export default function errorHandle(errors){
         }, 
         pass(){
             return errors.pass && (<div>{errors.pass}</div>)
+        },
+        rePass(){
+            return errors.rePass && (<div>{errors.rePass}</div>)
         }
     }
 }

@@ -45,10 +45,6 @@ h3{
     font-size: 30px;
 }
 
-/* h4{
-    
-} */
-
 h5{                               
     font-size: 18px;
     font-weight: 400;
@@ -110,6 +106,19 @@ p{
     border: solid 2px var(--dc);
     color: var(--dc);
 }
+
+.input{
+    border: solid 1px var(--gc);
+    padding: 1rem;
+    background-color: var(--dgbg);
+    font-size: 20px;
+}
+
+.input:hover{
+    border: solid 1px var(--wc);
+}
+
+
 /* .smallP{
 
 }

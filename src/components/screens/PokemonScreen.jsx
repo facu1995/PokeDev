@@ -81,8 +81,10 @@ export const PokemonScreen = () => {
     }, [id]);
 
     return (
-        <>
-            <h3>PokemonScreen</h3>
+        <section className='PokemonScreen'>
+
+            <h3>PokemonScreen</h3>    
+
             <PokemonContext.Provider value={pokemon}>
                 <AboutPokemon species = {species}/>
                 <StatsPokemon />
@@ -98,7 +100,8 @@ export const PokemonScreen = () => {
             <EnergiaPokemon /> */}
 
             </PokemonContext.Provider>
-        </>
+
+        </section>
     )
 }
 
