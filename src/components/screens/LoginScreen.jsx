@@ -16,10 +16,6 @@ export const LoginScreen = () => {
     const fnValidationForm = (v) => { 
         alert(JSON.stringify(v));
         navigate('/home');
-        //const {email,pass} =v;
-        //AVERIGUAR COMO HACER PARA QUE ME REDIRIJA SOLO con un if que compare
-        //si usuario e email coinciden con base de datos
-
     }
 
     return (
