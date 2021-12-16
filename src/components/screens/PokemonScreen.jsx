@@ -13,6 +13,7 @@ import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON";
 import "../../styles/components/PokemonScreen.css";
 import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
 import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
+import Nav from '../nav/nav_principal';
 // import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 // import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
 
@@ -80,10 +81,9 @@ export const PokemonScreen = () => {
         obtenerNameEvolutionPokemon(id);
     }, [id]);
 
-    return (
-        <section className='PokemonScreen'>
-
-            <h3>PokemonScreen</h3>    
+    return (  <>
+        <Nav />
+        <section className='PokemonScreen'>   
 
             <PokemonContext.Provider value={pokemon}>
                 <AboutPokemon species = {species}/>
@@ -102,6 +102,7 @@ export const PokemonScreen = () => {
             </PokemonContext.Provider>
 
         </section>
+        </>
     )
 }
 

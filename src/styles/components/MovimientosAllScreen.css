@@ -1,6 +1,13 @@
 .MovimientosAllScreen__filter{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.MovimientosAllScreen__btn{
+    margin: 20px 0;
+    width: 400px;
+    height: 40px;
 }
 .MovimientosAllScreen__input {
     font-size: 0.875em;
@@ -16,4 +23,7 @@
 
 .MovimientosAllScreen__input:hover {
     border: solid 2px #b3aca7;
+}
+.MovimientosAllScreen__AddMoveAll{
+    margin:20px 3%
 }

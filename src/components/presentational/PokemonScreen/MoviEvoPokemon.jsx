@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
 import CardPokemonEvoluciones from "../PokemonScreen/CardPokemonEvoluciones"
 import UsePokemon from '../../context/usePokemon'
 import MostrarMovimientoPokemon from './MostrarMovimientosPokemon';
@@ -7,11 +6,10 @@ import "../../../styles/components/MoviEvoPokemon.css";
 import AddMoveForm from './AddMoveForm';
 
 
-const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
+const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
     const pokemon = UsePokemon();
-
-    const [MoviEvo, setMoviEvo] = useState('evo')
-
+    const [agregarMoves, setAgregarMoves] = useState(false);
+    const [MoviEvo, setMoviEvo] = useState('evo');
     const movieEvoState = (msg) => setMoviEvo(msg === 'evo' ? 'mov' : 'evo');
 
     const EliminarPoder = (movimientoName) => {
@@ -47,8 +45,8 @@ const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
                         <li onClick={() => { movieEvoState('mov') }}>Evolutions</li>
                         <li className='GOLD MoviEvoPokemon__active'>Moves</li>
                     </ul>
-                    <div className="PruebaMovimientos"  >
-                        <div className="MoviEvoPokemon__Movimientos">
+                    <div className="MoviEvoPokemon__Movimientos">
+                        {agregarMoves === false && <>
                             <ul className='MoviEvoPokemon__Movimientos__bar'>
                                 <li>LEVEL</li>
                                 <li>MOVE NAME</li>
@@ -60,10 +58,12 @@ const MoviEvoPokemon = ({ evoluciones, species,setPokemon }) => {
                                 <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder} />
                             </div>
                             <div className='MoviEvoPokemon__Movimientos__barBottom'></div>
-                        </div>
-                        <Link to="/add/move">Agregar Movimientos</Link>
+                            <button className='btn btn-form' onClick={()=>setAgregarMoves(true)} >Agregar Movimientos</button>
+                        </>}
+                        {agregarMoves === true && <><AddMoveForm setPokemon={setPokemon} />
+                        <button className="btn btn-form" type="submit" onClick={() =>{setAgregarMoves(false)}}>Atras</button></>}
                     </div>
-                    <AddMoveForm setPokemon={setPokemon} />
+
                 </>
             }
         </section>

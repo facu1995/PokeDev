@@ -6,6 +6,7 @@ import Schema from "../../form/move/form_validation/schema_validation/move_schem
 //error
 import errorHandle from "../../form/move/form_validation/error_validation/move_errors";
 //pokemon
+
 export default function AddMoveAll({ setmovesAll,movesAll }) {
     let initialValue = { id: 0, name: "", type: "", power: 0 };
 
@@ -18,8 +19,10 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
         ]);
     }
     return (
-        <div>
-            <h3>::Agregar Movimiento</h3>
+        <div className="AddMoveAll">
+            <h3>Agregar Movimiento</h3>
+            <br/>
+            <br/>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -28,23 +31,24 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                     return (
                         <Form>
                             <section>
-                                <Field name="id" className="input" placeholder="id" />
+                                <Field name="id" className="input width-100" placeholder="id" />
                                 {errorHandle(errors).id()}
                             </section>
                             <section>
-                                <Field name="name" className="input" placeholder="name" />
+                                <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
                             <section>
-                                <Field name="type" className="input" placeholder="type" />
+                                <Field name="type" className="input width-100" placeholder="type" />
                                 {errorHandle(errors).type()}
                             </section>
                             <section>
-                                <Field name="power" className="input" placeholder="power" />
+                                <Field name="power" className="input width-100" placeholder="power" />
                                 {errorHandle(errors).power()}
                             </section>
                             <section>
-                                <button type="submit" className="btn">Agregar Movimiento</button>
+                            <br/>
+                                <button type="submit" className="btn btn-form">Agregar Movimiento</button>
                             </section>
                         </Form>)
                 }}

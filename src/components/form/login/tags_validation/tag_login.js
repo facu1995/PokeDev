@@ -1,9 +1,9 @@
 const TAGS_VALIDATITION_FROM={
     EMAIL:{
-        IS_REQUIRED:"El nombre es obligatorio"
+        IS_REQUIRED:"El email es obligatorio"
     },
     PASS:{
-        IS_REQUIRED:"La type es obligatorio"
+        IS_REQUIRED:"La contraseña es obligatorio"
     },
     IS_INTEGER:"Tiene que ser un entero",
 };
