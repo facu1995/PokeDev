@@ -31,10 +31,6 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                     return (
                         <Form>
                             <section>
-                                <Field name="id" className="input width-100" placeholder="id" />
-                                {errorHandle(errors).id()}
-                            </section>
-                            <section>
                                 <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
@@ -45,6 +41,10 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                             <section>
                                 <Field name="power" className="input width-100" placeholder="power" />
                                 {errorHandle(errors).power()}
+                            </section>
+                            <section>
+                                <Field name="description" className="input width-100" placeholder="description" />
+                                {errorHandle(errors).description()}
                             </section>
                             <section>
                             <br/>
