@@ -17,3 +17,18 @@
     color: var(--gbg);
     font-weight: 600;
 }
+
+.StatsPokemon__statBar{
+    height: 20px;
+    width: 20%;
+    background-color: red;
+    margin: 16px;
+}
+
+.StatsPokemon__stats_center{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: -20px;
+}

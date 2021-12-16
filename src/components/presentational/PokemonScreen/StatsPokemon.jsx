@@ -11,6 +11,12 @@ const StatsPokemon = () => {
         })
         return total;
     }
+        
+    // let statBar = pokemon.stats.map((el)=>{
+    //     let size = el.base_stat * 100 / greaterStat;   
+    //     return <div>{size}</div> 
+    // }
+
 
     return (
         <div className="StatsPokemon">
@@ -28,6 +34,9 @@ const StatsPokemon = () => {
                     <li>SPEED</li>
                     <li>TOTAL</li>
                 </ul>
+                {/* <div className='StatsPokemon__stats_center'>
+                    {statBar}
+                </div> */}
                 <ul className='StatsPokemon__stats_right' >
                     <li>{pokemon.stats[0].base_stat}</li>
                     <li>{pokemon.stats[1].base_stat}</li>
