@@ -144,20 +144,13 @@ p {
     overflow:hidden;
     border-radius: 100%;
 }
-.spinner-card{
-    position: relative;
-    height:500px;
-    width:380px;
-    overflow:hidden;
-    border-radius: 100%;
-}
 .spinner__fondo{
     background: var(--bspinner);
     width:100%;
     height:100%;
     position:absolute;
     top:0;
-    opacity:50%;
+    opacity:0.5;
     z-index: 21;
 }
 .spinner__imagen{
