@@ -15,44 +15,50 @@ export default function AddMoveForm({ setPokemon }) {
     let initialValue = { id: 0, name: "", type: "", power: 0 };
     const pokemon = UsePokemon();
 
-    const fnValidationForm = (v) => { 
+    const fnValidationForm = (v) => {
         alert(JSON.stringify(v))
-        const {id,name,type,power} =v;
+        const { id, name, type, power } = v;
         setPokemon({
             ...pokemon,
-            moves: [{ local:1,name:name,id: id, move: { name: name }, type: { name: type }, power: power }, ...pokemon.moves]
+            moves: [{ local: 1, name: name, id: id, move: { name: name }, type: { name: type }, power: power }, ...pokemon.moves]
         })
     }
     return (
         <div>
-            <h3>::AgregarMovimiento</h3>
+            <h3>Agregar Movimiento</h3>
+            <br/>
+            <br/>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
                 onSubmit={fnValidationForm}>
                 {({ errors }) => {
-                    return (
+                    return (<>
                         <Form>
                             <section>
-                                <Field name="id" placeholder="id" />
+                                <Field name="id" className="input width-100 " placeholder="id" />
                                 {errorHandle(errors).id()}
                             </section>
                             <section>
-                                <Field name="name" placeholder="name" />
+                                <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
                             <section>
-                                <Field name="type" placeholder="type" />
+                                <Field name="type" className="input width-100" placeholder="type" />
                                 {errorHandle(errors).type()}
                             </section>
                             <section>
-                                <Field name="power" placeholder="power" />
+                                <Field name="power" className="input width-100" placeholder="power" />
                                 {errorHandle(errors).power()}
                             </section>
                             <section>
-                                <button type="submit">Agregar Movimiento</button>
+                            <br/>
+                                <button className="btn btn-form" type="submit">Agregar Movimiento</button>
                             </section>
-                        </Form>)
+                        </Form>
+                        
+                    </>
+                    )
                 }}
             </Formik>
         </div>

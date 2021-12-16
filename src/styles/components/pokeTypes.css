@@ -214,3 +214,61 @@
     background: #54ebd1;
     box-shadow: 0 0 20px #75d0c1;
 }
+.fa-circle {
+    color: white;
+    background: #a0a29f;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-circle:hover {
+    transform: scale(110%, 110%);
+    background: #c8cac7;
+    box-shadow: 0 0 20px #a0a29f;
+}
+
+.fa-battle-net {
+    color: white;
+    background: #fa8581;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-battle-net:hover {
+    transform: scale(110%, 110%);
+    background: #fd645f;
+    box-shadow: 0 0 20px #fa8581;
+}
+
+
+.fa-bahai {
+    color: white;
+    background: #ee90e6;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-bahai:hover {
+    transform: scale(110%, 110%);
+    background: #ff67f2;
+    box-shadow: 0 0 20px #ee90e6;
+}
+
+
+.fa-moon {
+    color: white;
+    background: #595761;
+    border-radius: 50px;
+    transition: .1s;
+    text-align: center;
+}
+
+.fa-moon:hover {
+    transform: scale(110%, 110%);
+    background: #595761;
+    box-shadow: 0 0 20px #595761;
+
+}

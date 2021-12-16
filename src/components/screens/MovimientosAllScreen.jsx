@@ -4,34 +4,61 @@ import MostrarMovimientos from '../presentational/MovimientosAllScreen/MostrarMo
 import AddMoveForm from '../presentational/MovimientosAllScreen/AddMoveAll';
 //styles
 import "../../styles/components/MovimientosAllScreen.css";
-
+import Spinner from '../img/spinner5.gif';
+import Nav from '../nav/nav_principal';
 
 
 export const MovimientosAllScreen = () => {
     const [filtro, setFiltro] = useState("");
     const [movesAll, setmovesAll] = useState([]);
-    const cantMovesFetch=826;
+    const cantMovesFetch = 826;
+    const [spinner, setSpinner] = useState(true);
+    const [agregarMoves, setAgregarMoves] = useState(false);
 
     const handleChange = (evt) => {
         setFiltro(evt.target.value);
     }
 
     useEffect(() => {
+        setSpinner(true);
         const obtenerMovimientos = async (id) => {
             const data = await fetch("https://pokeapi.co/api/v2/move/?offset=0&limit=" + cantMovesFetch);
             const dataJSON = await data.json();
             setmovesAll(dataJSON.results);
         }
         obtenerMovimientos();
+        setSpinner(false);
     }, [cantMovesFetch]);
 
-    return (
-        <div className="MovimientosAllScreen ">
-            <div className="MovimientosAllScreen__filter">
-                <input className="MovimientosAllScreen__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
+    const spinnerOn = () => {
+        return (
+            <div className="flex-centerAll">
+                <div className="spinner">
+                    <div className="spinner__fondo"></div>
+                    <img className='spinner__imagen' src={Spinner} alt="foto" />
+                </div>
             </div>
-            <MostrarMovimientos movesAll={movesAll} filtro={filtro} />
-            <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll}  />
+        );
+    }
+    return (<>
+        <Nav />
+        <div className="MovimientosAllScreen ">
+            {agregarMoves === false &&
+                <>
+                    <div className="MovimientosAllScreen__filter">
+                        <button className='btn MovimientosAllScreen__btn' onClick={() => setAgregarMoves(true)} >Agregar Movimientos</button>
+                        <input className="MovimientosAllScreen__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
+                    </div>
+                    {spinner === true && spinnerOn()}
+                    {spinner === false && <MostrarMovimientos movesAll={movesAll} filtro={filtro} />}
+                </>}
+            {agregarMoves === true && <>
+                <div className="MovimientosAllScreen__AddMoveAll">
+                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll} />
+                    <button className="btn btn-form" type="submit" onClick={() => { setAgregarMoves(false) }}>Atras</button>
+                </div>
+            </>}
         </div>
+    </>
     )
 }

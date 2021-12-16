@@ -14,7 +14,11 @@ export const obtenerClassType = (type) => {
         case 'dragon': return 'type fas fa-dragon';
         case 'poison': return 'type fas fa-skull-crossbones';
         case 'ice': return 'type fas fa-snowflake';
-        default: return "";
+        case 'normal': return 'type far fa-circle';
+        case 'psychic': return 'type fab fa-battle-net';
+        case 'fairy': return 'type fas fa-bahai';
+        case 'dark': return 'type fas fa-moon';
+        default: return '';
         //falta hada fairy psychic normal dark
     }
 }
