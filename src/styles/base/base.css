@@ -148,13 +148,15 @@ p {
 
 .btn-add {
     margin: 20px 0;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
     height: 40px;
 }
 
 .filter__input {
     font-size: 0.875em;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
     height: 40px;
     background: transparent;
     outline: none;

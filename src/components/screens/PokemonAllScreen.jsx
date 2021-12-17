@@ -8,6 +8,7 @@ import PaginaMoverNav from '../presentational/PokemonAllScreen/PaginaMoverNav';
 import "../../styles/components/PokemonAllScreen.css";
 import Nav from '../nav/nav_principal';
 
+
 export const PokemonAllScreen = () => {
     const [offset, setOffset] = useState(1);
     const [filtro, setFiltro] = useState("");
@@ -34,6 +35,7 @@ export const PokemonAllScreen = () => {
             <div className="PokemonAllScreen">
                 {agregarPokemon === false &&
                     <>
+
                         <NavPokemonAll offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} setFiltro={setFiltro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} setAgregarPokemon={setAgregarPokemon} />
                         <ContenedorPokemons offset={offset} limit={limit} pokemonAll={pokemonAll} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} setCantMaximaPokemon={setCantMaximaPokemon} />
                         <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} />

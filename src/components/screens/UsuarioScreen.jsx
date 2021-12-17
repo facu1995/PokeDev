@@ -10,6 +10,8 @@ import userData from "../usuario/mocks/usuarios_mocks";
 import "../../styles/components/UsuarioScreen.css";
 import EditUserFromix from "../presentational/UsuarioScreen/EditUserFromix"
 
+import pokeball from '../../components/img/PokeImgs/PokeBall.png'
+
 export const UsuarioScreen = () => {
 
     const { id } = useParams();
@@ -42,6 +44,7 @@ export const UsuarioScreen = () => {
                 <div className='flex-centerAll'>
                     <Link to={"/users/"}><button className="btn">BACK</button></Link>
                     <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button>
+                    <img src={pokeball} alt="pokeBall" className='pokeBallBg UsuarioScreen__pokeball' />
                 </div>
             </>}
             {editarUsuario === true && <>

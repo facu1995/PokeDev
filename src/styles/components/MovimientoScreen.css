@@ -1,5 +1,4 @@
 .MovimientoScreen{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,12 +11,24 @@
 
 .MovimientoScreen__ul{
     margin: 40px 0;
-    width: 500px;
+    max-width: 500px;
     border:1px solid var(--gc);
     padding:20px;
+
 }
 .MovimientoScreen__ul__ul{
     display: flex;
     justify-content: space-between;
 }
 
+.MovimientoScreen_flexRight{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 500px){
+    .MovimientoScreen_flexRight{
+        display: flex;
+        text-align: right;
+    }
+}

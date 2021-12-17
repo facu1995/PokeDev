@@ -22,6 +22,10 @@
     justify-content: center;
 }
 
+.UsuarioScreen__pokeball{
+    top: 20%;
+}
+
 @media (max-width: 950px) {
     .UsuarioScreen {
         width: 90%;

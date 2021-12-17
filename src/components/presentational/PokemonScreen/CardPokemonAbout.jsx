@@ -13,10 +13,10 @@ export const CardPokemonAbout = () => {
 
   return (
     <div className="CardPokemonAbout">
-      <div className="CardPokemonAbout__contenedor1">
-        <div className="CardPokemonAbout__contenedor2">
-          <div className="CardPokemonAbout__CardPokemon">
-            <img className="CardPokemonAbout__CardPokemon__img" src={imgSrc} alt="imagen" />
+      <div className="contenedor1">
+        <div className="contenedor2">
+          <div className="CardPokemon">
+            <img className="CardPokemon__img" src={imgSrc} alt="imagen" />
             <h5 className="CardPokemonAbout__GOLD">HI THERE! I'M </h5>
             <h3 className="CardPokemonAbout__CardPokemon__name animate__animated animate__fadeIn">
               <span className="CardPokemonAbout__MyPokemonScreenHeader__blink">[</span> {pokemon.name}{" "}

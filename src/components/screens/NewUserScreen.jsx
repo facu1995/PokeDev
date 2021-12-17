@@ -35,10 +35,10 @@ export const NewUserScreen = () => {
                                 <Field className="input input-big" name="email" placeholder="E-mail" />
                                 {errorHandle(errors).email()}
 
-                                <Field className="input input-big" name="pass" placeholder="Password" />
+                                <Field type="password" className="input input-big" name="pass" placeholder="Password" />
                                 {errorHandle(errors).pass()}
 
-                                <Field className="input input-big" name="rePass" placeholder="Rewrite your Password" />
+                                <Field type="password" className="input input-big" name="rePass" placeholder="Rewrite your Pass" />
                                 {errorHandle(errors).rePass()}
 
                                 <button className='btn' type="submit">Create New User</button>

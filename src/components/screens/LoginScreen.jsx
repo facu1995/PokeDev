@@ -39,7 +39,7 @@ export const LoginScreen = () => {
                             <Field className="input input-big" name="email" placeholder="E-mail" />
                             {errorHandle(errors).email()}
 
-                            <Field className="input input-big" name="pass" placeholder="Password" />
+                            <Field type="password"  className="input input-big" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
 
                             <button className='btn LoginScreen__btndiv' type="submit">Login</button>

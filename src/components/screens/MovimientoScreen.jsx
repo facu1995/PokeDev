@@ -10,6 +10,8 @@ import Spinner from '../img/spinner5.gif';
 import "../../styles/components/MovimientoScreen.css";
 import Nav from '../nav/nav_principal';
 
+import pokeball from '../../components/img/PokeImgs/PokeBall.png'
+
 export const MovimientoScreen = () => {
     const { id } = useParams();
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });
@@ -49,29 +51,30 @@ export const MovimientoScreen = () => {
     const spinnerOff = () => {
         return (
             <div className="MovimientoScreen">
+                <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
                 <ul className="MovimientoScreen__ul">
                     <ul className="MovimientoScreen__ul__ul">
                         <li className="MovimientoScreen__li flex-align-center">ID:</li>
-                        <li className="MovimientoScreen__li flex-centerAll" >{move.id}</li>
+                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.id}</li>
                     </ul>
                     <ul className="MovimientoScreen__ul__ul">
                         <li className="MovimientoScreen__li flex-align-center">Name:</li>
-                        <li className="MovimientoScreen__li flex-centerAll" >{move.name}</li>
+                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.name}</li>
                     </ul>
                     <ul className="MovimientoScreen__ul__ul">
                         <li className="MovimientoScreen__li flex-align-center">TYPE-NAME:</li>
-                        <li className="MovimientoScreen__li flex-centerAll" ><i>{move.type.name}</i>
+                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" ><i>{move.type.name}</i>
                         </li>
                     </ul>
                     <ul className="MovimientoScreen__ul__ul">
                         <li className="MovimientoScreen__li flex-align-center">TYPE:</li>
-                        <li className="MovimientoScreen__li flex-centerAll" >
+                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >
                             <i className={obtenerClassType(move.type.name)}></i>
                         </li>
                     </ul>
                     <ul className="MovimientoScreen__ul__ul">
                         <li className="MovimientoScreen__li flex-align-center">POWER:</li>
-                        <li className="MovimientoScreen__li flex-centerAll" >{move.power}</li>
+                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.power}</li>
                     </ul>
                 </ul>
                 <div>

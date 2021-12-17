@@ -15,13 +15,14 @@ const StatsPokemon = () => {
     const greaterStat = () => {
         let may = 0;
         pokemon.stats.forEach(stat => {
-            if (may > stat.base_stat) {
+            if (may < stat.base_stat) {
                 may = stat.base_stat
             }
-            console.log(stat.base_stat)
         });
+        return may
     }
         
+
      let statBar = pokemon.stats.map((stat)=>
          <div className='StatsPokemon__statBar' style={{width: `${stat.base_stat * 100 / greaterStat()}%`}}>{greaterStat()}</div> 
      )
