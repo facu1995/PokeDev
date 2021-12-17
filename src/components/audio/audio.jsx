@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Intro from "./intro.mp3";
 import { Howl, Howler } from "howler";
 
-
+import "../../styles/components/Audio.css";
 const Audio = () => {
-    const sound = new Howl({
+    const [music, setMusic] = useState(0);
+    let sound = new Howl({
         src: Intro,
-        loop: true,
+        autoplay: false
     });
+    const prender = () => {
+        if (music === 0) {
+            sound.play();
+            setMusic(1);
+        }
+    }
+
     Howler.volume(0.6);
+    const apagar = () => {
+        sound.stop();
+    }
+
     return (
         <>
-            <button onClick={() => sound.play()} >Play</button>
-            <button onClick={() => sound.pause()} >Pause</button>
-            <button onClick={() => sound.stop()} >Stop</button>
-        </>
 
+            {music === 0 && <button className=" on" onClick={() => { prender() }}><i className="fas fa-music"></i></button>}
+            <button className="btn-music off" onClick={() => apagar()}><i className="fas fa-music"></i></button>
+        </>
     )
 }
 

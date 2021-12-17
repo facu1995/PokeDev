@@ -1,0 +1,17 @@
+.btn-music {
+    background: none;
+    border: none;
+    font-size: 25px;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+
+.on {
+    color: var(--grc);
+
+}
+
+.off {
+    color: var(--rc);
+}
