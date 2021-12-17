@@ -1,0 +1,8 @@
+.PaginaMoverNav{
+    margin: auto;
+    text-align: center;
+}
+
+.PaginaMoverNav>h4{
+    margin: 1rem;
+}

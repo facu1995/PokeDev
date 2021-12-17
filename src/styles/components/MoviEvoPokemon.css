@@ -26,9 +26,9 @@
 .MoviEvoPokemon__Movimientos__bar{
     align-items: center;
     background-color: var(--dc);
-    height: 2rem;
+    height: 3rem;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 4fr 2fr 1fr;
     padding: 0 1rem;
     border-radius: 5px 5px 0 0;
 }
@@ -48,6 +48,6 @@
 
 .MoviEvoPokemon__Movimientos__barBottom{
     background-color: var(--dc);
-    height: 2rem;
+    height: 3rem;
     border-radius: 0 0 5px 5px;
 }

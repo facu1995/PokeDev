@@ -68,7 +68,8 @@ p {
 .sign {
     font-family: 'Smooch', cursive;
     font-size: 3rem;
-    margin: 2rem;
+    margin: 3rem 20% 0 0;
+    text-align: right;
 }
 
 .flex {
@@ -114,7 +115,14 @@ p {
     padding: 1rem;
     background-color: var(--dgbg);
     font-size: 20px;
+    margin: auto;
 }
+
+.input-big{
+    max-width: 400px;
+    width: 80%;
+}
+
 .width-100{
     width: 100%;
 }
@@ -164,4 +172,11 @@ p {
     width:100%;
     height:100%;
     z-index: 20;
+}
+
+.pokeBallBg{
+    position: absolute;
+    filter: opacity(0.1);
+    height: 70%;
+    z-index: -100;
 }

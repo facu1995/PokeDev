@@ -21,3 +21,11 @@
 .CardPokemonEvoluciones__info>h3{
     margin: 1rem 0;
 }
+
+@media (max-width: 600px) {
+    .CardPokemonEvoluciones{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

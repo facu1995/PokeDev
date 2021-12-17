@@ -1,8 +1,8 @@
 .StatsPokemon__stats{
     display: flex;
-    width: 500px;
+    max-width: 700px;
     justify-content: space-between;
-    margin: 4rem 0;
+    margin: 4rem auto;
 }
 
 .StatsPokemon__stats>ul>li{
@@ -16,13 +16,14 @@
 .StatsPokemon__stats_right>li{
     color: var(--gbg);
     font-weight: 600;
+    text-align: right;
 }
 
 .StatsPokemon__statBar{
     height: 20px;
-    width: 20%;
-    background-color: red;
+    background-color: var(--dc);
     margin: 16px;
+    
 }
 
 .StatsPokemon__stats_center{

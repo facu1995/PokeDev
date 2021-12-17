@@ -1,0 +1,20 @@
+.Error504{
+    margin-top: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.Error504>div{
+    text-align: center;
+}
+
+.Error504>div>h1{
+    margin: 10px;
+}
+
+.Error504__aqui:hover{
+    transition: 0.2s;
+    color: red;
+    transform: scale(1.2);
+}

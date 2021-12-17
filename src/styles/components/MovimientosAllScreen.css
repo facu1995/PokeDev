@@ -6,12 +6,14 @@
 }
 .MovimientosAllScreen__btn{
     margin: 20px 0;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
     height: 40px;
 }
 .MovimientosAllScreen__input {
     font-size: 0.875em;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
     height: 40px;
     background: transparent;
     outline: none;

@@ -48,11 +48,11 @@ const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
                     <div className="MoviEvoPokemon__Movimientos">
                         {agregarMoves === false && <>
                             <ul className='MoviEvoPokemon__Movimientos__bar'>
-                                <li>LEVEL</li>
-                                <li>MOVE NAME</li>
+                                <li>LvL </li>
+                                <li> &nbsp; &nbsp;NAME</li>
                                 <li>TYPE</li>
                                 <li>POWER</li>
-                                <li>Eliminar</li>
+
                             </ul>
                             <div className='MoviEvoPokemon__Movimientos__list'>
                                 <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder} />

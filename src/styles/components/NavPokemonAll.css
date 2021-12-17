@@ -7,7 +7,8 @@
 
 .NavPokemonAll__input {
     font-size: 0.875em;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
     height: 40px;
     background: transparent;
     outline: none;
@@ -19,9 +20,10 @@
 
 .NavPokemonAll__input:hover {
     border: solid 2px var(--white);
+
 }
 .NavPokemonAll__btn{
     margin: 20px 0;
-    width: 400px;
-    height: 40px;
+    max-width: 400px;
+    width: 80%;
 }

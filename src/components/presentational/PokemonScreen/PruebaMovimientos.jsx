@@ -22,7 +22,7 @@ const PruebaMovimientos = ({ setPokemon }) => {
                     <li>MOVE NAME</li>
                     <li>TYPE</li>
                     <li>POWER</li>
-                    <li>Eliminar</li>
+
                 </ul>
                 <div className='MovimientosAllScreen__list'>
                     <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder}/>

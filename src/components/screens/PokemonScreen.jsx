@@ -35,6 +35,9 @@ export const PokemonScreen = () => {
     useEffect(() => {
         let evolucionesNameArray = [];
         let descriptionArray = [];
+
+        window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
+
         async function obtenerIdEvolutionPokemon() {
             let i = 0;
             let evolucionesIdArray = [];

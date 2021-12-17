@@ -7,8 +7,8 @@ import Schema from '../form/login/form_validation/schema_validation/login_schema
 import errorHandle from '../form/login/form_validation/error_validation/login_errors';
 import { useNavigate } from 'react-router-dom';
 //audio
-import Audio from '../audio/audio';
-
+// import Audio from '../audio/audio';
+import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
 export const LoginScreen = () => {
 
@@ -16,7 +16,7 @@ export const LoginScreen = () => {
     const navigate = useNavigate();
 
     const fnValidationForm = (v) => {
-        alert(JSON.stringify(v));
+        alert('Bienvenido a PokeDev!');
         navigate('/home');
     }
 
@@ -25,18 +25,20 @@ export const LoginScreen = () => {
     return (
 
         <div className='LoginScreen'>
+            
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
                 onSubmit={fnValidationForm}>
                 {({ errors }) => {
                     return (
+                        
                         <Form className='LoginScreen__form'>
-                            <h3>LOGIN</h3>
-                            <Field className="input" name="email" placeholder="E-mail" />
+                            <h3>WELCOME TO <br/><br/> POKE DEV!</h3>
+                            <Field className="input input-big" name="email" placeholder="E-mail" />
                             {errorHandle(errors).email()}
 
-                            <Field className="input" name="pass" placeholder="Password" />
+                            <Field className="input input-big" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
 
                             <button className='btn LoginScreen__btndiv' type="submit">Login</button>
@@ -44,7 +46,8 @@ export const LoginScreen = () => {
                         </Form>)
                 }}
             </Formik>
-            <Audio />
+            <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
+            {/* <Audio /> */}
         </div>
     )
 }

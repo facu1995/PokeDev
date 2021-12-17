@@ -7,7 +7,8 @@ import Schema from '../form/newUser/form_validation/schema_validation/newUser_sc
 import errorHandle from '../form/newUser/form_validation/error_validation/newUser_errors';
 import { useNavigate } from 'react-router-dom';
 //audio
-import Audio from '../audio/audio';
+// import Audio from '../audio/audio';
+import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
 export const NewUserScreen = () => {
 
@@ -19,7 +20,7 @@ export const NewUserScreen = () => {
         navigate('/home');
     }
 
-    const goBack = () => navigate('/login')
+    const goBack = () => navigate('/')
 
     return (
         <div className='NewUserScreen'>
@@ -30,14 +31,14 @@ export const NewUserScreen = () => {
                 {({ errors }) => {
                     return (
                         <Form className='NewUserScreen__form'>
-                                <h3>CREATE NEW USER</h3>
-                                <Field className="input" name="email" placeholder="E-mail" />
+                                <h3>CREATE <br/> <br/> NEW USER</h3>
+                                <Field className="input input-big" name="email" placeholder="E-mail" />
                                 {errorHandle(errors).email()}
 
-                                <Field className="input" name="pass" placeholder="Password" />
+                                <Field className="input input-big" name="pass" placeholder="Password" />
                                 {errorHandle(errors).pass()}
 
-                                <Field className="input" name="rePass" placeholder="Rewrite your Password" />
+                                <Field className="input input-big" name="rePass" placeholder="Rewrite your Password" />
                                 {errorHandle(errors).rePass()}
 
                                 <button className='btn' type="submit">Create New User</button>
@@ -45,7 +46,8 @@ export const NewUserScreen = () => {
                         </Form>)
                 }}
             </Formik>
-            <Audio/>
+            <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
+            {/* <Audio/> */}
         </div>
     )
 }

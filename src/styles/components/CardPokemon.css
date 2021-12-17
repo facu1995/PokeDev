@@ -12,19 +12,22 @@
     align-items: center;
     margin: 0 -10px;
     height: 500px;
-    width: 370px;
+    max-width: 370px;
+    width: 80vw;
     border: 1px solid var(--gc);
 }
 .contenedor2{
     position: absolute;
     height: 470px;
-    width: 400px;
+    width: 87vw;
+    max-width: 400px;
     border: 1px solid var(--gc);
 }
 
 .CardPokemon__img{
     height:300px;
-    width:300px;
+    width: 90%;
+    max-width:300px;
     margin: 0 0 10px
 }
 

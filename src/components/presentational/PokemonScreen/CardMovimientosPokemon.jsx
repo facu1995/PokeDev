@@ -26,7 +26,7 @@ function CardMovimientosPokemon({ pokeMove,local=0, EliminarPoder }) {
                 <i className={obtenerClassType(move.type.name)}></i>
             </div>
             <div className="flex-align-center">{move.power}</div>
-            <button className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i className="fas fa-trash-alt"></i></button>
+            {/* <button className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i className="fas fa-trash-alt"></i></button> */}
         </div>
     );
 }
