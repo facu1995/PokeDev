@@ -15,4 +15,5 @@
 @import './components/MovimientosAllScreen.css';
 @import './components/LoginScreen.css';
 @import './components/NewUserScreen.css';
-@import './/components/Error504.css'
+@import './components/Error504.css';
+@import './components/Footer.css'

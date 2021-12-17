@@ -10,6 +10,7 @@ import { LoginScreen } from './components/screens/LoginScreen';
 import { NewUserScreen } from './components/screens/NewUserScreen';
 import {UsuariosAllScreen} from './components/screens/UsuariosAllScreen';
 import {UsuarioScreen} from './components/screens/UsuarioScreen';
+import { Footer } from './components/footer/Footer';
 /* import Audio from "./components/audio/audio"; */
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<Error504 />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
