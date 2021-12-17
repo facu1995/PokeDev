@@ -1,6 +1,6 @@
 const TAGS_VALIDATITION_FROM={
-    ID:{
-        IS_REQUIRED:"El id es obligatorio",
+    DESCRIPTION:{
+        IS_REQUIRED:"El descripcion es obligatorio",
     },
     NAME:{
         IS_REQUIRED:"El nombre es obligatorio"

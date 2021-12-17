@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //styles
 import "../../../styles/components/CardMovimientos.css";
 
-function CardMovimiento({ pokeMove, setmovesAll }) {
+function CardMovimiento({ pokeMove }) {
     let id = 1;
     let arrayURL = pokeMove.url.split('/');
     if (arrayURL[6]) {

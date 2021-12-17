@@ -48,7 +48,7 @@ const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
                     <div className="MoviEvoPokemon__Movimientos">
                         {agregarMoves === false && <>
                             <ul className='MoviEvoPokemon__Movimientos__bar'>
-                                <li>LEVEL</li>
+                                <li>ID</li>
                                 <li>MOVE NAME</li>
                                 <li>TYPE</li>
                                 <li>POWER</li>
@@ -58,7 +58,7 @@ const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
                                 <MostrarMovimientoPokemon movesAll={pokemon.moves} EliminarPoder={EliminarPoder} />
                             </div>
                             <div className='MoviEvoPokemon__Movimientos__barBottom'></div>
-                            <button className='btn btn-form' onClick={()=>setAgregarMoves(true)} >Agregar Movimientos</button>
+                            {/* <button className='btn btn-form' onClick={()=>setAgregarMoves(true)} >Agregar Movimientos</button> */}
                         </>}
                         {agregarMoves === true && <><AddMoveForm setPokemon={setPokemon} />
                         <button className="btn btn-form" type="submit" onClick={() =>{setAgregarMoves(false)}}>Atras</button></>}

@@ -11,7 +11,7 @@ import Audio from '../audio/audio';
 
 export const NewUserScreen = () => {
 
-    let initialValue = { email: "", pass: ""};
+    let initialValue = { email: "", pass: "",rePass:""};
     const navigate = useNavigate();
 
     const fnValidationForm = (v) => { 
@@ -19,7 +19,7 @@ export const NewUserScreen = () => {
         navigate('/home');
     }
 
-    const goBack = () => navigate('/login')
+    const goBack = () => navigate('/')
 
     return (
         <div className='NewUserScreen'>
