@@ -1,3 +1,4 @@
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 //styles
 import "../../styles/components/nav_principal.css";
@@ -8,24 +9,22 @@ import "../../styles/components/nav_principal.css";
 
 
 function Nav() {
-    // const sound = new Howl({
-    //     src: Intro,
-    //     loop: true,
-    // });
-    // Howler.volume(0.6);
 
-    // const [music, setMusic] = useState(true)
+    const [active, setActive] = useState(false)
+    function showLinks() {
+        if (active) {
+            setActive(false);
+        }
+        else {
+            setActive(true);
+        }
+    }
 
-    // const playMusic = () => {
-    //     music ? sound.play() : sound.stop() ;
-    //     music ? setMusic(false) : setMusic(true)
-    //     console.log(music)
-    // }
-
-    return(
+    return (
         <nav className="nav_principal">
-        <div className="nav_principal__icono"></div>
-            <ul className="nav_principal__ul">
+            <div className="nav_principal__icono"></div>
+            <button onClick={showLinks} className="btn-hamburger"><i id="hamburger" className={active === false ? 'fas fa-bars' : 'fas fa-times'}></i></button>
+            <ul id="nav-links" className={active === false ? 'nav_principal__list' : 'nav_principal__list active'} >
                 <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">Pokemones</Link></li>
                 <li className="nav_principal__li"><Link to="/moves" className="nav_principal__a">Moves</Link></li>
                 <li className="nav_principal__li"><Link to="/users" className="nav_principal__a">Users</Link></li>

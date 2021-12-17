@@ -1,32 +1,33 @@
-.nav_principal{
-    padding:10px 0;
+.nav_principal {
+    padding: 10px 0;
     display: flex;
     justify-content: space-around;
-    box-shadow: 0px 24px 24px -20px rgba(0,0,0,0.57);
+    box-shadow: 0px 24px 24px -20px rgba(0, 0, 0, 0.57);
     margin: 0 0 10px 0;
 }
 
 
-.nav_principal__ul{
+.nav_principal__ul {
     padding: 5px 0;
     display: flex;
     align-items: center;
 }
 
-.nav_principal__li{
+.nav_principal__li {
     font-size: 18px;
-    
+
 }
 
-.nav_principal__a{
+.nav_principal__a {
     text-decoration: none;
-    padding:10px 20px;
+    padding: 10px 20px;
 }
-.nav_principal__a:hover{
+
+.nav_principal__a:hover {
     color: var(--white)
 }
 
-.nav_principal__icono{
+.nav_principal__icono {
     background-image: url(../../components/img/pokeball.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -35,23 +36,70 @@
     width: 50px;
 }
 
-
-.nav_principal__btn-music{
-    background: none;
-    border: none;
-    font-size: 25px;
+.nav_principal__list {
+    display: flex;
+    align-items: center;
 }
-.nav_principal{ 
+
+
+.nav_principal {
     background-color: var(--dgbg);
 }
 
-@media (max-width: 550px){
-    .nav_principal{
+.btn-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.nav_principal_superior {
+    display: none;
+    background: none;
+}
+
+@media screen and (max-width: 850px) {
+    .nav_principal {
         display: flex;
-        justify-content: center;
         position: sticky;
         top: 0;
         z-index: 200;
     }
 
+    .nav_principal_superior {
+        display: block;
+    }
+
+    .btn-hamburger {
+        display: block;
+    }
+
+    .nav_principal__list {
+        display: none;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: rgba(35, 37, 49, .9);
+        text-align: center;
+    }
+    .nav_principal__li{
+        border-bottom:1px solid var(--gc);
+        width: 100%;
+
+    }
+    .nav_principal__a {
+        display: block;
+        padding: 15px 0;
+
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.btn-hamburger i {
+    font-size: 35px;
 }
