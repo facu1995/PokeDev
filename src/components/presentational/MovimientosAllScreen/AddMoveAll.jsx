@@ -7,7 +7,7 @@ import Schema from "../../form/move/form_validation/schema_validation/move_schem
 import errorHandle from "../../form/move/form_validation/error_validation/move_errors";
 //pokemon
 
-export default function AddMoveAll({ setmovesAll,movesAll }) {
+export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
     let initialValue = { id: 0, name: "", type: "", power: 0 };
 
     const fnValidationForm = (v) => { 
@@ -17,6 +17,7 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
             {id:id,name:name,type:type,power:power,url:"https://pokeapi.co/api/v2/move/"+id},
             ...movesAll
         ]);
+        setAgregarMoves(false);
     }
     return (
         <div className="AddMoveAll">
@@ -31,10 +32,6 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                     return (
                         <Form>
                             <section>
-                                <Field name="id" className="input width-100" placeholder="id" />
-                                {errorHandle(errors).id()}
-                            </section>
-                            <section>
                                 <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
                             </section>
@@ -45,6 +42,10 @@ export default function AddMoveAll({ setmovesAll,movesAll }) {
                             <section>
                                 <Field name="power" className="input width-100" placeholder="power" />
                                 {errorHandle(errors).power()}
+                            </section>
+                            <section>
+                                <Field name="description" className="input width-100" placeholder="description" />
+                                {errorHandle(errors).description()}
                             </section>
                             <section>
                             <br/>

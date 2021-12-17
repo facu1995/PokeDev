@@ -1,7 +1,7 @@
 export default function errorHandle(errors){
     return {
-        id(){
-            return errors.id && (<div>{errors.id}</div>)
+        description(){
+            return errors.description && (<div>{errors.description}</div>)
         },
         
         name(){

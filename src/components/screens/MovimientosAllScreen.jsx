@@ -46,15 +46,15 @@ export const MovimientosAllScreen = () => {
             {agregarMoves === false &&
                 <>
                     <div className="MovimientosAllScreen__filter">
-                        <button className='btn MovimientosAllScreen__btn' onClick={() => setAgregarMoves(true)} >Agregar Movimientos</button>
-                        <input className="MovimientosAllScreen__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
+                        <button className='btn btn-add' onClick={() => setAgregarMoves(true)} >Agregar Movimientos</button>
+                        <input className="filter__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach Move" />
                     </div>
                     {spinner === true && spinnerOn()}
                     {spinner === false && <MostrarMovimientos movesAll={movesAll} filtro={filtro} />}
                 </>}
             {agregarMoves === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
-                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll} />
+                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll}  />
                     <button className="btn btn-form" type="submit" onClick={() => { setAgregarMoves(false) }}>Atras</button>
                 </div>
             </>}

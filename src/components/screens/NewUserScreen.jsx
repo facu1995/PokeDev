@@ -12,7 +12,7 @@ import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
 export const NewUserScreen = () => {
 
-    let initialValue = { email: "", pass: ""};
+    let initialValue = { email: "", pass: "",rePass:""};
     const navigate = useNavigate();
 
     const fnValidationForm = (v) => { 

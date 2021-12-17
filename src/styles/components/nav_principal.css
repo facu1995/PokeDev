@@ -1,3 +1,12 @@
+.nav_principal{
+    padding:10px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 24px 24px -20px rgba(0,0,0,0.57);
+    margin: 0 0 10px 0;
+}
+
+
 .nav_principal__ul{
     padding: 5px 0;
     display: flex;
@@ -6,12 +15,26 @@
 
 .nav_principal__li{
     font-size: 18px;
-    padding:10px 20px;
+    
 }
 
 .nav_principal__a{
     text-decoration: none;
+    padding:10px 20px;
 }
+.nav_principal__a:hover{
+    color: var(--white)
+}
+
+.nav_principal__icono{
+    background-image: url(../../components/img/pokeball.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 50px;
+    width: 50px;
+}
+
 
 .nav_principal__btn-music{
     background: none;

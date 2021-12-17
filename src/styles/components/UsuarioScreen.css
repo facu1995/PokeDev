@@ -1,0 +1,32 @@
+.UsuarioScreen {
+    width: 60%;
+    margin: 40px auto;
+}
+
+.UsuarioScreen__Card {
+    padding: 20px 0;
+    border: 1px solid var(--gc);
+    margin: 0 0 40px 0;
+}
+
+.UsuarioScreen__list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.UsuarioScreen__dato {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 950px) {
+    .UsuarioScreen {
+        width: 90%;
+    }
+    .UsuarioScreen__dato {
+        height: 60px;
+    }
+}

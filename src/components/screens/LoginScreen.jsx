@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 // import Audio from '../audio/audio';
 import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
+
 export const LoginScreen = () => {
 
     let initialValue = { email: "", pass: "" };
@@ -46,8 +47,10 @@ export const LoginScreen = () => {
                         </Form>)
                 }}
             </Formik>
+
             <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
             {/* <Audio /> */}
+
         </div>
     )
 }
