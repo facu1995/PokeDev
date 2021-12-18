@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
 //Schema
@@ -8,15 +9,19 @@ import errorHandle from '../../form/addUser/form_validation/error_validation/add
 //style
 import "../../../styles/components/AddUserFromix.css";
 
-export const AddUserFromix = ({ setUserAll, userAll,setAgregarUsuario }) => {
+export const AddUserFromix = ({ setUserAll, userAll, setAgregarUsuario }) => {
 
-    let initialValue = { email: "", pass: "" };
+    let initialValue = { name:"",email: "", pass: "" };
 
     const fnValidationForm = (v) => {
         setUserAll([
             ...userAll, v
         ])
-        console.log(v);
+        axios.post('http://localhost:4000/add/user', v)
+            .then(function (response) {
+            })
+            .catch(function (error) {
+            });
         setAgregarUsuario(false);
     }
 
@@ -36,9 +41,9 @@ export const AddUserFromix = ({ setUserAll, userAll,setAgregarUsuario }) => {
                             {errorHandle(errors).name()}
                             <Field className="input width-100" name="email" placeholder="E-mail" />
                             {errorHandle(errors).email()}
-                            <Field className="input width-100" name="pass" placeholder="Password" />
+                            <Field className="input width-100" type="password" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
-                            <br/>
+                            <br />
                             <button className='btn btn-form' type="submit">Create New User</button>
                         </Form>
                     )
