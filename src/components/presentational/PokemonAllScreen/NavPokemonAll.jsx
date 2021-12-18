@@ -17,8 +17,8 @@ function NavPokemonAll({ offset, limit, setOffset, filtro, setFiltro, cantMaxima
         <button className='btn NavPokemonAll__btn' onClick={() => setAgregarPokemon(true)} >Agregar Pokemon</button>
             <input className="NavPokemonAll__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Buscar Pokemon" />
 ======= */}
-        <button className='btn btn-add' onClick={() => setAgregarPokemon(true)} >Agregar Pokemon</button>
-            <input className="filter__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Buscar Pokemon" />
+        <button className='btn btn-add' onClick={() => setAgregarPokemon(true)} >Add Pokemon</button>
+            <input className="filter__input" type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Search Pokemon" />
 
             {/* <PaginaMoverNav offset={offset} limit={limit} setOffset={setOffset} filtro={filtro} cantMaximaPokemon={cantMaximaPokemon} cantPokemonFetch={cantPokemonFetch} page={page} setPage={setPage} /> */}
         </div>

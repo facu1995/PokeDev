@@ -42,8 +42,8 @@ export const UsuariosAllScreen = ({ users }) => {
             {agregarUsuario === false &&
                 <>
                     <div className="MovimientosAllScreen__filter">
-                        <button className='btn btn-add' onClick={() => setAgregarUsuario(true)} >Agregar Usuario</button>
-                        <input className="filter__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Seach User" />
+                        <button className='btn btn-add' onClick={() => setAgregarUsuario(true)} >Add User</button>
+                        <input className="filter__input " type="text" value={filtro} onChange={handleChange} name="filtro" placeholder="Search User" />
                     </div>
                     {spinner === true && spinnerOn()}
                     {spinner === false && <MostrarUsers userAll={userAll} filtro={filtro} />}
@@ -51,7 +51,7 @@ export const UsuariosAllScreen = ({ users }) => {
             {agregarUsuario === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
                     <AddUserFromix setUserAll={setUserAll} userAll={userAll} setAgregarUsuario={setAgregarUsuario} />
-                    <button className="btn btn-form" type="submit" onClick={() => { setAgregarUsuario(false) }}>Atras</button>
+                    <button className="btn btn-form" type="submit" onClick={() => { setAgregarUsuario(false) }}>Back</button>
                 </div>
             </>}
         </div>

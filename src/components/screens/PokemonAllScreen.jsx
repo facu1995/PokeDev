@@ -44,7 +44,7 @@ export const PokemonAllScreen = () => {
                 {agregarPokemon === true &&
                     <>
                         <AddPokemonAll pokemonAll={pokemonAll} setPokemonAll={setPokemonAll} />
-                        <button className="btn btn-form" type="submit" onClick={() => { setAgregarPokemon(false) }}>Atras</button>
+                        <button className="btn btn-form" type="submit" onClick={() => { setAgregarPokemon(false) }}>Back</button>
                     </>
                 }
             </div>

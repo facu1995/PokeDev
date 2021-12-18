@@ -1,7 +1,7 @@
 const userData = [
-    { "email": "foo@foo.com", "name": "foo", "pass": "foo123" },
-    { "email": "bar@bar.com", "name": "bar", "pass": "bar123" },
-    { "email": "qux@qux.com", "name": "qux", "pass": "qux123" },
+    { "email": "foo@foo.com", "name": "Ash", "pass": "foo123" },
+    { "email": "bar@bar.com", "name": "Misty", "pass": "bar123" },
+    { "email": "qux@qux.com", "name": "Brock", "pass": "qux123" },
 ];
 
 export default userData;

@@ -10,7 +10,7 @@ const AboutPokemon = ({species} ) => {
 
             <CardPokemonAbout />
             <div className='AboutPokemon__flex' >    
-                <h5 className='GOLD'>INTRODUCTION</h5>
+                {/* <h5 className='GOLD'>INTRODUCTION</h5> */}
                 <h2>About Me</h2>
                 <hr className='AboutPokemon__hr'/>
                 <p>{species.flavor_text_entries[0].flavor_text}</p>

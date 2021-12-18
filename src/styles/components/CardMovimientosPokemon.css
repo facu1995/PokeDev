@@ -1,7 +1,8 @@
 .CardMovimientosPokemon__movimientos{
     display: grid;
     grid-template-columns: 1fr 4fr 2fr 1fr;
-    padding: 0 1rem;
+    padding: 3px 0 3px 1rem;
+    border-bottom:1px solid var(--gc);
 }
 
 .CardMovimientosPokemon__btn{

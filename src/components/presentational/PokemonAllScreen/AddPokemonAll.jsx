@@ -16,7 +16,7 @@ export default function AddPokemonAll() {
     }
     return (
         <div>
-            <h3>Agregar Pokemon</h3>
+            <h3>Add Pokemon</h3>
             <br/>
             <br/>
             <Formik
@@ -44,7 +44,7 @@ export default function AddPokemonAll() {
                             </section>
                             <section>
                             <br/>
-                                <button type="submit" className="btn btn-form">Agregar Pokemon</button>
+                                <button type="submit" className="btn btn-form">Add Pokemon</button>
                             </section>
                         </Form>)
                 }}

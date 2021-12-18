@@ -48,10 +48,10 @@ const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
                     <div className="MoviEvoPokemon__Movimientos">
                         {agregarMoves === false && <>
                             <ul className='MoviEvoPokemon__Movimientos__bar'>
-                                <li>ID </li>
-                                <li> &nbsp; &nbsp;NAME</li>
-                                <li>TYPE</li>
-                                <li>POWER</li>
+                                <li className='flex-centerAll'>ID </li>
+                                <li className='flex-centerAll'> &nbsp; &nbsp;NAME</li>
+                                <li className='flex-centerAll'>TYPE</li>
+                                <li className='flex-centerAll'>POWER</li>
 
                             </ul>
                             <div className='MoviEvoPokemon__Movimientos__list'>
