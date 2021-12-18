@@ -8,7 +8,7 @@ export const MostrarMovimientos = ({ movesAll, filtro }) => {
 
     useEffect(() => {
         setMovesActuales([
-            ...movesAll.filter(el => el.name.includes(filtro))
+            ...movesAll.filter(el => el.name.toUpperCase().includes(filtro.toUpperCase()))
         ]);
     }, [filtro, movesAll]);
     return (
