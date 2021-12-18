@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-    gap: 1rem;
+    gap: 1rem 0;
     text-align: center;
 
 }
@@ -28,3 +28,7 @@
     height: 45px;
 }
 
+.NewUserScreen__form>input{
+    width: 100%;
+    max-width: 400px;
+}

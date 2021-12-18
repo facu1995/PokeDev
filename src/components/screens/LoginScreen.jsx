@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 // import Audio from '../audio/audio';
 import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
-import NavBurger from "../nav/nav_prueba/nav";
+// import NavBurger from "../nav/nav_prueba/nav";
 
 export const LoginScreen = () => {
 
@@ -27,7 +27,7 @@ export const LoginScreen = () => {
     return (
         
         <div className='LoginScreen'>
-            <NavBurger/>
+            {/* <NavBurger/> */}
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
