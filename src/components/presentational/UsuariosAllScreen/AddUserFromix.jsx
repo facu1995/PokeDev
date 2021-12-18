@@ -32,11 +32,11 @@ export const AddUserFromix = ({ setUserAll, userAll,setAgregarUsuario }) => {
                             <h3>CREATE NEW USER</h3>
                             <br />
                             <br />
-                            <Field className="input" name="name" placeholder="Name" />
+                            <Field className="input width-100" name="name" placeholder="Name" />
                             {errorHandle(errors).name()}
-                            <Field className="input" name="email" placeholder="E-mail" />
+                            <Field className="input width-100" name="email" placeholder="E-mail" />
                             {errorHandle(errors).email()}
-                            <Field className="input" name="pass" placeholder="Password" />
+                            <Field className="input width-100" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
                             <br/>
                             <button className='btn btn-form' type="submit">Create New User</button>
