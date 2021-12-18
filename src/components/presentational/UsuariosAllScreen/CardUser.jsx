@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 /* import { obtenerClassType } from "../visualData/Types"; */
 //styles
 import "../../../styles/components/CardUsers.css";
-import foto from "./e1.png"
 
 function CardUser({ user, id }) {
     const idx=id+1
-    let img="UsuariosAllScreen__img UsuariosAllScreen__img"+idx;
+ /*    let img="UsuariosAllScreen__img UsuariosAllScreen__img"+idx; */
     return (
         <Link className="text-decore-none" to={"/users/" + id}>
             <div className="UsuariosAllScreen__card">
