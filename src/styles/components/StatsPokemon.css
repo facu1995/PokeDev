@@ -13,6 +13,9 @@
     font-weight: 600;
 }
 
+.StatsPokemon__stats_right{
+    min-width: 50px;
+}
 .StatsPokemon__stats_right>li{
     color: var(--gbg);
     font-weight: 600;
@@ -27,7 +30,7 @@
 }
 
 .StatsPokemon__stats_center{
-    width: 100px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;

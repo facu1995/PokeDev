@@ -20,12 +20,12 @@ function CardMovimientosPokemon({ pokeMove,local=0, EliminarPoder }) {
     }, [pokeMove, pokeMove.move.url])
     return (
         <div className='CardMovimientosPokemon__movimientos'>
-            <div className="flex-align-center">{move.id}</div>
-            <div className="flex-align-center">{move.name}</div>
-            <div className="flex-align-center">
+            <div className="flex-centerAll">{move.id}</div>
+            <div className="flex-centerAll">{move.name}</div>
+            <div className="flex-centerAll">
                 <i className={obtenerClassType(move.type.name)}></i>
             </div>
-            <div className="flex-align-center">{move.power}</div>
+            <div className="flex-centerAll">{move.power}</div>
             {/* <button className="flex-centerAll CardMovimientosPokemon__btn" onClick={() => { EliminarPoder(pokeMove.move.name) }}><i className="fas fa-trash-alt"></i></button> */}
         </div>
     );

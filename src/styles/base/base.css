@@ -68,7 +68,7 @@ p {
 .sign {
     font-family: 'Smooch', cursive;
     font-size: 3rem;
-    margin: 3rem 20% 0 0;
+    margin: 5rem 23% 5rem 0;
     text-align: right;
 }
 
@@ -87,6 +87,10 @@ p {
     justify-content: center;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
 .text-decore-none {
     text-decoration: none;
 }
@@ -110,10 +114,6 @@ p {
     color: var(--dc);
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
 
 .input {
     border: solid 1px var(--gc);

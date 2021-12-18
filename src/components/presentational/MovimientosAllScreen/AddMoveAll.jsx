@@ -21,7 +21,7 @@ export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
     }
     return (
         <div className="AddMoveAll">
-            <h3>Agregar Movimiento</h3>
+            <h3>Add Move</h3>
             <br/>
             <br/>
             <Formik
@@ -49,7 +49,7 @@ export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
                             </section>
                             <section>
                             <br/>
-                                <button type="submit" className="btn btn-form">Agregar Movimiento</button>
+                                <button type="submit" className="btn btn-form">Save</button>
                             </section>
                         </Form>)
                 }}

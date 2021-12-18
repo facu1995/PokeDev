@@ -48,6 +48,6 @@
 
 .MoviEvoPokemon__Movimientos__barBottom{
     background-color: var(--dc);
-    height: 3rem;
+    height: 20px;
     border-radius: 0 0 5px 5px;
 }
