@@ -23,7 +23,8 @@ export const MovimientoScreen = () => {
     useEffect(() => {
         setSpinner(true);
         const obtenerMove = async () => {
-            const data = await fetch("https://pokeapi.co/api/v2/move/" + id);
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
+            const data = await fetch("http://localhost:4000/movesOne/" + id);
             const dataJSON = await data.json();
             setMove(dataJSON);
             setSpinner(false);

@@ -5,14 +5,12 @@ import Spinner from '../img/spinner5.gif';
 import { MostrarUsers } from "../presentational/UsuariosAllScreen/MostrarUsers";
 import Nav from '../nav/nav_principal';
 import AddUserFromix from '../presentational/UsuariosAllScreen/AddUserFromix'
-//mocks
-import userInit from "../usuario/mocks/usuarios_mocks";
 //style
 import "../../styles/components/UsuariosAllScreen.css";
 
 export const UsuariosAllScreen = ({ users }) => {
     const [spinner, setSpinner] = useState(true);
-    const [userAll, setUserAll] = useState(userInit);
+    const [userAll, setUserAll] = useState([]);
     const [agregarUsuario, setAgregarUsuario] = useState(false);
     const [filtro, setFiltro] = useState("");
 
@@ -22,6 +20,13 @@ export const UsuariosAllScreen = ({ users }) => {
 
     useEffect(() => {
         setSpinner(true);
+        const obtenerUsers = async () => {
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
+            const data = await fetch("http://localhost:4000/users/");
+            const dataJSON = await data.json();
+            setUserAll(dataJSON)
+        }
+        obtenerUsers();
         setSpinner(false);
     }
         , [])

@@ -22,7 +22,8 @@ export const MovimientosAllScreen = () => {
     useEffect(() => {
         setSpinner(true);
         const obtenerMovimientos = async (id) => {
-            const data = await fetch("https://pokeapi.co/api/v2/move/?offset=0&limit=" + cantMovesFetch);
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/?offset=0&limit=" + cantMovesFetch); */
+            const data = await fetch("http://localhost:4000/moves");
             const dataJSON = await data.json();
             setmovesAll(dataJSON.results);
         }

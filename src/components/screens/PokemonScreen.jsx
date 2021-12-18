@@ -21,13 +21,14 @@ export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
-    const [species, setSpecies] = useState({flavor_text_entries:[{flavor_text:''}]})
+    const [species, setSpecies] = useState({ flavor_text_entries: [{ flavor_text: '' }] })
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
 
 
     const obtenerPokemon = async (id) => {
-        const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id)
+        /* const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id) */
+        const data = await fetch('http://localhost:4000/pokemonOne/' + id)
         const dataJSON = await data.json();
         setPokemon(dataJSON);
     }
@@ -35,17 +36,18 @@ export const PokemonScreen = () => {
     useEffect(() => {
         let evolucionesNameArray = [];
         let descriptionArray = [];
+        let evolucionesIdArray = [];
 
         window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
 
-        async function obtenerIdEvolutionPokemon() {
+        async function obtenerDescription() {
             let i = 0;
-            let evolucionesIdArray = [];
+            
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
-                let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesNameArray[i])
+               /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
+                let data = await fetch('http://localhost:4000/specieOne/' + evolucionesIdArray[i]);
                 let dataJSON = await data.json();
-                evolucionesIdArray.push(dataJSON.id);
                 if (dataJSON.flavor_text_entries[0].flavor_text) {
                     descriptionArray.push(dataJSON.flavor_text_entries[0].flavor_text);
                 }
@@ -59,24 +61,50 @@ export const PokemonScreen = () => {
         }
 
         async function obtenerNameEvolutionPokemon(id) {
-            let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + id)
+            let idEvo = 0;
+            let data = await fetch('http://localhost:4000/specieOne/' + id)
             let dataJSON = await data.json();
             setSpecies(dataJSON);
             if (dataJSON.evolution_chain.url) {
-                data = await fetch(dataJSON.evolution_chain.url)
+                let arrayURL = dataJSON.evolution_chain.url.split('/');
+                if (arrayURL[6]) {
+                    idEvo = arrayURL[6];
+                }
+                /* data = await fetch(dataJSON.evolution_chain.url) */
+                let data = await fetch('http://localhost:4000/evolvesOne/' + idEvo)
                 dataJSON = await data.json();
                 if (dataJSON.chain) {
                     evolucionesNameArray.push(dataJSON.chain.species.name);
+                    arrayURL = dataJSON.chain.species.url.split('/');
+                    if (arrayURL[6]) {
+                        idEvo = arrayURL[6];
+                        evolucionesIdArray.push(idEvo);
+                    }
                     if (dataJSON.chain.evolves_to[0]) {
                         evolucionesNameArray.push(dataJSON.chain.evolves_to[0].species.name);
+                        arrayURL = dataJSON.chain.evolves_to[0].species.url.split('/');
+                        if (arrayURL[6]) {
+                            idEvo = arrayURL[6];
+                            evolucionesIdArray.push(idEvo);
+                        }
                         if (dataJSON.chain.evolves_to[0].evolves_to[0]) {
                             evolucionesNameArray.push(dataJSON.chain.evolves_to[0].evolves_to[0].species.name);
+                            arrayURL = dataJSON.chain.evolves_to[0].evolves_to[0].species.url.split('/');
+                            if (arrayURL[6]) {
+                                idEvo = arrayURL[6];
+                                evolucionesIdArray.push(idEvo);
+                            }
                             if (dataJSON.chain.evolves_to[0].evolves_to[0].evolves_to[0]) {
                                 evolucionesNameArray.push(dataJSON.chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name);
+                                arrayURL = dataJSON.chain.evolves_to[0].evolves_to[0].evolves_to[0].species.url.split('/');
+                                if (arrayURL[6]) {
+                                    idEvo = arrayURL[6];
+                                    evolucionesIdArray.push(idEvo);
+                                }
                             }
                         }
                     }
-                    obtenerIdEvolutionPokemon();
+                    obtenerDescription();
                 }
             }
         }
@@ -84,18 +112,18 @@ export const PokemonScreen = () => {
         obtenerNameEvolutionPokemon(id);
     }, [id]);
 
-    return (  <>
+    return (<>
         <Nav />
-        <section className='PokemonScreen'>   
+        <section className='PokemonScreen'>
 
             <PokemonContext.Provider value={pokemon}>
-                <AboutPokemon species = {species}/>
+                <AboutPokemon species={species} />
                 <StatsPokemon />
-                <MoviEvoPokemon evoluciones={evoluciones} species = {species} setPokemon={setPokemon}  /> 
+                <MoviEvoPokemon evoluciones={evoluciones} species={species} setPokemon={setPokemon} />
                 {/* <MyFormulario />   */}
                 {/* <AddMoveFormula setPokemon={setPokemon} /> */}
                 {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
-                
+
 
                 {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
                 {/* <HeaderPokemon />
@@ -105,7 +133,7 @@ export const PokemonScreen = () => {
             </PokemonContext.Provider>
 
         </section>
-        </>
+    </>
     )
 }
 
