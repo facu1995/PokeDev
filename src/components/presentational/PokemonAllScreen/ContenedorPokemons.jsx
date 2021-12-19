@@ -21,7 +21,7 @@ function ContenedorPokemons({ offset, limit, pokemonAll, filtro, cantMaximaPokem
                 setPokemonAllArray(auxArray);
             }
             else {
-                let arrayFiltro = pokemonAll.filter(el => el.name.includes(filtro));
+                let arrayFiltro = pokemonAll.filter(el => el.name.toUpperCase().includes(filtro.toUpperCase()));
                 setCantMaximaPokemon(arrayFiltro.length);
                 iterar = offset + limit > arrayFiltro.length ? arrayFiltro.length - 1 : offset + limit - 1;
                 for (; i <= iterar; i++) {

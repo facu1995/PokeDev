@@ -7,7 +7,7 @@ export const MostrarUsers = ({ userAll, filtro }) => {
 
     useEffect(() => {
         setUsuariosActuales([
-            ...userAll.filter(el => el.name.includes(filtro))
+            ...userAll.filter(el => el.name.toUpperCase().includes(filtro.toUpperCase()))
         ]);
     }, [filtro, userAll]);
     return (

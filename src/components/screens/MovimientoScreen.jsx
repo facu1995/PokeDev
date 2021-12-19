@@ -9,34 +9,35 @@ import Spinner from '../img/spinner5.gif';
 //styles
 import "../../styles/components/MovimientoScreen.css";
 import Nav from '../nav/nav_principal';
-
+import EditMove from "../presentational/MovimientoScreen/EditMove"
 import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
 export const MovimientoScreen = () => {
     const { id } = useParams();
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });
     const [pagNext, setPagNext] = useState(0);
-    const [pagBack, setPagBack] = useState(0);
+    const [pagBack, setPagBack] = useState(1);
     const [spinner, setSpinner] = useState(true);
+    const [editMoves, setEditMoves] = useState(false);
 
 
     useEffect(() => {
         setSpinner(true);
         const obtenerMove = async () => {
-            const data = await fetch("https://pokeapi.co/api/v2/move/" + id);
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
+            const data = await fetch("http://localhost:4000/movesOne/" + id);
             const dataJSON = await data.json();
             setMove(dataJSON);
             setSpinner(false);
         }
         obtenerMove();
-
-        if (id > 1) {
+        if (parseInt(id) > 1) {
             setPagBack(parseInt(id) - 1);
         }
         if (id < 826) {
             setPagNext(parseInt(id) + 1);
         }
-    }, [id])
+    }, [id,editMoves])
 
     const spinnerOn = () => {
         return (
@@ -51,36 +52,49 @@ export const MovimientoScreen = () => {
     const spinnerOff = () => {
         return (
             <div className="MovimientoScreen">
-                <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
-                <ul className="MovimientoScreen__ul">
-                    <ul className="MovimientoScreen__ul__ul">
-                        <li className="MovimientoScreen__li flex-align-center">ID:</li>
-                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.id}</li>
-                    </ul>
-                    <ul className="MovimientoScreen__ul__ul">
-                        <li className="MovimientoScreen__li flex-align-center">Name:</li>
-                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.name}</li>
-                    </ul>
-                    <ul className="MovimientoScreen__ul__ul">
-                        <li className="MovimientoScreen__li flex-align-center">TYPE-NAME:</li>
-                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" ><i>{move.type.name}</i>
-                        </li>
-                    </ul>
-                    <ul className="MovimientoScreen__ul__ul">
-                        <li className="MovimientoScreen__li flex-align-center">TYPE:</li>
-                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >
-                            <i className={obtenerClassType(move.type.name)}></i>
-                        </li>
-                    </ul>
-                    <ul className="MovimientoScreen__ul__ul">
-                        <li className="MovimientoScreen__li flex-align-center">POWER:</li>
-                        <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.power}</li>
-                    </ul>
-                </ul>
-                <div>
-                    <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="btn" > atras</button></Link>
-                    <Link className="text-decore-none" to={"/moves/" + pagNext}>  <button className="btn" > siguiente</button></Link>
+                {editMoves === false &&
+                    <>
+                        <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
+                        <div className="flex-centerAll">
+                            <Link className="text-decore-none" to={"/moves/"}><button className="btn" >Back</button></Link>
+                            <button className='btn' onClick={() => setEditMoves(true)} >Edit move</button>
+                        </div>
+                        <ul className="MovimientoScreen__ul">
+                            <ul className="MovimientoScreen__ul__ul">
+                                <li className="MovimientoScreen__li flex-align-center">ID:</li>
+                                <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.id}</li>
+                            </ul>
+                            <ul className="MovimientoScreen__ul__ul">
+                                <li className="MovimientoScreen__li flex-align-center">Name:</li>
+                                <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.name}</li>
+                            </ul>
+                            <ul className="MovimientoScreen__ul__ul">
+                                <li className="MovimientoScreen__li flex-align-center">TYPE-NAME:</li>
+                                <li className="MovimientoScreen__li MovimientoScreen_flexRight" ><i>{move.type.name}</i>
+                                </li>
+                            </ul>
+                            <ul className="MovimientoScreen__ul__ul">
+                                <li className="MovimientoScreen__li flex-align-center">TYPE:</li>
+                                <li className="MovimientoScreen__li MovimientoScreen_flexRight" >
+                                    <i className={obtenerClassType(move.type.name)}></i>
+                                </li>
+                            </ul>
+                            <ul className="MovimientoScreen__ul__ul">
+                                <li className="MovimientoScreen__li flex-align-center">POWER:</li>
+                                <li className="MovimientoScreen__li MovimientoScreen_flexRight" >{move.power}</li>
+                            </ul>
+                        </ul>
+                        <div>
+                            <Link className="text-decore-none" to={"/moves/" + pagBack}><button className="btn" >Previous</button></Link>
+                            <Link className="text-decore-none" to={"/moves/" + pagNext}>  <button className="btn" >Next</button></Link>
+                        </div>
+                    </>}
+                    {editMoves === true && <>
+                <div className="MovimientosAllScreen__AddMoveAll">
+                    <EditMove move={move} setMove={setMove} id={id} setEditMoves={setEditMoves}  />
+                    <button className="btn btn-form" type="submit" onClick={() => { setEditMoves(false) }}>Back</button>
                 </div>
+            </>}
             </div>
         );
     }

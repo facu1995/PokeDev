@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
 //Schema
@@ -8,15 +9,20 @@ import errorHandle from "../../form/move/form_validation/error_validation/move_e
 //pokemon
 
 export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
-    let initialValue = { id: 0, name: "", type: "", power: 0 };
+    let initialValue = { name: "", type: "", power: "" };
 
     const fnValidationForm = (v) => { 
         alert(JSON.stringify(v))
-        const {id,name,type,power} =v;
+        const {name} =v;
         setmovesAll([
-            {id:id,name:name,type:type,power:power,url:"https://pokeapi.co/api/v2/move/"+id},
+            {name:name,url:"https://pokeapi.co/api/v2/move/999/"},
             ...movesAll
         ]);
+        axios.post('http://localhost:4000/addmove', v)
+            .then(function (response) {
+            })
+            .catch(function (error) {
+            });
         setAgregarMoves(false);
     }
     return (
@@ -44,8 +50,8 @@ export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
                                 {errorHandle(errors).power()}
                             </section>
                             <section>
-                                <Field name="description" className="input width-100" placeholder="description" />
-                                {errorHandle(errors).description()}
+                                {/* <Field name="description" className="input width-100" placeholder="description" />
+                                {errorHandle(errors).description()} */}
                             </section>
                             <section>
                             <br/>

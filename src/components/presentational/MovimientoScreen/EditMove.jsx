@@ -1,25 +1,31 @@
 import React from 'react';
 import { Formik, Form, Field } from "formik";  //validar formulario
-
+import axios from "axios";
 //Schema
-import Schema from "../../form/pokemonMove/form_validation/schema_validation/pokemonMove_schema";
+import Schema from "../../form/move/form_validation/schema_validation/move_schema";
 //error
-import errorHandle from "../../form/pokemonMove/form_validation/error_validation/pokemonMove_errors";
+import errorHandle from "../../form/move/form_validation/error_validation/move_errors"
 //pokemon
-export default function EditMoveAll({ setmovesAll,movesAll }) {
-    let initialValue = { id: 0, name: "", type: "", power: 0 };
+export default function EditMoveAll({ move, setMove,id ,setEditMoves}) {
+    let initialValue = {  name: "", type: "", power: ""};
 
     const fnValidationForm = (v) => { 
-        alert(JSON.stringify(v))
-        const {id,name,type,power} =v;
-        setmovesAll([
-            {id:id,name:name,type:type,power:power,url:"https://pokeapi.co/api/v2/move/"+id},
-            ...movesAll
-        ]);
+        const {name,type,power} =v;
+        let newMove={id,name,type,power};
+        alert(JSON.stringify(newMove));
+        setMove({
+            ...move, name:v.name,type:v.type,power:v.power
+        })
+        axios.put('http://localhost:4000/editMove', newMove)
+            .then(function (response) {
+            })
+            .catch(function (error) {
+            });
+            setEditMoves(false);
     }
     return (
         <div>
-            <h3>Agregar Movimiento</h3>
+            <h3>Edit Pokemon</h3>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -27,10 +33,6 @@ export default function EditMoveAll({ setmovesAll,movesAll }) {
                 {({ errors }) => {
                     return (
                         <Form>
-                            <section>
-                                <Field name="id" className="input width-100" placeholder="id" />
-                                {errorHandle(errors).id()}
-                            </section>
                             <section>
                                 <Field name="name" className="input width-100" placeholder="name" />
                                 {errorHandle(errors).name()}
@@ -44,7 +46,7 @@ export default function EditMoveAll({ setmovesAll,movesAll }) {
                                 {errorHandle(errors).power()}
                             </section>
                             <section>
-                                <button type="submit" className="btn btn-form">Agregar Movimiento</button>
+                                <button type="submit" className="btn btn-form">Confirm</button>
                             </section>
                         </Form>)
                 }}

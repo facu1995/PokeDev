@@ -22,13 +22,14 @@ export const MovimientosAllScreen = () => {
     useEffect(() => {
         setSpinner(true);
         const obtenerMovimientos = async (id) => {
-            const data = await fetch("https://pokeapi.co/api/v2/move/?offset=0&limit=" + cantMovesFetch);
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/?offset=0&limit=" + cantMovesFetch); */
+            const data = await fetch("http://localhost:4000/moves");
             const dataJSON = await data.json();
             setmovesAll(dataJSON.results);
         }
         obtenerMovimientos();
         setSpinner(false);
-    }, [cantMovesFetch]);
+    }, [cantMovesFetch,agregarMoves]);
 
     const spinnerOn = () => {
         return (
@@ -54,7 +55,7 @@ export const MovimientosAllScreen = () => {
                 </>}
             {agregarMoves === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
-                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll}  />
+                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll} setAgregarMoves={setAgregarMoves}  />
                     <button className="btn btn-form" type="submit" onClick={() => { setAgregarMoves(false) }}>Back</button>
                 </div>
             </>}

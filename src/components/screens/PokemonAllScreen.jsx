@@ -21,7 +21,8 @@ export const PokemonAllScreen = () => {
 
     useEffect(() => {
         const obtenerPokemons = async (id) => {
-            const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + cantPokemonFetch + "&offset=0");
+            /* const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + cantPokemonFetch + "&offset=0");  */
+            const data = await fetch("http://localhost:4000/pokemon");
             const dataJSON = await data.json();
             setPokemonAll(dataJSON.results);
         }
