@@ -11,6 +11,25 @@ const TAGS_VALIDATITION_FROM={
     DESCRIPTION:{
         IS_REQUIRED:"El description es obligatorio"
     },
+    HP:{
+        IS_REQUIRED:"El hp es obligatorio"
+    },
+    ATTACK:{
+        IS_REQUIRED:"El attack es obligatorio"
+    },
+    DEFENSE:{
+        IS_REQUIRED:"El defense es obligatorio"
+    },
+    SPECIAL_ATTACK:{
+        IS_REQUIRED:"El specialAttack es obligatorio"
+    },
+    SPECIAL_DEFENSE:{
+        IS_REQUIRED:"El specialDefense es obligatorio"
+    },
+    SPEED:{
+        IS_REQUIRED:"El speed es obligatorio"
+    },
+    
     IS_INTEGER:"Tiene que ser un entero",
     IS_NUMBER:"Tiene que ser un numero",
     IS_POSITIVE:"Tiene que ser un positivo",

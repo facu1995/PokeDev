@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
 //Schema
@@ -7,25 +6,19 @@ import Schema from "../../form/pokemon/form_validation/schema_validation/pokemon
 //error
 import errorHandle from "../../form/pokemon/form_validation/error_validation/pokemon_errors";
 
-export default function AddPokemonAll({ pokemonAll, setPokemonAll, setAgregarPokemon }) {
-    let initialValue = { name: "", type: "", description: "", hp: "", attack: "", defense: "", specialAttack: "", specialDefense: "", speed: "", };
+export default function EditPokemon() {
+    let initialValue = { name: "", type: "", description: "",hp:"",attack:"",defense:"",specialAttack:"",specialDefense:"",speed:"", };
 
     const fnValidationForm = (v) => {
         alert(JSON.stringify(v))
-        /*   const { id, name, type, description } = v; */
-        axios.post('http://localhost:4000/addpokemon', v)
-            .then(function (response) {
-            })
-            .catch(function (error) {
-            });
-        setAgregarPokemon(false);
-    }
+      /*   const { id, name, type, description } = v; */
 
+    }
     return (
         <div>
-            <h3>Recommend Pokemon</h3>
-            <br />
-            <br />
+            <h3>Edit Pokemon</h3>
+            <br/>
+            <br/>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -89,7 +82,7 @@ export default function AddPokemonAll({ pokemonAll, setPokemonAll, setAgregarPok
                                 {errorHandle(errors).speed()}
                             </section>
                             <section>
-                                <br />
+                            <br/>
                                 <button type="submit" className="btn btn-form">Recommend Pokemon</button>
                             </section>
                         </Form>)
