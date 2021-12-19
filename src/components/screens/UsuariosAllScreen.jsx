@@ -29,7 +29,7 @@ export const UsuariosAllScreen = ({ users }) => {
         obtenerUsers();
         setSpinner(false);
     }
-        , [])
+        , [agregarUsuario])
 
     const spinnerOn = () => {
         return (
@@ -55,7 +55,7 @@ export const UsuariosAllScreen = ({ users }) => {
                 </>}
             {agregarUsuario === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
-                    <AddUserFromix setUserAll={setUserAll} userAll={userAll} setAgregarUsuario={setAgregarUsuario} />
+                    <AddUserFromix setAgregarUsuario={setAgregarUsuario} />
                     <button className="btn btn-form" type="submit" onClick={() => { setAgregarUsuario(false) }}>Back</button>
                 </div>
             </>}

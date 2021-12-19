@@ -9,14 +9,11 @@ import errorHandle from '../../form/addUser/form_validation/error_validation/add
 //style
 import "../../../styles/components/AddUserFromix.css";
 
-export const AddUserFromix = ({ setUserAll, userAll, setAgregarUsuario }) => {
+export const AddUserFromix = ({ setAgregarUsuario }) => {
 
     let initialValue = { name:"",email: "", pass: "" };
 
     const fnValidationForm = (v) => {
-        setUserAll([
-            ...userAll, v
-        ])
         axios.post('http://localhost:4000/add/user', v)
             .then(function (response) {
             })
