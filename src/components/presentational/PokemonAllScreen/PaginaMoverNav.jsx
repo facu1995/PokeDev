@@ -39,9 +39,9 @@ function PaginaMoverNav({ offset, limit, setOffset, filtro, cantMaximaPokemon, c
     return (
         <div className="PaginaMoverNav">
             <br/>
-            <button className="btn" onClick={decrementarOffset}> atras</button>
-            <button className="btn" onClick={aumentarOffset}> siguiente</button>
-            <h4>Página {page} de {cantPage}</h4>
+            <button className="btn" onClick={decrementarOffset}> Previous</button>
+            <button className="btn" onClick={aumentarOffset}> Next</button>
+            <h4>Page {page} of {cantPage}</h4>
         </div>
     )
 }
