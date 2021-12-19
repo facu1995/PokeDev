@@ -1,16 +1,26 @@
 import React from 'react';
 import { Formik, Form, Field } from "formik";  //validar formulario
+import axios from "axios";
 
 //Schema
-import Schema from '../../form/addUser/form_validation/schema_validation/addUser_schema';
+import Schema from '../../form/addUser/form_validation/schema_validation/editUser_schema';
 //error
 import errorHandle from '../../form/addUser/form_validation/error_validation/addUser_errors';
 //style
-export const EditUserFromix = ({ setUserAll, userAll ,setEditarUsuario}) => {
+export const EditUserFromix = ({setUser, user, id, setEditarUsuario}) => {
 
     let initialValue = { name:"",email: "", pass: "" };
     const fnValidationForm = (v) => {
-        alert(JSON.stringify(v))
+        setUser({
+            ...user, name:v.name,pass:v.pass
+        })
+        let body={...v,email:user.email}
+       /*  alert(JSON.stringify(body)); */
+        axios.put('http://localhost:4000/user/cambiar/', body)
+            .then(function (response) {
+            })
+            .catch(function (error) {
+            });
         setEditarUsuario(false)
     }
 
@@ -26,14 +36,12 @@ export const EditUserFromix = ({ setUserAll, userAll ,setEditarUsuario}) => {
                             <h3>EDIT USER</h3>
                             <br />
                             <br />
-                            <Field className="input" name="name" placeholder="Name" />
+                            <Field className="input width-100" name="name" placeholder="Name" />
                             {errorHandle(errors).name()}
-                            <Field className="input" name="email" placeholder="E-mail" />
-                            {errorHandle(errors).email()}
-                            <Field className="input" name="pass" placeholder="Password" />
+                            <Field className="input width-100" type="password" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
-                            <br/>
-                            <button className='btn btn-form' type="submit">Create New User</button>
+                            <br />
+                            <button className='btn btn-form' type="submit">Confirm</button>
                         </Form>
                     )
                 }}

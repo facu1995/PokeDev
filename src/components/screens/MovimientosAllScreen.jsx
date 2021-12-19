@@ -29,7 +29,7 @@ export const MovimientosAllScreen = () => {
         }
         obtenerMovimientos();
         setSpinner(false);
-    }, [cantMovesFetch]);
+    }, [cantMovesFetch,agregarMoves]);
 
     const spinnerOn = () => {
         return (
@@ -55,7 +55,7 @@ export const MovimientosAllScreen = () => {
                 </>}
             {agregarMoves === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
-                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll}  />
+                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll} setAgregarMoves={setAgregarMoves}  />
                     <button className="btn btn-form" type="submit" onClick={() => { setAgregarMoves(false) }}>Back</button>
                 </div>
             </>}
