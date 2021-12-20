@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
@@ -16,7 +16,6 @@ import Swal from 'sweetalert2';
 // import NavBurger from "../nav/nav_prueba/nav";
 
 export const LoginScreen = () => {
-    const [login,setLogin]= useState({token:false});
     let initialValue = { email: "", pass: "" };
     const navigate = useNavigate();
 
@@ -25,20 +24,17 @@ export const LoginScreen = () => {
         axios.post('http://localhost:4000/login', v)
             .then(function (response) {
                 console.log(response.data);
-                setLogin(response.data)
-                if(response.data.token===false){
+                if (response.data.token === false) {
                     Swal.fire(
                         'Invalid Pass',
-
                         'error',
-                        
-                      )
+                    )
                 }
-                else{
+                else {
                     navigate('/home');
                     localStorage.clear();
-                    localStorage.setItem('user' , response.data.name);
-                    localStorage.setItem('id', response.data.id );
+                    localStorage.setItem('user', response.data.name);
+                    localStorage.setItem('id', response.data.id);
                     Swal.fire(
                         'Welcome Mr',
                         response.data.name,
@@ -51,11 +47,11 @@ export const LoginScreen = () => {
         /* alert(JSON.stringify(v)); */
     }
 
-/*     useEffect(() => {
-        if(login===true){
-            navigate('/home');
-        }
-    }, [login, navigate]) */
+    /*     useEffect(() => {
+            if(login===true){
+                navigate('/home');
+            }
+        }, [login, navigate]) */
 
     const newUser = () => navigate('/newUser')
     // const swalF = () => {

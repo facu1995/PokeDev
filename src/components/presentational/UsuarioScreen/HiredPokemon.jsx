@@ -5,7 +5,6 @@ import pokemonInit from '../../initializerJSON/pokemonInitJSON';
 
 //style
 import "../../../styles/components/HiredPokemon.css"; 
-import { obtenerClassType } from "../visualData/Types"
 import Spinner from '../../img/spinner5.gif';
 
 function HiredPokemon({ id}) {

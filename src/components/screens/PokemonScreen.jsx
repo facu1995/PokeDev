@@ -46,29 +46,30 @@ export const PokemonScreen = () => {
     }
 
     const Contratar = () => {
-        let body={
-            id:id,
-            idUser:storage.idUser
-        }
-        axios.put('http://localhost:4000/user/hirepokemon/', body)
-            .then(function (response) {
-            })
-            .catch(function (error) {
-            });
-            Swal.fire({
-                title: `Do you want to contrait ${pokemon.name}` ,
-                showDenyButton: true,
-                confirmButtonText: 'Recruit',
-                denyButtonText: `Don't recruit`,
-              }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                  Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
-                  navigate('/users/'+storage.idUser)
-                } else if (result.isDenied) {
-                  Swal.fire(`Oh! poor ${pokemon.name}!`, '', 'error')
+        Swal.fire({
+            title: `Do you want to contrait ${pokemon.name}`,
+            showDenyButton: true,
+            confirmButtonText: 'Recruit',
+            denyButtonText: `Don't recruit`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                let body = {
+                    id: id,
+                    idUser: storage.idUser
                 }
-              })
+                
+                axios.put('http://localhost:4000/user/hirepokemon/', body)
+                    .then(function (response) {
+                    })
+                    .catch(function (error) {
+                    });
+                Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
+                navigate('/users/' + storage.idUser)
+            } else if (result.isDenied) {
+                Swal.fire(`Oh! poor ${pokemon.name}!`, '', 'error')
+            }
+        })
     }
     useEffect(() => {
         let evolucionesNameArray = [];
@@ -79,7 +80,7 @@ export const PokemonScreen = () => {
         let idUser = localStorage.getItem('id');
         setStorage({
             name: name,
-            idUser:idUser
+            idUser: idUser
         })
 
         window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
@@ -101,9 +102,7 @@ export const PokemonScreen = () => {
                 id: evolucionesIdArray,
                 description: descriptionArray
             });
-
         }
-
         async function obtenerNameEvolutionPokemon(id) {
             let idEvo = 0;
             let data = await fetch('http://localhost:4000/specieOne/' + id)
@@ -154,7 +153,7 @@ export const PokemonScreen = () => {
         }
         obtenerPokemon(id);
         obtenerNameEvolutionPokemon(id);
-    }, [id,editarPokemon]);
+    }, [id, editarPokemon]);
 
     return (<>
         <Nav />

@@ -24,7 +24,6 @@ export const UsuarioScreen = () => {
             const data = await fetch("http://localhost:4000/user/" + id);
             const dataJSON = await data.json();
             setUser(dataJSON);
-            console.log(dataJSON);
             setSpinner(false);
             let userId = localStorage.getItem('id')
             setUserId(userId)
