@@ -23,7 +23,7 @@ export const NewUserScreen = () => {
             .catch(function (error) {
             });
         /* alert(JSON.stringify(v)); */
-        navigate('/home');
+        navigate('/');
     }
 
     const goBack = () => navigate('/')

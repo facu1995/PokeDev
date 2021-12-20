@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
@@ -29,6 +29,8 @@ export const LoginScreen = () => {
                 }
                 else{
                     navigate('/home');
+                    localStorage.clear();
+                    localStorage.setItem('user' , response.data.name)
                 }
             })
             .catch(function (error) {
