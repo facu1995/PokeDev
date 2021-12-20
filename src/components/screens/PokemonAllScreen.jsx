@@ -22,13 +22,13 @@ export const PokemonAllScreen = () => {
     useEffect(() => {
         const obtenerPokemons = async (id) => {
             /* const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + cantPokemonFetch + "&offset=0");  */
-            const data = await fetch("http://localhost:4000/pokemon");
+            const data = await fetch("https://back-poke.herokuapp.com/pokemon");
             const dataJSON = await data.json();
             setPokemonAll(dataJSON.results);
         }
         const obtenerCantMove = async () => {
             /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
-            const data = await fetch("http://localhost:4000/pokemoncant");
+            const data = await fetch("https://back-poke.herokuapp.com/pokemoncant");
             const dataJSON = await data.json();
             setCantPokemonFetch(dataJSON.cant);
         }

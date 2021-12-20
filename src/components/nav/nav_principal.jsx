@@ -44,7 +44,7 @@ function Nav() {
                 <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">Pokemons</Link></li>
                 <li className="nav_principal__li"><Link to="/moves" className="nav_principal__a">Moves</Link></li>
                 <li className="nav_principal__li"><Link to="/users" className="nav_principal__a">Users</Link></li>
-                <Link to= {storage.route} className="nav_principal__a">{storage.name}</Link>
+                <li className="nav_principal__li"><Link to= {storage.route} className="nav_principal__a">{storage.name}</Link></li>
                 <li className="nav_principal__li"><Link to="/" className="nav_principal__a">Sign off</Link></li>
                 {/* <li className="nav_principal__li"><button onClick={playMusic} type="button" className="nav_principal__a nav_principal__btn-music" ><i className="fas fa-music"></i></button></li> */}
             </ul>

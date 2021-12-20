@@ -12,7 +12,7 @@ export default function EditMoveAll({id, setEditMoves }) {
     const fnValidationForm = (v) => {
         const { name, type, power } = v;
         let newMove = { id, name, type, power };
-        axios.put('http://localhost:4000/editMove', newMove)
+        axios.put('https://back-poke.herokuapp.com/editMove', newMove)
             .then(function (response) {
             })
             .catch(function (error) {

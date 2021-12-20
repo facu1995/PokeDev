@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import UsePokemon from "../../context/usePokemon";
 //import CardPokemon from '../PokemonAllScreen/CardPokemon';
 const StatsPokemon = () => {
     const pokemon = UsePokemon();
 
 
-    const [longStats, setLongStats] = useState({
+    const longStats={
         'SPECIAL-ATTACK':'SPECIAL-ATTACK',
         'SPECIAL-DEFENSE':'SPECIAL-DEFENSE'
-    })
+    }
 
     // const onWindowsSizeChange =()=>{
     //     window.addEventListener("resize", window.screen.width > 400 ? setLongStats({
@@ -68,13 +68,13 @@ const StatsPokemon = () => {
                     {statBar}
                 </div>
                 <ul className='StatsPokemon__stats_right' >
-                    <li>{pokemon.stats[0].base_stat}</li>
-                    <li>{pokemon.stats[1].base_stat}</li>
-                    <li>{pokemon.stats[2].base_stat}</li>
-                    <li>{pokemon.stats[3].base_stat}</li>
-                    <li>{pokemon.stats[4].base_stat}</li>
-                    <li>{pokemon.stats[5].base_stat}</li>
-                    <li>{sumarStats()}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[0].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[1].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[2].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[3].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[4].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{pokemon.stats[5].base_stat}</li>
+                    <li className='StatsPokemon__stats_right__li'>{sumarStats()}</li>
                 </ul>
 
 

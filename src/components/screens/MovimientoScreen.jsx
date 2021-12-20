@@ -26,14 +26,14 @@ export const MovimientoScreen = () => {
         setSpinner(true);
         const obtenerMove = async () => {
             /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
-            const data = await fetch("http://localhost:4000/movesOne/" + id);
+            const data = await fetch("https://back-poke.herokuapp.com/movesOne/" + id);
             const dataJSON = await data.json();
             setMove(dataJSON);
             setSpinner(false);
         }
         const obtenerCantMove = async () => {
             /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
-            const data = await fetch("http://localhost:4000/movescant");
+            const data = await fetch("https://back-poke.herokuapp.com/movescant");
             const dataJSON = await data.json();
             setCantMoves(dataJSON.cant);
         }

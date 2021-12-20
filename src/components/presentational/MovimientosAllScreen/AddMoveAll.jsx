@@ -12,7 +12,7 @@ export default function AddMoveAll({ setAgregarMoves }) {
     let initialValue = { name: "", type: "", power: "" };
 
     const fnValidationForm = (v) => { 
-        axios.post('http://localhost:4000/addmove', v)
+        axios.post('https://back-poke.herokuapp.com/addmove', v)
             .then(function (response) {
             })
             .catch(function (error) {

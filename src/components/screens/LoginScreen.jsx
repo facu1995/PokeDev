@@ -21,7 +21,7 @@ export const LoginScreen = () => {
 
     const fnValidationForm = (v) => {
         /* alert('Bienvenido a PokeDev!'); */
-        axios.post('http://localhost:4000/login', v)
+        axios.post('https://back-poke.herokuapp.com/login', v)
             .then(function (response) {
                 console.log(response.data);
                 if (response.data.token === false) {

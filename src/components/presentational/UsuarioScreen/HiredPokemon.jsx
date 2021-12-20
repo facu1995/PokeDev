@@ -19,7 +19,7 @@ function HiredPokemon({ id}) {
 
 
     const obtenerPokemon = async (id) => {
-        const data = await fetch('http://localhost:4000/pokemonOne/' + id)
+        const data = await fetch('https://back-poke.herokuapp.com/pokemonOne/' + id)
         const dataJSON = await data.json();
         setPokemon(dataJSON);
         setSpinner(false);

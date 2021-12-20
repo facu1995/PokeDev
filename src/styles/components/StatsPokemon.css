@@ -1,78 +1,91 @@
-.StatsPokemon__stats{
-    display: flex;
-    max-width: 700px;
-    justify-content: space-between;
-    margin: 4rem auto;
+.StatsPokemon__stats {
+  display: flex;
+  max-width: 700px;
+  justify-content: space-between;
+  margin: 4rem auto;
 }
 
-.StatsPokemon__stats>ul>li{
-    margin: 25px 0;
+.StatsPokemon__stats>ul>li {
+  margin: 25px 0;
 }
 
-.StatsPokemon__stats_left>li{
-    font-weight: 600;
+.StatsPokemon__stats_left>li {
+  font-weight: 600;
 }
 
-.StatsPokemon__stats_right{
-    min-width: 50px;
-}
-.StatsPokemon__stats_right>li{
-    color: var(--gbg);
-    font-weight: 600;
-    text-align: right;
+.StatsPokemon__stats_right {
+  min-width: 50px;
 }
 
-.StatsPokemon__statBar{
-    height: 20px;
-    /* background-color: var(--dc); */
-    margin: 12px;
-    -webkit-animation: color-change-3x 4s linear infinite alternate both;
-	        animation: color-change-3x 4s linear infinite alternate both;
+.StatsPokemon__stats_right>li {
+  color: var(--gbg);
+  font-weight: 600;
+  text-align: right;
 }
 
-.StatsPokemon__statBar:first-child{
+
+.StatsPokemon__statBar {
+  height: 20px;
+  /* background-color: var(--dc); */
+  margin: 12px;
+  -webkit-animation: color-change-3x 4s linear infinite alternate both;
+  animation: color-change-3x 4s linear infinite alternate both;
+}
+
+.StatsPokemon__statBar:first-child {
   margin-top: -32px;
 }
 
-@media (max-width: 600px){
-  .StatsPokemon__statBar{
+@media (max-width: 600px) {
+  .StatsPokemon__statBar {
     margin: 14px;
   }
-  .StatsPokemon__statBar:first-child{
+
+  .StatsPokemon__statBar:first-child {
     margin-top: -30px;
   }
-  .StatsPokemon__statBar:nth-child(){
 
-  }
+  .StatsPokemon__statBar:nth-child() {}
 }
 
 @-webkit-keyframes color-change-3x {
-    0% {
-      background: #19dcea;
-    }
-    50% {
-      background: #b22cff;
-    }
-    100% {
-      background: #ea2222;
-    }
-  }
-  @keyframes color-change-3x {
-    0% {
-      background: #19dcea;
-    }
-    50% {
-      background: #b22cff;
-    }
-    100% {
-      background: #ea2222;
-    }
+  0% {
+    background: #19dcea;
   }
 
-.StatsPokemon__stats_center{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: -20px;
+  50% {
+    background: #b22cff;
+  }
+
+  100% {
+    background: #ea2222;
+  }
+}
+
+@keyframes color-change-3x {
+  0% {
+    background: #19dcea;
+  }
+
+  50% {
+    background: #b22cff;
+  }
+
+  100% {
+    background: #ea2222;
+  }
+}
+
+.StatsPokemon__stats_center {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: -20px;
+}
+
+@media (max-width: 500px) {
+  .StatsPokemon__stats_right__li {
+    padding: 3px 0;
+  }
 }
