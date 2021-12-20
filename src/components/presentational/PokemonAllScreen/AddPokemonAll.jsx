@@ -11,7 +11,6 @@ export default function AddPokemonAll({ setAgregarPokemon }) {
     let initialValue = { name: "", type: "", description: "", hp: "", attack: "", defense: "", specialAttack: "", specialDefense: "", speed: "", };
 
     const fnValidationForm = (v) => {
-        alert(JSON.stringify(v))
         /*   const { id, name, type, description } = v; */
         axios.post('http://localhost:4000/addpokemon', v)
             .then(function (response) {

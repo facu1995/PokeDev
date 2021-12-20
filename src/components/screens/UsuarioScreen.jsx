@@ -59,7 +59,8 @@ export const UsuarioScreen = () => {
                         </div>
                         <div className='UsuarioScreen__list'>
                             <div className="UsuarioScreen__dato">Password:</div>
-                            <div className="UsuarioScreen__dato">{user.pass}</div>
+                            {/* <div className="UsuarioScreen__dato">{user.pass}</div> */}
+                            <div className="UsuarioScreen__dato">**********</div>
                         </div>
                     </div>
                     <div className='flex-centerAll'>

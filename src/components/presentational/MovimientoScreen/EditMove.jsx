@@ -12,7 +12,6 @@ export default function EditMoveAll({id, setEditMoves }) {
     const fnValidationForm = (v) => {
         const { name, type, power } = v;
         let newMove = { id, name, type, power };
-        alert(JSON.stringify(newMove));
         axios.put('http://localhost:4000/editMove', newMove)
             .then(function (response) {
             })

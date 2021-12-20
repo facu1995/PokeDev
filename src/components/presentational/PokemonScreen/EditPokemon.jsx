@@ -10,7 +10,6 @@ export default function EditPokemon({id,setEditarPokemon}) {
     let initialValue = { description: "",hp:"",attack:"",defense:"",specialAttack:"",specialDefense:"",speed:"" };
 
     const fnValidationForm = (v) => {
-        alert(JSON.stringify(v))
         let body={
             id,
             ...v

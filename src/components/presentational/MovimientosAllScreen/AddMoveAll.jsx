@@ -12,7 +12,6 @@ export default function AddMoveAll({ setAgregarMoves }) {
     let initialValue = { name: "", type: "", power: "" };
 
     const fnValidationForm = (v) => { 
-        alert(JSON.stringify(v))
         axios.post('http://localhost:4000/addmove', v)
             .then(function (response) {
             })
