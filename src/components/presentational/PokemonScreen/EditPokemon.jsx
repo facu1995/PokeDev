@@ -63,7 +63,7 @@ export default function EditPokemon({id,setEditarPokemon}) {
                             </section>
                             <section>
                             <br/>
-                                <button type="submit" className="btn btn-form">Recommend Pokemon</button>
+                                <button type="submit" className="btn btn-form">Save Pokemon</button>
                             </section>
                         </Form>)
                 }}
