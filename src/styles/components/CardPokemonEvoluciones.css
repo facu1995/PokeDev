@@ -5,6 +5,13 @@
     padding: 3rem;
     margin: 1rem 0;
 }
+
+.CardPokemonEvoluciones:hover{
+    transition: 0.5s;
+    border: 1px solid var(--white);
+}
+
+
 .CardPokemonEvoluciones__name{
     text-transform: uppercase;
 }

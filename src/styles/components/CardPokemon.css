@@ -43,5 +43,7 @@
 
 
 .contenedor1:hover,.contenedor2:hover{
+    transition: 0.5s;
     border: 1px solid var(--white);
+    transform: scale(1.01);
 }

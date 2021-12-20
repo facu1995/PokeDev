@@ -1,38 +1,40 @@
 const TAGS_VALIDATITION_FROM={
     ID:{
-        IS_REQUIRED:"El id es obligatorio",
+        IS_REQUIRED:"Id is required",
     },
     NAME:{
-        IS_REQUIRED:"El nombre es obligatorio"
+        IS_REQUIRED:"Name is required"
     },
     TYPE:{
-        IS_REQUIRED:"La type es obligatorio"
+        IS_REQUIRED:"Type required"
     },
     DESCRIPTION:{
-        IS_REQUIRED:"El description es obligatorio"
+        IS_REQUIRED:"Description is required"
     },
+
     HP:{
-        IS_REQUIRED:"El hp es obligatorio"
+        IS_REQUIRED:"Hp is required"
     },
     ATTACK:{
-        IS_REQUIRED:"El attack es obligatorio"
+        IS_REQUIRED:"Attack is required"
     },
     DEFENSE:{
-        IS_REQUIRED:"El defense es obligatorio"
+        IS_REQUIRED:"Defense is required"
     },
     SPECIAL_ATTACK:{
-        IS_REQUIRED:"El specialAttack es obligatorio"
+        IS_REQUIRED:"SpecialAttack is required"
     },
     SPECIAL_DEFENSE:{
-        IS_REQUIRED:"El specialDefense es obligatorio"
+        IS_REQUIRED:"SpecialDefense is required"
     },
     SPEED:{
-        IS_REQUIRED:"El speed es obligatorio"
+        IS_REQUIRED:"Speed is required"
     },
     
-    IS_INTEGER:"Tiene que ser un entero",
-    IS_NUMBER:"Tiene que ser un numero",
-    IS_POSITIVE:"Tiene que ser un positivo",
+    IS_INTEGER:"Must be integer",
+    IS_NUMBER:"Must be a number",
+    IS_POSITIVE:"Must be positive",
+
 
 };
 

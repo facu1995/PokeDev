@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UsePokemon from "../../context/usePokemon";
 //import CardPokemon from '../PokemonAllScreen/CardPokemon';
 const StatsPokemon = () => {
     const pokemon = UsePokemon();
 
-    const sumarStats = () => {
+
+    const [longStats, setLongStats] = useState({
+        'SPECIAL-ATTACK':'SPECIAL-ATTACK',
+        'SPECIAL-DEFENSE':'SPECIAL-DEFENSE'
+    })
+
+    // const onWindowsSizeChange =()=>{
+    //     window.addEventListener("resize", window.screen.width > 400 ? setLongStats({
+    //             'SPECIAL-ATTACK':'SP-AT'}) );
+    // }
+
+    // useEffect(() => {
+        
+    // })
+
+    const sumarStats =() =>{
+
         let total = 0;
         pokemon.stats.forEach(stat => {
             total += parseInt(stat.base_stat);
@@ -28,6 +44,7 @@ const StatsPokemon = () => {
     )
 
 
+
     return (
         <div className="StatsPokemon">
             {/* 
@@ -42,8 +59,8 @@ const StatsPokemon = () => {
                     <li>HP:</li>
                     <li>ATTACK</li>
                     <li>DEFENSE</li>
-                    <li>SPECIAL-ATTACK</li>
-                    <li>SPECIAL-DEFENSE</li>
+                    <li>{longStats['SPECIAL-ATTACK']}</li>
+                    <li>{longStats['SPECIAL-DEFENSE']}</li>
                     <li>SPEED</li>
                     <li>TOTAL</li>
                 </ul>

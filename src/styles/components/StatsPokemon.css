@@ -24,10 +24,50 @@
 
 .StatsPokemon__statBar{
     height: 20px;
-    background-color: var(--dc);
-    margin: 16px;
-    
+    /* background-color: var(--dc); */
+    margin: 12px;
+    -webkit-animation: color-change-3x 4s linear infinite alternate both;
+	        animation: color-change-3x 4s linear infinite alternate both;
 }
+
+.StatsPokemon__statBar:first-child{
+  margin-top: -32px;
+}
+
+@media (max-width: 600px){
+  .StatsPokemon__statBar{
+    margin: 14px;
+  }
+  .StatsPokemon__statBar:first-child{
+    margin-top: -30px;
+  }
+  .StatsPokemon__statBar:nth-child(){
+
+  }
+}
+
+@-webkit-keyframes color-change-3x {
+    0% {
+      background: #19dcea;
+    }
+    50% {
+      background: #b22cff;
+    }
+    100% {
+      background: #ea2222;
+    }
+  }
+  @keyframes color-change-3x {
+    0% {
+      background: #19dcea;
+    }
+    50% {
+      background: #b22cff;
+    }
+    100% {
+      background: #ea2222;
+    }
+  }
 
 .StatsPokemon__stats_center{
     width: 300px;

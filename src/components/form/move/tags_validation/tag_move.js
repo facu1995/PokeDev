@@ -1,19 +1,19 @@
 const TAGS_VALIDATITION_FROM={
     DESCRIPTION:{
-        IS_REQUIRED:"El descripcion es obligatorio",
+        IS_REQUIRED:"Description is required",
     },
     NAME:{
-        IS_REQUIRED:"El nombre es obligatorio"
+        IS_REQUIRED:"Name is required"
     },
     TYPE:{
-        IS_REQUIRED:"La type es obligatorio"
+        IS_REQUIRED:"Type is required"
     },
     POWER:{
-        IS_REQUIRED:"El power es obligatorio"
+        IS_REQUIRED:"Power is required"
     },
-    IS_INTEGER:"Tiene que ser un entero",
-    IS_NUMBER:"Tiene que ser un numero",
-    IS_POSITIVE:"Tiene que ser un positivo",
+    IS_INTEGER:"Must be integer",
+    IS_NUMBER:"Must be a number",
+    IS_POSITIVE:"Must be positive",
 
 };
 
