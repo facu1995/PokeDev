@@ -63,7 +63,7 @@ export const MovimientoScreen = () => {
                 {editMoves === false &&
                     <>
                         <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
-                        <div className="flex-centerAll">
+                        <div className="MovimientoScreen__sup flex-centerAll">
                             <Link className="text-decore-none" to={"/moves/"}><button className="btn" >Back</button></Link>
                             <button className='btn' onClick={() => setEditMoves(true)} >Edit move</button>
                         </div>

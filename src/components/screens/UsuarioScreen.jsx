@@ -7,12 +7,12 @@ import Spinner from '../img/spinner5.gif';
 //style
 import "../../styles/components/UsuarioScreen.css";
 import EditUserFromix from "../presentational/UsuarioScreen/EditUserFromix"
-
+import MostrarPokemones from "../presentational/UsuarioScreen/MostrarPokemones"
 import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 
 export const UsuarioScreen = () => {
     const { id } = useParams();
-    const [user, setUser] = useState({name:"",email:"",pass:""});
+    const [user, setUser] = useState({ name: "", email: "", pass: "", pokemons: [] });
     const [editarUsuario, setEditarUsuario] = useState(false);
     const [spinner, setSpinner] = useState(true);
     const [userId, setUserId] = useState('')
@@ -21,17 +21,17 @@ export const UsuarioScreen = () => {
         setSpinner(true);
         const obtenerUsers = async () => {
             /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
-            const data = await fetch("http://localhost:4000/user/"+ id);
+            const data = await fetch("http://localhost:4000/user/" + id);
             const dataJSON = await data.json();
-            setUser(dataJSON)
+            setUser(dataJSON);
+            console.log(dataJSON);
             setSpinner(false);
             let userId = localStorage.getItem('id')
             setUserId(userId)
         }
         obtenerUsers();
-    }, [id,editarUsuario])
 
-
+    }, [id, editarUsuario])
 
     const spinnerOn = () => {
         return (
@@ -74,11 +74,19 @@ export const UsuarioScreen = () => {
                         {userId === id && <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button> }
                         <img src={pokeball} alt="pokeBall" className='pokeBallBg UsuarioScreen__pokeball' />
                     </div>
+                    <div className="UsuarioScreen__Contratos">
+                        <h4>Contracted Pokemon</h4>
+                        <div className="Contratos__container">
+                            <MostrarPokemones pokemons={user.pokemons} />
+                        </div>
+                    </div>
                 </>}
                 {editarUsuario === true && <>
                     <div className="MovimientosAllScreen__AddMoveAll">
-                        {}
-                        <EditUserFromix user={user}  setEditarUsuario={setEditarUsuario} />
+
+                        <EditUserFromix user={user} setEditarUsuario={setEditarUsuario} />
+
+
                         <button className="btn btn-form" type="submit" onClick={() => { setEditarUsuario(false) }}>Back</button>
                     </div>
                 </>}

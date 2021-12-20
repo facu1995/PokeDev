@@ -1,0 +1,47 @@
+.HiredPokemon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--gc);
+    width: 300px;
+}
+
+.HiredPokemon__contenedor1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -10px;
+    height: 300px;
+    max-width: 370px;
+    width: 80vw;
+    border: 1px solid var(--gc);
+}
+
+.HiredPokemon__img{
+    height:200px;
+    width: 90%;
+    max-width:300px;
+    margin: 0 0 10px
+}
+
+.HiredPokemon__name{
+    margin: 5px 0 5px;  
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:20px;
+    
+}
+
+.MyPokemonScreenHeader__blink{
+    color: var(--grc);
+    animation: blink 2.5s linear infinite;
+}
+
+
+.HiredPokemon__contenedor1:hover,.HiredPokemon__contenedor2:hover{
+    transition: 0.5s;
+    border: 1px solid var(--white);
+    transform: scale(1.01);
+}

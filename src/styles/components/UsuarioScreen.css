@@ -25,6 +25,9 @@
 .UsuarioScreen__pokeball{
     top: 20%;
 }
+.UsuarioScreen__Contratos{
+    margin: 20px 0;
+}
 
 @media (max-width: 950px) {
     .UsuarioScreen {
@@ -33,4 +36,12 @@
     .UsuarioScreen__dato {
         height: 60px;
     }
+}
+
+
+.Contratos__container{
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px
 }
