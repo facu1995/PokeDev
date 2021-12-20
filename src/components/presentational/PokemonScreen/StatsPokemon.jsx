@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import UsePokemon from "../../context/usePokemon";
 //import CardPokemon from '../PokemonAllScreen/CardPokemon';
 const StatsPokemon = () => {
     const pokemon = UsePokemon();
 
 
-    const [longStats, setLongStats] = useState({
+    const longStats={
         'SPECIAL-ATTACK':'SPECIAL-ATTACK',
         'SPECIAL-DEFENSE':'SPECIAL-DEFENSE'
-    })
+    }
 
     // const onWindowsSizeChange =()=>{
     //     window.addEventListener("resize", window.screen.width > 400 ? setLongStats({
