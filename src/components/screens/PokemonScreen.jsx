@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-
+import axios from 'axios';
 //components
 import AboutPokemon from '../presentational/PokemonScreen/AboutPokemon';
 //import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
@@ -26,6 +26,11 @@ export const PokemonScreen = () => {
     const [species, setSpecies] = useState({ flavor_text_entries: [{ flavor_text: '' }] })
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
+    const [storage, setStorage] = useState({
+        name: '',
+        idUser: ''
+    })
+
 
 
     const obtenerPokemon = async (id) => {
@@ -35,10 +40,29 @@ export const PokemonScreen = () => {
         setPokemon(dataJSON);
     }
 
+    const Contratar = (v) => {
+        let body={
+            id:id,
+            idUser:storage.idUser
+        }
+        axios.put('http://localhost:4000/user/hirepokemon/', body)
+            .then(function (response) {
+            })
+            .catch(function (error) {
+            });
+        setEditarPokemon(false);
+    }
     useEffect(() => {
         let evolucionesNameArray = [];
         let descriptionArray = [];
         let evolucionesIdArray = [];
+
+        let name = localStorage.getItem('user');
+        let idUser = localStorage.getItem('id');
+        setStorage({
+            name: name,
+            idUser:idUser
+        })
 
         window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
 
@@ -133,6 +157,7 @@ export const PokemonScreen = () => {
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
                         <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
+                        <button className='btn btn-form' onClick={() => Contratar(true)} >Pokemon Recruit</button>
                     </PokemonContext.Provider>
                 </>}
             {editarPokemon === true &&
