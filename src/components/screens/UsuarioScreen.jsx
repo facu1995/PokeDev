@@ -15,6 +15,7 @@ export const UsuarioScreen = () => {
     const [user, setUser] = useState({name:"",email:"",pass:""});
     const [editarUsuario, setEditarUsuario] = useState(false);
     const [spinner, setSpinner] = useState(true);
+    const [userId, setUserId] = useState('')
 
     useEffect(() => {
         setSpinner(true);
@@ -24,9 +25,14 @@ export const UsuarioScreen = () => {
             const dataJSON = await data.json();
             setUser(dataJSON)
             setSpinner(false);
+            let userId = localStorage.getItem('id')
+            setUserId(userId)
         }
         obtenerUsers();
     }, [id,editarUsuario])
+
+
+
     const spinnerOn = () => {
         return (
             <div className="flex-centerAll">
@@ -59,18 +65,19 @@ export const UsuarioScreen = () => {
                         </div>
                         <div className='UsuarioScreen__list'>
                             <div className="UsuarioScreen__dato">Password:</div>
-                            {/* <div className="UsuarioScreen__dato">{user.pass}</div> */}
-                            <div className="UsuarioScreen__dato">**********</div>
+                            <div className="UsuarioScreen__dato">{userId === id ? user.pass : '**********' }</div> 
+                            
                         </div>
                     </div>
                     <div className='flex-centerAll'>
                         <Link to={"/users/"}><button className="btn">BACK</button></Link>
-                        <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button>
+                        {userId === id && <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button> }
                         <img src={pokeball} alt="pokeBall" className='pokeBallBg UsuarioScreen__pokeball' />
                     </div>
                 </>}
                 {editarUsuario === true && <>
                     <div className="MovimientosAllScreen__AddMoveAll">
+                        {}
                         <EditUserFromix user={user}  setEditarUsuario={setEditarUsuario} />
                         <button className="btn btn-form" type="submit" onClick={() => { setEditarUsuario(false) }}>Back</button>
                     </div>

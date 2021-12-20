@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 //styles
 import "../../styles/components/nav_principal.css";
@@ -21,6 +21,21 @@ function Nav() {
         }
     }
 
+    const [storage, setStorage] = useState({
+        name: '',
+        route: ''
+    })
+
+
+    useEffect(() => {
+        let name = localStorage.getItem('user');
+        let route = `/users/${localStorage.getItem('id')}`
+        setStorage({
+            name: name,
+            route:route
+        })
+    },[])
+
     return (
         <nav className="nav_principal">
             <div className="nav_principal__icono"></div>
@@ -29,6 +44,7 @@ function Nav() {
                 <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">Pokemons</Link></li>
                 <li className="nav_principal__li"><Link to="/moves" className="nav_principal__a">Moves</Link></li>
                 <li className="nav_principal__li"><Link to="/users" className="nav_principal__a">Users</Link></li>
+                <Link to= {storage.route} className="nav_principal__a">{storage.name}</Link>
                 <li className="nav_principal__li"><Link to="/" className="nav_principal__a">Sign off</Link></li>
                 {/* <li className="nav_principal__li"><button onClick={playMusic} type="button" className="nav_principal__a nav_principal__btn-music" ><i className="fas fa-music"></i></button></li> */}
             </ul>
