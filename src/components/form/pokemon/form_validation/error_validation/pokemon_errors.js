@@ -1,9 +1,5 @@
 export default function errorHandle(errors){
     return {
-        id(){
-            return errors.id && (<div>{errors.id}</div>)
-        },
-        
         name(){
             return errors.name && (<div>{errors.name}</div>)
         },
@@ -13,6 +9,23 @@ export default function errorHandle(errors){
         description(){
             return errors.description && (<div>{errors.description}</div>)
         },
-
+        hp(){
+            return errors.hp && (<div>{errors.hp}</div>)
+        },
+        attack(){
+            return errors.attack && (<div>{errors.attack}</div>)
+        },
+        defense(){
+            return errors.defense && (<div>{errors.defense}</div>)
+        },
+        specialAttack(){
+            return errors.specialAttack && (<div>{errors.specialAttack}</div>)
+        },
+        specialDefense(){
+            return errors.specialDefense && (<div>{errors.specialDefense}</div>)
+        },
+        speed(){
+            return errors.speed && (<div>{errors.speed}</div>)
+        }
     }
 }

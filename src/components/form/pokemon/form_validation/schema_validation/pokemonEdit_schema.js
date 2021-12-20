@@ -1,8 +1,6 @@
 import * as Yup from "yup";
 import TAGS_VALIDATITION_FROM from '../../tags_validation/tag_pokemon';
 const Schema = Yup.object().shape({
-    name: Yup.string().required(TAGS_VALIDATITION_FROM.NAME.IS_REQUIRED).max(10),
-    type: Yup.string().required(TAGS_VALIDATITION_FROM.TYPE.IS_REQUIRED),
     description: Yup.string().required(TAGS_VALIDATITION_FROM.DESCRIPTION.IS_REQUIRED),
     hp: Yup.number(TAGS_VALIDATITION_FROM.IS_NUMBER).required(TAGS_VALIDATITION_FROM.HP.IS_REQUIRED).positive(TAGS_VALIDATITION_FROM.IS_POSITIVE).integer(TAGS_VALIDATITION_FROM.IS_INTEGER),
     attack: Yup.number(TAGS_VALIDATITION_FROM.IS_NUMBER).required(TAGS_VALIDATITION_FROM.ATTACK.IS_REQUIRED).positive(TAGS_VALIDATITION_FROM.IS_POSITIVE).integer(TAGS_VALIDATITION_FROM.IS_INTEGER),

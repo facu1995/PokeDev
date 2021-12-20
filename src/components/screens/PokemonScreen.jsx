@@ -13,6 +13,7 @@ import PokemonInitPokemon from "../initializerJSON/pokemonInitJSON";
 import "../../styles/components/PokemonScreen.css";
 import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
 import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
+import EditPokemon from '../presentational/PokemonScreen/EditPokemon';
 import Nav from '../nav/nav_principal';
 // import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 // import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
@@ -21,6 +22,7 @@ export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
+    const [editarPokemon, setEditarPokemon] = useState(false);
     const [species, setSpecies] = useState({ flavor_text_entries: [{ flavor_text: '' }] })
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
@@ -42,10 +44,10 @@ export const PokemonScreen = () => {
 
         async function obtenerDescription() {
             let i = 0;
-            
+
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
-               /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
+                /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
                 let data = await fetch('http://localhost:4000/specieOne/' + evolucionesIdArray[i]);
                 let dataJSON = await data.json();
                 if (dataJSON.flavor_text_entries[0].flavor_text) {
@@ -110,28 +112,35 @@ export const PokemonScreen = () => {
         }
         obtenerPokemon(id);
         obtenerNameEvolutionPokemon(id);
-    }, [id]);
+    }, [id,editarPokemon]);
 
     return (<>
         <Nav />
         <section className='PokemonScreen'>
+            {editarPokemon === false &&
+                <>
+                    <PokemonContext.Provider value={pokemon}>
+                        <AboutPokemon species={species} />
+                        <StatsPokemon />
+                        <MoviEvoPokemon evoluciones={evoluciones} species={species} setPokemon={setPokemon} />
+                        {/* <MyFormulario />   */}
+                        {/* <AddMoveFormula setPokemon={setPokemon} /> */}
+                        {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
 
-            <PokemonContext.Provider value={pokemon}>
-                <AboutPokemon species={species} />
-                <StatsPokemon />
-                <MoviEvoPokemon evoluciones={evoluciones} species={species} setPokemon={setPokemon} />
-                {/* <MyFormulario />   */}
-                {/* <AddMoveFormula setPokemon={setPokemon} /> */}
-                {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
 
-
-                {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
-                {/* <HeaderPokemon />
+                        {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
+                        {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
-
-            </PokemonContext.Provider>
-
+                        <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
+                    </PokemonContext.Provider>
+                </>}
+            {editarPokemon === true &&
+                <>
+                    <EditPokemon id={id} setEditarPokemon={setEditarPokemon} />
+                    <button className="btn btn-form" type="submit" onClick={() => { setEditarPokemon(false) }}>Back</button>
+                </>
+            }
         </section>
     </>
     )

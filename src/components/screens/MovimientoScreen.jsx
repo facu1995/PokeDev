@@ -15,10 +15,11 @@ import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 export const MovimientoScreen = () => {
     const { id } = useParams();
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });
-    const [pagNext, setPagNext] = useState(0);
+    const [pagNext, setPagNext] = useState(826);
     const [pagBack, setPagBack] = useState(1);
     const [spinner, setSpinner] = useState(true);
     const [editMoves, setEditMoves] = useState(false);
+    const [cantMoves, setCantMoves] = useState(826);
 
 
     useEffect(() => {
@@ -30,14 +31,21 @@ export const MovimientoScreen = () => {
             setMove(dataJSON);
             setSpinner(false);
         }
+        const obtenerCantMove = async () => {
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
+            const data = await fetch("http://localhost:4000/movescant");
+            const dataJSON = await data.json();
+            setCantMoves(dataJSON.cant);
+        }
         obtenerMove();
+        obtenerCantMove();
         if (parseInt(id) > 1) {
             setPagBack(parseInt(id) - 1);
         }
-        if (id < 826) {
+        if (parseInt(id)< cantMoves) {
             setPagNext(parseInt(id) + 1);
         }
-    }, [id,editMoves])
+    }, [id, editMoves, cantMoves])
 
     const spinnerOn = () => {
         return (

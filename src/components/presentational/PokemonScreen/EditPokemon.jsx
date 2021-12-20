@@ -1,30 +1,31 @@
 import React from 'react';
-import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
-
+import axios from "axios";
 //Schema
-import Schema from "../../form/pokemon/form_validation/schema_validation/pokemon_schema";
+import Schema from "../../form/pokemon/form_validation/schema_validation/pokemonEdit_schema";
 //error
 import errorHandle from "../../form/pokemon/form_validation/error_validation/pokemon_errors";
 
-export default function AddPokemonAll({ setAgregarPokemon }) {
-    let initialValue = { name: "", type: "", description: "", hp: "", attack: "", defense: "", specialAttack: "", specialDefense: "", speed: "", };
+export default function EditPokemon({id,setEditarPokemon}) {
+    let initialValue = { description: "",hp:"",attack:"",defense:"",specialAttack:"",specialDefense:"",speed:"" };
 
     const fnValidationForm = (v) => {
-        /*   const { id, name, type, description } = v; */
-        axios.post('http://localhost:4000/addpokemon', v)
+        let body={
+            id,
+            ...v
+        }
+        axios.put('http://localhost:4000/editpokemon', body)
             .then(function (response) {
             })
             .catch(function (error) {
             });
-        setAgregarPokemon(false);
+        setEditarPokemon(false);
     }
-
     return (
         <div>
-            <h3>Recommend Pokemon</h3>
-            <br />
-            <br />
+            <h3>Edit Pokemon</h3>
+            <br/>
+            <br/>
             <Formik
                 initialValues={initialValue}
                 validationSchema={Schema}
@@ -32,33 +33,6 @@ export default function AddPokemonAll({ setAgregarPokemon }) {
                 {({ errors }) => {
                     return (
                         <Form>
-                            <section>
-                                <Field name="name" className="input width-100" placeholder="name" />
-                                {errorHandle(errors).name()}
-                            </section>
-                            <section>
-                            <Field as="select"  className="input width-100" name="type" >
-                                    <option value="fire">fire</option>
-                                    <option value="water">water</option>
-                                    <option value="electric">electric</option>
-                                    <option value="ground">ground</option>
-                                    <option value="grass">grass</option>
-                                    <option value="ghost">ghost</option>
-                                    <option value="flying">flying</option>
-                                    <option value="bug">bug</option>
-                                    <option value="rock">rock</option>
-                                    <option value="fighting">fighting</option>
-                                    <option value="steel">steel</option>
-                                    <option value="dragon">dragon</option>
-                                    <option value="poison">poison</option>
-                                    <option value="ice">ice</option>
-                                    <option value="normal">normal</option>
-                                    <option value="psychic">psychic</option>
-                                    <option value="fairy">fairy</option>
-                                    <option value="dark">dark</option>
-                                </Field>
-                                {errorHandle(errors).type()}
-                            </section>
                             <section>
                                 <Field name="description" className="input width-100" placeholder="description" />
                                 {errorHandle(errors).description()}
@@ -88,7 +62,7 @@ export default function AddPokemonAll({ setAgregarPokemon }) {
                                 {errorHandle(errors).speed()}
                             </section>
                             <section>
-                                <br />
+                            <br/>
                                 <button type="submit" className="btn btn-form">Recommend Pokemon</button>
                             </section>
                         </Form>)

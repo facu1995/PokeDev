@@ -8,16 +8,10 @@ import Schema from "../../form/move/form_validation/schema_validation/move_schem
 import errorHandle from "../../form/move/form_validation/error_validation/move_errors";
 //pokemon
 
-export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
+export default function AddMoveAll({ setAgregarMoves }) {
     let initialValue = { name: "", type: "", power: "" };
 
     const fnValidationForm = (v) => { 
-        alert(JSON.stringify(v))
-        const {name} =v;
-        setmovesAll([
-            {name:name,url:"https://pokeapi.co/api/v2/move/999/"},
-            ...movesAll
-        ]);
         axios.post('http://localhost:4000/addmove', v)
             .then(function (response) {
             })
@@ -42,7 +36,26 @@ export default function AddMoveAll({ setmovesAll,movesAll,setAgregarMoves }) {
                                 {errorHandle(errors).name()}
                             </section>
                             <section>
-                                <Field name="type" className="input width-100" placeholder="type" />
+                            <Field as="select"  className="input width-100" name="type"  >
+                                    <option value="fire">fire</option>
+                                    <option value="water">water</option>
+                                    <option value="electric">electric</option>
+                                    <option value="ground">ground</option>
+                                    <option value="grass">grass</option>
+                                    <option value="ghost">ghost</option>
+                                    <option value="flying">flying</option>
+                                    <option value="bug">bug</option>
+                                    <option value="rock">rock</option>
+                                    <option value="fighting">fighting</option>
+                                    <option value="steel">steel</option>
+                                    <option value="dragon">dragon</option>
+                                    <option value="poison">poison</option>
+                                    <option value="ice">ice</option>
+                                    <option value="normal">normal</option>
+                                    <option value="psychic">psychic</option>
+                                    <option value="fairy">fairy</option>
+                                    <option value="dark">dark</option>
+                                </Field>
                                 {errorHandle(errors).type()}
                             </section>
                             <section>

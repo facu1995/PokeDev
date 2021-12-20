@@ -11,7 +11,6 @@ import Nav from '../nav/nav_principal';
 export const MovimientosAllScreen = () => {
     const [filtro, setFiltro] = useState("");
     const [movesAll, setmovesAll] = useState([]);
-    const cantMovesFetch = 826;
     const [spinner, setSpinner] = useState(true);
     const [agregarMoves, setAgregarMoves] = useState(false);
 
@@ -29,7 +28,7 @@ export const MovimientosAllScreen = () => {
         }
         obtenerMovimientos();
         setSpinner(false);
-    }, [cantMovesFetch,agregarMoves]);
+    }, [agregarMoves]);
 
     const spinnerOn = () => {
         return (
@@ -55,7 +54,7 @@ export const MovimientosAllScreen = () => {
                 </>}
             {agregarMoves === true && <>
                 <div className="MovimientosAllScreen__AddMoveAll">
-                    <AddMoveForm setmovesAll={setmovesAll} movesAll={movesAll} setAgregarMoves={setAgregarMoves}  />
+                    <AddMoveForm setAgregarMoves={setAgregarMoves}  />
                     <button className="btn btn-form" type="submit" onClick={() => { setAgregarMoves(false) }}>Back</button>
                 </div>
             </>}

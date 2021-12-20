@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
 //Schema
@@ -13,19 +14,38 @@ import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 // import NavBurger from "../nav/nav_prueba/nav";
 
 export const LoginScreen = () => {
-
+    const [login,setLogin]= useState({token:false});
     let initialValue = { email: "", pass: "" };
     const navigate = useNavigate();
 
     const fnValidationForm = (v) => {
-        alert('Bienvenido a PokeDev!');
-        navigate('/home');
+        /* alert('Bienvenido a PokeDev!'); */
+        axios.post('http://localhost:4000/login', v)
+            .then(function (response) {
+                console.log(response.data);
+                setLogin(response.data)
+                if(response.data.token===false){
+                    alert('the email or password are not valid!')
+                }
+                else{
+                    navigate('/home');
+                }
+            })
+            .catch(function (error) {
+            });
+        /* alert(JSON.stringify(v)); */
     }
+
+/*     useEffect(() => {
+        if(login===true){
+            navigate('/home');
+        }
+    }, [login, navigate]) */
 
     const newUser = () => navigate('/newUser')
 
     return (
-        
+
         <div className='LoginScreen'>
             {/* <NavBurger/> */}
             <Formik
@@ -34,13 +54,13 @@ export const LoginScreen = () => {
                 onSubmit={fnValidationForm}>
                 {({ errors }) => {
                     return (
-                        
+
                         <Form className='LoginScreen__form'>
-                            <h3>WELCOME TO <br/><br/> POKE DEV!</h3>
+                            <h3>WELCOME TO <br /><br /> POKE DEV!</h3>
                             <Field className="input input-big" name="email" placeholder="E-mail" />
                             {errorHandle(errors).email()}
 
-                            <Field type="password"  className="input input-big" name="pass" placeholder="Password" />
+                            <Field type="password" className="input input-big" name="pass" placeholder="Password" />
                             {errorHandle(errors).pass()}
 
                             <button className='btn LoginScreen__btndiv' type="submit">Login</button>

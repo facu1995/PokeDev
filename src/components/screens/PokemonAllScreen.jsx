@@ -15,9 +15,9 @@ export const PokemonAllScreen = () => {
     const [pokemonAll, setPokemonAll] = useState([]);
     const [page, setPage] = useState(1);
     const limit = 8;
-    const cantPokemonFetch = 300;
     const [cantMaximaPokemon, setCantMaximaPokemon] = useState(30);
     const [agregarPokemon, setAgregarPokemon] = useState(false);
+    const [cantPokemonFetch, setCantPokemonFetch] = useState(301);
 
     useEffect(() => {
         const obtenerPokemons = async (id) => {
@@ -26,8 +26,15 @@ export const PokemonAllScreen = () => {
             const dataJSON = await data.json();
             setPokemonAll(dataJSON.results);
         }
+        const obtenerCantMove = async () => {
+            /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
+            const data = await fetch("http://localhost:4000/pokemoncant");
+            const dataJSON = await data.json();
+            setCantPokemonFetch(dataJSON.cant);
+        }
         obtenerPokemons();
-    }, []);
+        obtenerCantMove();
+    }, [agregarPokemon]);
 
     return (
         <>
@@ -44,7 +51,7 @@ export const PokemonAllScreen = () => {
                 }
                 {agregarPokemon === true &&
                     <>
-                        <AddPokemonAll pokemonAll={pokemonAll} setPokemonAll={setPokemonAll} />
+                        <AddPokemonAll pokemonAll={pokemonAll} setPokemonAll={setPokemonAll} setAgregarPokemon={setAgregarPokemon}/>
                         <button className="btn btn-form" type="submit" onClick={() => { setAgregarPokemon(false) }}>Back</button>
                     </>
                 }

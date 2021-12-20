@@ -26,7 +26,7 @@ function Nav() {
             <div className="nav_principal__icono"></div>
             <button onClick={showLinks} className="btn-hamburger"><i id="hamburger" className={active === false ? 'fas fa-bars' : 'fas fa-times'}></i></button>
             <ul id="nav-links" className={active === false ? 'nav_principal__list' : 'nav_principal__list active'} >
-                <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">Pokemones</Link></li>
+                <li className="nav_principal__li"><Link to="/home" className="nav_principal__a">Pokemons</Link></li>
                 <li className="nav_principal__li"><Link to="/moves" className="nav_principal__a">Moves</Link></li>
                 <li className="nav_principal__li"><Link to="/users" className="nav_principal__a">Users</Link></li>
                 <li className="nav_principal__li"><Link to="/" className="nav_principal__a">Sign off</Link></li>

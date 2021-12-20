@@ -16,7 +16,6 @@ export default function AddMoveForm({ setPokemon }) {
     const pokemon = UsePokemon();
 
     const fnValidationForm = (v) => {
-        alert(JSON.stringify(v))
         const { id, name, type, power } = v;
         setPokemon({
             ...pokemon,
