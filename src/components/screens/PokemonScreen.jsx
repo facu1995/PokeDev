@@ -40,7 +40,7 @@ export const PokemonScreen = () => {
 
     const obtenerPokemon = async (id) => {
         /* const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id) */
-        const data = await fetch('http://localhost:4000/pokemonOne/' + id)
+        const data = await fetch('https://back-poke.herokuapp.com/pokemonOne/' + id)
         const dataJSON = await data.json();
         setPokemon(dataJSON);
     }
@@ -59,7 +59,7 @@ export const PokemonScreen = () => {
                     idUser: storage.idUser
                 }
                 
-                axios.put('http://localhost:4000/user/hirepokemon/', body)
+                axios.put('https://back-poke.herokuapp.com/user/hirepokemon/', body)
                     .then(function (response) {
                     })
                     .catch(function (error) {
@@ -91,7 +91,7 @@ export const PokemonScreen = () => {
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
                 /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
-                let data = await fetch('http://localhost:4000/specieOne/' + evolucionesIdArray[i]);
+                let data = await fetch('https://back-poke.herokuapp.com/specieOne/' + evolucionesIdArray[i]);
                 let dataJSON = await data.json();
                 if (dataJSON.flavor_text_entries[0].flavor_text) {
                     descriptionArray.push(dataJSON.flavor_text_entries[0].flavor_text);
@@ -105,7 +105,7 @@ export const PokemonScreen = () => {
         }
         async function obtenerNameEvolutionPokemon(id) {
             let idEvo = 0;
-            let data = await fetch('http://localhost:4000/specieOne/' + id)
+            let data = await fetch('https://back-poke.herokuapp.com/specieOne/' + id)
             let dataJSON = await data.json();
             setSpecies(dataJSON);
             if (dataJSON.evolution_chain.url) {
@@ -114,7 +114,7 @@ export const PokemonScreen = () => {
                     idEvo = arrayURL[6];
                 }
                 /* data = await fetch(dataJSON.evolution_chain.url) */
-                let data = await fetch('http://localhost:4000/evolvesOne/' + idEvo)
+                let data = await fetch('https://back-poke.herokuapp.com/evolvesOne/' + idEvo)
                 dataJSON = await data.json();
                 if (dataJSON.chain) {
                     evolucionesNameArray.push(dataJSON.chain.species.name);

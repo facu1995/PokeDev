@@ -12,7 +12,7 @@ export default function AddPokemonAll({ setAgregarPokemon }) {
 
     const fnValidationForm = (v) => {
         /*   const { id, name, type, description } = v; */
-        axios.post('http://localhost:4000/addpokemon', v)
+        axios.post('https://back-poke.herokuapp.com/addpokemon', v)
             .then(function (response) {
             })
             .catch(function (error) {

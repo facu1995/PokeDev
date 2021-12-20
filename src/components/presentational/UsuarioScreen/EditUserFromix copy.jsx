@@ -14,7 +14,7 @@ export const EditUserFromix = ({ user, setEditarUsuario}) => {
 
         let body={...v,email:user.email}
        /*  alert(JSON.stringify(body)); */
-        axios.put('http://localhost:4000/user/cambiar/', body)
+        axios.put('https://back-poke.herokuapp.com/user/cambiar/', body)
             .then(function (response) {
             })
             .catch(function (error) {

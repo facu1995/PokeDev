@@ -21,7 +21,7 @@ export const UsuarioScreen = () => {
         setSpinner(true);
         const obtenerUsers = async () => {
             /* const data = await fetch("https://pokeapi.co/api/v2/move/" + id); */
-            const data = await fetch("http://localhost:4000/user/" + id);
+            const data = await fetch("https://back-poke.herokuapp.com/user/" + id);
             const dataJSON = await data.json();
             setUser(dataJSON);
             setSpinner(false);

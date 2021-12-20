@@ -14,7 +14,7 @@ export const AddUserFromix = ({ setAgregarUsuario }) => {
     let initialValue = { name:"",email: "", pass: "" };
 
     const fnValidationForm = (v) => {
-        axios.post('http://localhost:4000/add/user', v)
+        axios.post('https://back-poke.herokuapp.com/add/user', v)
             .then(function (response) {
             })
             .catch(function (error) {

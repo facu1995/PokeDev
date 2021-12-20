@@ -14,7 +14,7 @@ export default function EditPokemon({id,setEditarPokemon}) {
             id,
             ...v
         }
-        axios.put('http://localhost:4000/editpokemon', body)
+        axios.put('https://back-poke.herokuapp.com/editpokemon', body)
             .then(function (response) {
             })
             .catch(function (error) {

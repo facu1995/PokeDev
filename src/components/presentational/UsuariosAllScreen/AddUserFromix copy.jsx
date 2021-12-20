@@ -15,7 +15,7 @@ export const AddUserFromix = ({ setAgregarUsuario }) => {
     let initialValue = { name: "", email: "", pass: "", imagefile: "" };
 
     const fnValidationForm = (v) => {
-        axios.post('http://localhost:4000/registro/usuario', v, {
+        axios.post('https://back-poke.herokuapp.com/registro/usuario', v, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
