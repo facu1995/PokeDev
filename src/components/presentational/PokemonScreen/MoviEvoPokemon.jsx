@@ -52,7 +52,7 @@ const MoviEvoPokemon = ({ evoluciones, species, setPokemon }) => {
                                     <li className='flex-centerAll'>ID </li>
                                     <li className='flex-centerAll'> &nbsp; &nbsp;NAME</li>
                                     <li className='flex-centerAll'>TYPE</li>
-                                    <li className='flex-centerAll'>POWER</li>
+                                    <li className='flex-centerAll'>PW</li>
 
                                 </ul>
                                 <div className='MoviEvoPokemon__Movimientos__list'>
