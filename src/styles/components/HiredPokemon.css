@@ -8,6 +8,12 @@
     width: 300px;
 }
 
+.HiredPokemon:hover{
+    transition: 0.3s;
+    transform: scale(1.02);
+    border: solid white 1px;
+}
+
 .HiredPokemon__contenedor1{
     display: flex;
     justify-content: center;

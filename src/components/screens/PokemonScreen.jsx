@@ -15,8 +15,12 @@ import StatsPokemon from '../presentational/PokemonScreen/StatsPokemon';
 import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
 import EditPokemon from '../presentational/PokemonScreen/EditPokemon';
 import Nav from '../nav/nav_principal';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 // import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 // import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
+
+
 
 export const PokemonScreen = () => {
 
@@ -31,6 +35,7 @@ export const PokemonScreen = () => {
         idUser: ''
     })
 
+    const navigate = useNavigate();
 
 
     const obtenerPokemon = async (id) => {
@@ -40,7 +45,7 @@ export const PokemonScreen = () => {
         setPokemon(dataJSON);
     }
 
-    const Contratar = (v) => {
+    const Contratar = () => {
         let body={
             id:id,
             idUser:storage.idUser
@@ -50,7 +55,20 @@ export const PokemonScreen = () => {
             })
             .catch(function (error) {
             });
-        setEditarPokemon(false);
+            Swal.fire({
+                title: `Do you want to contrait ${pokemon.name}` ,
+                showDenyButton: true,
+                confirmButtonText: 'Recruit',
+                denyButtonText: `Don't recruit`,
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
+                  navigate('/users/'+storage.idUser)
+                } else if (result.isDenied) {
+                  Swal.fire(`Oh! poor ${pokemon.name}!`, '', 'error')
+                }
+              })
     }
     useEffect(() => {
         let evolucionesNameArray = [];
@@ -157,7 +175,7 @@ export const PokemonScreen = () => {
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
                         <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
-                        <button className='btn btn-form' onClick={() => Contratar(true)} >Pokemon Recruit</button>
+                        <button className='btn btn-form' onClick={() => Contratar()} >Pokemon Recruit</button>
                     </PokemonContext.Provider>
                 </>}
             {editarPokemon === true &&
