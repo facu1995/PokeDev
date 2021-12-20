@@ -1,8 +1,13 @@
 .MovimientoScreen{
     display: flex;
+    margin: 20px 3%;
     flex-direction: column;
     align-items: center;
     min-height:80vh;
+}
+
+.MovimientoScreen__sup{
+    margin: 40px 0;
 }
 
 .MovimientoScreen__li{
@@ -12,9 +17,10 @@
 
 .MovimientoScreen__ul{
     margin: 40px 0;
-    max-width: 500px;
+    width:80%;
     border:1px solid var(--gc);
     padding:20px;
+    max-width: 350px;
 
 }
 .MovimientoScreen__ul__ul{
@@ -27,9 +33,30 @@
     align-items: center;
 }
 
-@media (max-width: 500px){
+/* @media (max-width: 500px){
     .MovimientoScreen_flexRight{
         display: flex;
         text-align: right;
+    }
+} */
+@media (min-width: 600px) {
+    .MovimientoScreen__ul {
+        width: 90%;
+        padding:20px 5%;
+        max-width: 500px;
+    }
+    .MovimientoScreen__ul__ul li {
+        height: 45px;
+    }
+}
+
+@media (min-width: 950px) {
+    .MovimientoScreen__ul {
+        width: 90%;
+        padding:20px 5%;
+        max-width: 900px;
+    }
+    .MovimientoScreen__ul__ul li {
+        height: 60px;
     }
 }
