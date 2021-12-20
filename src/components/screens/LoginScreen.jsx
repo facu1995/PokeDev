@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 import { Formik, Form, Field } from "formik";  //validar formulario
 
@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 //audio
 // import Audio from '../audio/audio';
 import pokeball from '../../components/img/PokeImgs/PokeBall.png'
+import Swal from 'sweetalert2';
+
 
 // import NavBurger from "../nav/nav_prueba/nav";
 
@@ -25,10 +27,23 @@ export const LoginScreen = () => {
                 console.log(response.data);
                 setLogin(response.data)
                 if(response.data.token===false){
-                    alert('the email or password are not valid!')
+                    Swal.fire(
+                        'Invalid Pass',
+
+                        'error',
+                        
+                      )
                 }
                 else{
                     navigate('/home');
+                    localStorage.clear();
+                    localStorage.setItem('user' , response.data.name);
+                    localStorage.setItem('id', response.data.id );
+                    Swal.fire(
+                        'Welcome Mr',
+                        response.data.name,
+                        'success'
+                    )
                 }
             })
             .catch(function (error) {
@@ -43,6 +58,12 @@ export const LoginScreen = () => {
     }, [login, navigate]) */
 
     const newUser = () => navigate('/newUser')
+    // const swalF = () => {
+    //     return Swal.fire(
+    //                         'Welcome Mr',
+    //                         'You clicked the button!',
+    //                         'success'
+    //                     )}
 
     return (
 
@@ -65,6 +86,7 @@ export const LoginScreen = () => {
 
                             <button className='btn LoginScreen__btndiv' type="submit">Login</button>
                             <button className='btn' type="button" onClick={newUser}>New User</button>
+                            {/* <button onClick={ () => swalF()}>Prueba SWAL</button> */}
                         </Form>)
                 }}
             </Formik>
