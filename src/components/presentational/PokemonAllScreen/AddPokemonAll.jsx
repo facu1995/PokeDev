@@ -7,7 +7,7 @@ import Schema from "../../form/pokemon/form_validation/schema_validation/pokemon
 //error
 import errorHandle from "../../form/pokemon/form_validation/error_validation/pokemon_errors";
 
-export default function AddPokemonAll({ pokemonAll, setPokemonAll, setAgregarPokemon }) {
+export default function AddPokemonAll({ setAgregarPokemon }) {
     let initialValue = { name: "", type: "", description: "", hp: "", attack: "", defense: "", specialAttack: "", specialDefense: "", speed: "", };
 
     const fnValidationForm = (v) => {

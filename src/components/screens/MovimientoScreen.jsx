@@ -15,7 +15,7 @@ import pokeball from '../../components/img/PokeImgs/PokeBall.png'
 export const MovimientoScreen = () => {
     const { id } = useParams();
     const [move, setMove] = useState({ id: "", power: "0", type: { name: "" } });
-    const [pagNext, setPagNext] = useState(0);
+    const [pagNext, setPagNext] = useState(826);
     const [pagBack, setPagBack] = useState(1);
     const [spinner, setSpinner] = useState(true);
     const [editMoves, setEditMoves] = useState(false);
@@ -42,7 +42,7 @@ export const MovimientoScreen = () => {
         if (parseInt(id) > 1) {
             setPagBack(parseInt(id) - 1);
         }
-        if (id < cantMoves) {
+        if (parseInt(id)< cantMoves) {
             setPagNext(parseInt(id) + 1);
         }
     }, [id, editMoves, cantMoves])

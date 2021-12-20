@@ -22,7 +22,7 @@ export const PokemonScreen = () => {
 
     const { id } = useParams();
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
-    const [agregarPokemon, setAgregarPokemon] = useState(false);
+    const [editarPokemon, setEditarPokemon] = useState(false);
     const [species, setSpecies] = useState({ flavor_text_entries: [{ flavor_text: '' }] })
 
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
@@ -112,12 +112,12 @@ export const PokemonScreen = () => {
         }
         obtenerPokemon(id);
         obtenerNameEvolutionPokemon(id);
-    }, [id]);
+    }, [id,editarPokemon]);
 
     return (<>
         <Nav />
         <section className='PokemonScreen'>
-            {agregarPokemon === false &&
+            {editarPokemon === false &&
                 <>
                     <PokemonContext.Provider value={pokemon}>
                         <AboutPokemon species={species} />
@@ -132,13 +132,13 @@ export const PokemonScreen = () => {
                         {/* <HeaderPokemon />
             <AtaquesPokemon />
             <EnergiaPokemon /> */}
-                        <button className='btn btn-form' onClick={() => setAgregarPokemon(true)} >Edit Pokemon</button>
+                        <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
                     </PokemonContext.Provider>
                 </>}
-            {agregarPokemon === true &&
+            {editarPokemon === true &&
                 <>
-                    <EditPokemon pokemon={pokemon} setPokemon={setPokemon} />
-                    <button className="btn btn-form" type="submit" onClick={() => { setAgregarPokemon(false) }}>Back</button>
+                    <EditPokemon id={id} setEditarPokemon={setEditarPokemon} />
+                    <button className="btn btn-form" type="submit" onClick={() => { setEditarPokemon(false) }}>Back</button>
                 </>
             }
         </section>
