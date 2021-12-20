@@ -45,8 +45,8 @@ function CardPokemon({ name, url }) {
       {spinner === true && spinnerOn()}
       {spinner === false &&
         <Link to={"/pokemon/" + id}>
-          <div className="contenedor1">
-            <div className="contenedor2">
+          <div className="contenedor1 ">
+            <div className="contenedor2 ">
               <div className="CardPokemon">
                 <img className="CardPokemon__img" src={imgSrc} alt="imagen" />
                 <h5 className="GOLD">HI THERE! I'M </h5>

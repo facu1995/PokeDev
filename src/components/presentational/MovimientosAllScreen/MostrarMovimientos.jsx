@@ -18,7 +18,7 @@ export const MostrarMovimientos = ({ movesAll, filtro }) => {
                 return <CardMovimiento key={idx} pokeMove={el} />
             })
             }
-            {movesActuales.length === 0 && <h5>No se encontro ningun pokemon con el nombre: {filtro}</h5>}
+            {movesActuales.length === 0 && <h5>Pokemon {filtro} not found</h5>}
             </ul>
         </div>
     )

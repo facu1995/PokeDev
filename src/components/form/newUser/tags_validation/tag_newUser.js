@@ -1,14 +1,14 @@
 const TAGS_VALIDATITION_FROM={
     EMAIL:{
-        IS_REQUIRED:"El email es obligatorio"
+        IS_REQUIRED:"Email is required"
     },
     PASS:{
-        IS_REQUIRED:"La password es obligatoria"
+        IS_REQUIRED:"Pass is required"
     },
     REPASS:{
-        IS_REQUIRED:"Reescriba su password"
+        IS_REQUIRED:"Rewrite Pass"
     },
-    IS_INTEGER:"Tiene que ser un entero",
+    IS_INTEGER:"Must be integer",
 };
 
 export default TAGS_VALIDATITION_FROM;

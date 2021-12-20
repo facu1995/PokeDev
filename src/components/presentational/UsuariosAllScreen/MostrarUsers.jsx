@@ -17,7 +17,7 @@ export const MostrarUsers = ({ userAll, filtro }) => {
                 return <CardUser key={idx} user={el}  id={idx}/>
             })
             }
-            {usuariosActuales.length === 0 && <h5>No se encontro ningun usuario con el nombre: {filtro}</h5>}
+            {usuariosActuales.length === 0 && <h5>User {filtro} not found</h5>}
             </ul>
         </div>
     )

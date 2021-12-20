@@ -15,9 +15,17 @@
     margin-top: 5rem;
 }
 
+.animate__fadeIn{
+    --animate-duration: 6s;
+}
+
+
 @media (max-width: 950px) {
     .AboutPokemon{
         display: block;
     }
 }
 
+
+
+  
