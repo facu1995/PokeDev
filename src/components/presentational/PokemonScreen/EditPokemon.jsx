@@ -6,16 +6,28 @@ import Schema from "../../form/pokemon/form_validation/schema_validation/pokemon
 //error
 import errorHandle from "../../form/pokemon/form_validation/error_validation/pokemon_errors";
 
-export default function EditPokemon({id,setEditarPokemon}) {
+export default function EditPokemon({id,obtenerPokemon,setEditarPokemon,setSpecies,species}) {
     let initialValue = { description: "",hp:"",attack:"",defense:"",specialAttack:"",specialDefense:"",speed:"" };
 
     const fnValidationForm = (v) => {
+        console.log(species);
         let body={
             id,
             ...v
         }
+        setSpecies({
+            ...species,
+            flavor_text_entries: [{ flavor_text: v.description }] 
+        })
+        console.log(species);
         axios.put('https://back-poke.herokuapp.com/editpokemon', body)
             .then(function (response) {
+                obtenerPokemon(id);
+                setSpecies({
+                    ...species,
+                    flavor_text_entries: [{ flavor_text: v.description }] 
+                })
+                console.log("cambio");
             })
             .catch(function (error) {
             });

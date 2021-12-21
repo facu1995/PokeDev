@@ -45,7 +45,7 @@ export const MovimientoScreen = () => {
         if (parseInt(id)< cantMoves) {
             setPagNext(parseInt(id) + 1);
         }
-    }, [id, editMoves, cantMoves])
+    }, [id, cantMoves])
 
     const spinnerOn = () => {
         return (

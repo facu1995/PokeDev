@@ -7,18 +7,23 @@ import Schema from '../../form/addUser/form_validation/schema_validation/editUse
 //error
 import errorHandle from '../../form/addUser/form_validation/error_validation/addUser_errors';
 //style
-export const EditUserFromix = ({ user, setEditarUsuario}) => {
+export const EditUserFromix = ({ user, setUser, setEditarUsuario }) => {
 
-    let initialValue = { name:"",email: "", pass: "" };
+    let initialValue = { name: "", email: "", pass: "" };
     const fnValidationForm = (v) => {
-
-        let body={...v,email:user.email}
-       /*  alert(JSON.stringify(body)); */
+        let body = { ...v, email: user.email }
+        /*  alert(JSON.stringify(body)); */
+        setUser({
+            ...user,
+            name:v.name,
+            pass: v.pass
+        })
         axios.put('https://back-poke.herokuapp.com/user/cambiar/', body)
             .then(function (response) {
             })
             .catch(function (error) {
             });
+        
         setEditarUsuario(false)
     }
 

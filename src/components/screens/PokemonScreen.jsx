@@ -58,7 +58,6 @@ export const PokemonScreen = () => {
                     id: id,
                     idUser: storage.idUser
                 }
-                
                 axios.put('https://back-poke.herokuapp.com/user/hirepokemon/', body)
                     .then(function (response) {
                     })
@@ -179,7 +178,7 @@ export const PokemonScreen = () => {
                 </>}
             {editarPokemon === true &&
                 <>
-                    <EditPokemon id={id} setEditarPokemon={setEditarPokemon} />
+                    <EditPokemon id={id} obtenerPokemon={obtenerPokemon} setEditarPokemon={setEditarPokemon} setSpecies={setSpecies} species={species}/>
                     <button className="btn btn-form" type="submit" onClick={() => { setEditarPokemon(false) }}>Back</button>
                 </>
             }

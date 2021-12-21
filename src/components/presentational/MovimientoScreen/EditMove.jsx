@@ -6,12 +6,18 @@ import Schema from "../../form/move/form_validation/schema_validation/move_schem
 //error
 import errorHandle from "../../form/move/form_validation/error_validation/move_errors"
 //pokemon
-export default function EditMoveAll({id, setEditMoves }) {
+export default function EditMoveAll({move, setMove,id, setEditMoves }) {
     let initialValue = { name: "", type: "", power: "" };
 
     const fnValidationForm = (v) => {
         const { name, type, power } = v;
         let newMove = { id, name, type, power };
+        setMove({
+            ...move,
+            name:name,
+            type:{name:type},
+            power:power
+        });
         axios.put('https://back-poke.herokuapp.com/editMove', newMove)
             .then(function (response) {
             })

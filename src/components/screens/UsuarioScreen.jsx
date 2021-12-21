@@ -30,7 +30,7 @@ export const UsuarioScreen = () => {
         }
         obtenerUsers();
 
-    }, [id, editarUsuario])
+    }, [id])
 
     const spinnerOn = () => {
         return (
@@ -83,9 +83,7 @@ export const UsuarioScreen = () => {
                 {editarUsuario === true && <>
                     <div className="MovimientosAllScreen__AddMoveAll">
 
-                        <EditUserFromix user={user} setEditarUsuario={setEditarUsuario} />
-
-
+                        <EditUserFromix user={user}  setUser={setUser} setEditarUsuario={setEditarUsuario} />
                         <button className="btn btn-form" type="submit" onClick={() => { setEditarUsuario(false) }}>Back</button>
                     </div>
                 </>}
