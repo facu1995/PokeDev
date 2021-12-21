@@ -34,20 +34,23 @@ export const UsuarioScreen = () => {
 
     const spinnerOn = () => {
         return (
-            <div className="flex-centerAll">
-                <div className="spinner">
-                    <div className="spinner__fondo"></div>
-                    <img className='spinner__imagen' src={Spinner} alt="foto" />
+            <>
+                <Nav />
+                <div className="flex-centerAll">
+                    <div className="spinner">
+                        <div className="spinner__fondo"></div>
+                        <img className='spinner__imagen' src={Spinner} alt="foto" />
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 
     return (
         <>
-            <Nav />
+
             {spinner === true && spinnerOn()}
-            {spinner === false && <div className='UsuarioScreen'>
+            {spinner === false && <> <Nav cambiar={editarUsuario} name={user.name} /><div className='UsuarioScreen'>
                 {editarUsuario === false && <>
                     <div className='UsuarioScreen__Card'>
                         <div className='UsuarioScreen__list'>
@@ -64,13 +67,13 @@ export const UsuarioScreen = () => {
                         </div>
                         <div className='UsuarioScreen__list'>
                             <div className="UsuarioScreen__dato">Password:</div>
-                            <div className="UsuarioScreen__dato">{userId === id ? user.pass : '**********' }</div> 
-                            
+                            <div className="UsuarioScreen__dato">{userId === id ? user.pass : '**********'}</div>
+
                         </div>
                     </div>
                     <div className='flex-centerAll'>
                         <Link to={"/users/"}><button className="btn">BACK</button></Link>
-                        {userId === id && <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button> }
+                        {userId === id && <button className="btn" onClick={() => setEditarUsuario(true)}>EDIT</button>}
                         <img src={pokeball} alt="pokeBall" className='pokeBallBg UsuarioScreen__pokeball' />
                     </div>
                     <div className="UsuarioScreen__Contratos">
@@ -83,12 +86,12 @@ export const UsuarioScreen = () => {
                 {editarUsuario === true && <>
                     <div className="MovimientosAllScreen__AddMoveAll">
 
-                        <EditUserFromix user={user}  setUser={setUser} setEditarUsuario={setEditarUsuario} />
+                        <EditUserFromix user={user} setUser={setUser} setEditarUsuario={setEditarUsuario} />
                         <button className="btn btn-form" type="submit" onClick={() => { setEditarUsuario(false) }}>Back</button>
                     </div>
                 </>}
             </div>
-            }
+            </>}
         </>
     )
 }

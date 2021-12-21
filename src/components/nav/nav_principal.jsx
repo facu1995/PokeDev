@@ -9,8 +9,9 @@ import "../../styles/components/nav_principal.css";
 // import { useState } from "react";
 
 
-function Nav() {
+function Nav({cambiar,name}) {
 
+    
     const [active, setActive] = useState(false)
     function showLinks() {
         if (active) {
@@ -34,7 +35,9 @@ function Nav() {
             name: name,
             route:route
         })
-    },[])
+        console.log(cambiar);
+    },[cambiar])
+
 
     return (
         <nav className="nav_principal">

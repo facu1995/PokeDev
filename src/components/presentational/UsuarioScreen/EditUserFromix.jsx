@@ -18,6 +18,7 @@ export const EditUserFromix = ({ user, setUser, setEditarUsuario }) => {
             name:v.name,
             pass: v.pass
         })
+        localStorage.setItem('user', v.name);
         axios.put('https://back-poke.herokuapp.com/user/cambiar/', body)
             .then(function (response) {
             })

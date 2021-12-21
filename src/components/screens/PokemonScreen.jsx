@@ -16,7 +16,7 @@ import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
 import EditPokemon from '../presentational/PokemonScreen/EditPokemon';
 import Nav from '../nav/nav_principal';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+/* import { useNavigate } from 'react-router-dom'; */
 // import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 // import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
 
@@ -35,7 +35,7 @@ export const PokemonScreen = () => {
         idUser: ''
     })
 
-    const navigate = useNavigate();
+    /* const navigate = useNavigate(); */
 
 
     const obtenerPokemon = async (id) => {
@@ -64,7 +64,7 @@ export const PokemonScreen = () => {
                     .catch(function (error) {
                     });
                 Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
-                navigate('/users/' + storage.idUser)
+                /* navigate('/users/' + storage.idUser) */
             } else if (result.isDenied) {
                 Swal.fire(`Oh! poor ${pokemon.name}!`, '', 'error')
             }
