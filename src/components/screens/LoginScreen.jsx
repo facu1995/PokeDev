@@ -23,7 +23,6 @@ export const LoginScreen = () => {
         /* alert('Bienvenido a PokeDev!'); */
         axios.post('https://back-poke.herokuapp.com/login', v)
             .then(function (response) {
-                console.log(response.data);
                 if (response.data.token === false) {
                     Swal.fire(
                         'Invalid Pass',

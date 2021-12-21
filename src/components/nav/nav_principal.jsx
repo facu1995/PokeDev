@@ -35,7 +35,6 @@ function Nav({cambiar,name}) {
             name: name,
             route:route
         })
-        console.log(cambiar);
     },[cambiar])
 
 

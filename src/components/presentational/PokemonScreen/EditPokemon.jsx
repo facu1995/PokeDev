@@ -10,7 +10,6 @@ export default function EditPokemon({id,obtenerPokemon,setEditarPokemon,setSpeci
     let initialValue = { description: "",hp:"",attack:"",defense:"",specialAttack:"",specialDefense:"",speed:"" };
 
     const fnValidationForm = (v) => {
-        console.log(species);
         let body={
             id,
             ...v
@@ -19,7 +18,7 @@ export default function EditPokemon({id,obtenerPokemon,setEditarPokemon,setSpeci
             ...species,
             flavor_text_entries: [{ flavor_text: v.description }] 
         })
-        console.log(species);
+
         axios.put('https://back-poke.herokuapp.com/editpokemon', body)
             .then(function (response) {
                 obtenerPokemon(id);
@@ -27,7 +26,6 @@ export default function EditPokemon({id,obtenerPokemon,setEditarPokemon,setSpeci
                     ...species,
                     flavor_text_entries: [{ flavor_text: v.description }] 
                 })
-                console.log("cambio");
             })
             .catch(function (error) {
             });
