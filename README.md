@@ -31,7 +31,7 @@ This is the final Proyect of the Front End Bootcamp by DevPlace.
 # PokeDev
 https://pokemodevp.netlify.app/
 
-BACK
+# BACKEND
 Solo desarrollamos lo necesario para que se puedan aplicar todas las funcionalidades del Front
 https://github.com/facu1995/BackPokeDev
 
