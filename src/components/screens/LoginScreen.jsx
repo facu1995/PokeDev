@@ -85,7 +85,7 @@ export const LoginScreen = () => {
                         </Form>)
                 }}
             </Formik>
-
+            <p>El backend se encuentra alojado en heroku. Como no se uso en un tiempo, va a tardar en arrancar. Espere al "alert" al tocar "login".</p>
             <img src={pokeball} alt="pokeBall" className='pokeBallBg' />
             {/* <Audio /> */}
 

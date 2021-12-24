@@ -16,7 +16,7 @@ import MoviEvoPokemon from '../presentational/PokemonScreen/MoviEvoPokemon';
 import EditPokemon from '../presentational/PokemonScreen/EditPokemon';
 import Nav from '../nav/nav_principal';
 import Swal from 'sweetalert2';
-/* import { useNavigate } from 'react-router-dom'; */
+import { useNavigate } from 'react-router-dom';
 // import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
 // import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
 
@@ -28,18 +28,16 @@ export const PokemonScreen = () => {
     const [pokemon, setPokemon] = useState(PokemonInitPokemon)
     const [editarPokemon, setEditarPokemon] = useState(false);
     const [species, setSpecies] = useState({ flavor_text_entries: [{ flavor_text: '' }] })
-
     const [evoluciones, setEvoluciones] = useState({ name: [], id: [], description: [], });
     const [storage, setStorage] = useState({
         name: '',
         idUser: ''
     })
 
-    /* const navigate = useNavigate(); */
+    const navigate = useNavigate();
 
 
     const obtenerPokemon = async (id) => {
-        /* const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id) */
         const data = await fetch('https://back-poke.herokuapp.com/pokemonOne/' + id)
         const dataJSON = await data.json();
         setPokemon(dataJSON);
@@ -64,7 +62,7 @@ export const PokemonScreen = () => {
                     .catch(function (error) {
                     });
                 Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
-                /* navigate('/users/' + storage.idUser) */
+                navigate('/users/' + storage.idUser)
             } else if (result.isDenied) {
                 Swal.fire(`Oh! poor ${pokemon.name}!`, '', 'error')
             }
@@ -82,14 +80,12 @@ export const PokemonScreen = () => {
             idUser: idUser
         })
 
-        window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
+        window.scrollTo(0, 0) 
 
         async function obtenerDescription() {
             let i = 0;
-
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
-                /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
                 let data = await fetch('https://back-poke.herokuapp.com/specieOne/' + evolucionesIdArray[i]);
                 let dataJSON = await data.json();
                 if (dataJSON.flavor_text_entries[0].flavor_text) {
@@ -163,15 +159,6 @@ export const PokemonScreen = () => {
                         <AboutPokemon species={species} />
                         <StatsPokemon />
                         <MoviEvoPokemon evoluciones={evoluciones} species={species} setPokemon={setPokemon} />
-                        {/* <MyFormulario />   */}
-                        {/* <AddMoveFormula setPokemon={setPokemon} /> */}
-                        {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
-
-
-                        {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
-                        {/* <HeaderPokemon />
-            <AtaquesPokemon />
-            <EnergiaPokemon /> */}
                         <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
                         <button className='btn btn-form' onClick={() => Contratar()} >Pokemon Recruit</button>
                     </PokemonContext.Provider>
